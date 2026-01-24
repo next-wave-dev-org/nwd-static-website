@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-import belindas from "../images/belindasmobile.png";
-import pelletier from "../images/pelletier.png";
+import belindas from "../images/GeekGirlCon Mobile App.png";
+import pelletier from "../images/Licton Springs Review.png";
 import DeveloperThumbnail from "../components/DeveloperThumbnail";
 import studentData from "../students.json";
 import { Helmet } from "react-helmet";
@@ -53,7 +53,7 @@ function Main() {
               src={belindas}
             />
             <p className="portfolio-div__examples_description">
-              Belinda's Closet
+            GeekGirlCon Mobile App
             </p>
           </div>
           <div className="portfolio-div__examples_entry">
@@ -63,7 +63,7 @@ function Main() {
               src={pelletier}
             />
             <p className="portfolio-div__examples_description">
-              Pelletier Construction
+            Licton Springs Review
             </p>
           </div>
         </div>
