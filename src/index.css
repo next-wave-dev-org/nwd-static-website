@@ -33,6 +33,18 @@ body {
 navbar
  ========== */
 
+.navbar {
+  position: relative;
+}
+
+.hamburger-menu {
+  z-index: 1001;
+}
+
+.nav-links {
+  z-index: 1000;
+}
+
 .nav-dropdown {
   position: relative;
   display: inline-block;
@@ -75,16 +87,18 @@ navbar
   background-color: #003a7a;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .nav-dropdown-menu {
     position: static;
     box-shadow: none;
-    margin-top: 0;
-    margin-left: 1rem;
+    margin-top: 0.5rem;
+    margin-left: 0;
+    width: 100%;
   }
 
-  .nav-dropdown:hover .nav-dropdown-menu {
-    display: block;
+  .nav-dropdown-item {
+    text-align: center;
+    padding: 10px 16px;
   }
 }
 
@@ -332,6 +346,7 @@ navbar
     max-width: 20ch;
   }
 }
+
 /* ======= Graduates & Companies section ======= */
 .graduates-companies-section {
   background-color: var(--secondary-green);
@@ -339,6 +354,7 @@ navbar
   max-width: 2200px;
   margin: 0 auto;
 }
+
 .graduates-companies-section__title {
   font-size: 3rem;
   font-weight: 700;
@@ -346,6 +362,7 @@ navbar
   margin-bottom: 3rem;
   color: var(--primary-blue);
 }
+
 .graduates-companies-section__tiles {
   display: flex;
   flex-direction: row;
@@ -353,6 +370,7 @@ navbar
   justify-content: center;
   align-items: stretch;
 }
+
 .graduates-companies-section__tile {
   flex: 1;
   max-width: 500px;
@@ -367,55 +385,67 @@ navbar
   flex-direction: column;
   justify-content: center;
 }
+
 .graduates-companies-section__tile:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
   background-color: var(--primary-blue);
 }
+
 .graduates-companies-section__tile:hover .graduates-companies-section__tile-heading,
 .graduates-companies-section__tile:hover .graduates-companies-section__tile-description {
   color: white;
 }
+
 .graduates-companies-section__tile-content {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+
 .graduates-companies-section__tile-heading {
   font-size: 2rem;
   font-weight: 700;
   color: var(--primary-blue);
   transition: color 0.3s ease;
 }
+
 .graduates-companies-section__tile-description {
   font-size: 1.1rem;
   color: #333;
   line-height: 1.6;
   transition: color 0.3s ease;
 }
+
 @media (max-width: 800px) {
   .graduates-companies-section {
     padding: 3rem 1.5rem;
   }
+
   .graduates-companies-section__title {
     font-size: 2rem;
     margin-bottom: 2rem;
   }
+
   .graduates-companies-section__tiles {
     flex-direction: column;
     gap: 1.5rem;
   }
+
   .graduates-companies-section__tile {
     max-width: 100%;
     padding: 2rem 1.5rem;
   }
+
   .graduates-companies-section__tile-heading {
     font-size: 1.5rem;
   }
+
   .graduates-companies-section__tile-description {
     font-size: 1rem;
   }
 }
+
 /* ======= Main page contact ======= */
 .contact-div {
   display: flex;
