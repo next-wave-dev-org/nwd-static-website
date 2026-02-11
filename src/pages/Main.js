@@ -1,7 +1,6 @@
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-import belindas from "../images/belindasmobile.png";
-import pelletier from "../images/pelletier.png";
+import nwdScreenshot from "../images/next-wave-dev.png";
 import DeveloperThumbnail from "../components/DeveloperThumbnail";
 import studentData from "../students.json";
 import { Helmet } from "react-helmet";
@@ -16,7 +15,7 @@ const studentDataSlice = studentDatafiltered.slice(0, 16);
 function Main() {
   console.log(studentDatafiltered.length);
   return (
-    <>
+    <>  
       <Helmet>
         <title> Next Wave Dev </title>
       </Helmet>
@@ -49,21 +48,11 @@ function Main() {
           <div className="portfolio-div__examples_entry">
             <img
               className="portfolio-div__examples__photo"
-              alt="example portable web app"
-              src={belindas}
+              alt="Next Wave Dev website"
+              src={nwdScreenshot}
             />
             <p className="portfolio-div__examples_description">
-              Belinda's Closet
-            </p>
-          </div>
-          <div className="portfolio-div__examples_entry">
-            <img
-              className="portfolio-div__examples__photo"
-              alt="example desktop web app"
-              src={pelletier}
-            />
-            <p className="portfolio-div__examples_description">
-              Pelletier Construction
+              Next Wave Dev
             </p>
           </div>
         </div>
@@ -87,6 +76,21 @@ function Main() {
           <span>— Ginni Rometty</span>
           </p>
       </div>
+      <div className="donation-div">
+        <div className="donation-div__flexcol">
+          <p className="donation-div__flexcol__heading">
+            Support the Next Wave of Developers
+          </p>
+          <p className="donation-div__flexcol__paragraph">
+            Your contribution helps us provide essential resources, mentorship, and real-world project opportunities to aspiring sutdent developers, empowering them to launch successful careers in tech.
+          </p>
+          <Link to={"/Donation"}>
+            <button className="donation-div__button" type="button">
+              Donate Now
+            </button>
+          </Link>
+        </div> 
+      </div>  
       <div className="graduates-companies-section">
         <h2 className="graduates-companies-section__title">Graduates & Companies</h2>
         <div className="graduates-companies-section__tiles">

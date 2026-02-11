@@ -11,7 +11,6 @@ export function FormComponent() {
 
     const formData = new FormData(e.target);
 
-    // Replace YOUR_FORM_ID with your actual Google Form ID
     const googleFormUrl =
       "https://docs.google.com/forms/d/e/1FAIpQLSc6TcZviCuDGUOS0Nm4geU5rDJnDxlghpY4VMyPbFmZRU3-mg/formResponse";
 
@@ -22,14 +21,12 @@ export function FormComponent() {
         body: formData,
       });
 
-      // Google Ads conversion trigger (optional)
       if (window.gtag) {
         window.gtag("event", "conversion", {
           send_to: "AW-CONVERSION_ID/CONVERSION_LABEL",
         });
       }
 
-      // Redirect to thank-you page
       navigate("/contact-thank-you");
     } catch (err) {
       console.error(err);
@@ -38,50 +35,55 @@ export function FormComponent() {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ width: "100%" }}>
-      <div style={{ marginBottom: "1rem" }}>
-        <label>Name</label>
-        <input
-          type="text"
-          name="entry.2005620554"
-          required
-          style={{ width: "100%", padding: "0.5rem" }}
-        />
-      </div>
+    <>
+      <h2 style={{ marginBottom: "1rem" }}>
+        Ready to work on a project with us? Contact us below!
+      </h2>
 
-      <div style={{ marginBottom: "1rem" }}>
-        <label>Email</label>
-        <input
-          type="email"
-          name="emailAddress"
-          required
-          style={{ width: "100%", padding: "0.5rem" }}
-        />
-      </div>
+      <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+        <div style={{ marginBottom: "1rem" }}>
+          <label>Name</label>
+          <input
+            type="text"
+            name="entry.2005620554"
+            required
+            style={{ width: "100%", padding: "0.5rem" }}
+          />
+        </div>
 
-      <div style={{ marginBottom: "1rem" }}>
-        <label>Company / Organization</label>
-        <input
-          type="text"
-          name="entry.1065046570"
-          style={{ width: "100%", padding: "0.5rem" }}
-        />
-      </div>
+        <div style={{ marginBottom: "1rem" }}>
+          <label>Email</label>
+          <input
+            type="email"
+            name="emailAddress"
+            required
+            style={{ width: "100%", padding: "0.5rem" }}
+          />
+        </div>
 
-      <div style={{ marginBottom: "1rem" }}>
-        <label>Message</label>
-        <textarea
-          name="entry.839337160"
-          required
-          rows={5}
-          style={{ width: "100%", padding: "0.5rem" }}
-        />
-      </div>
+        <div style={{ marginBottom: "1rem" }}>
+          <label>Company / Organization</label>
+          <input
+            type="text"
+            name="entry.1065046570"
+            style={{ width: "100%", padding: "0.5rem" }}
+          />
+        </div>
 
-      <button type="submit" disabled={submitting}>
-        {submitting ? "Submitting..." : "Submit"}
-      </button>
-    </form>
+        <div style={{ marginBottom: "1rem" }}>
+          <label>Message</label>
+          <textarea
+            name="entry.839337160"
+            required
+            rows={5}
+            style={{ width: "100%", padding: "0.5rem" }}
+          />
+        </div>
+
+        <button type="submit" disabled={submitting}>
+          {submitting ? "Submitting..." : "Submit"}
+        </button>
+      </form>
+    </>
   );
 }
-

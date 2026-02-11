@@ -7,6 +7,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub} from '@fortawesome/free-brands-svg-icons'
 import page1 from '../images/projects/pelletier/pelletier.png'
 import page2 from '../images/projects/nsc_portfolio/homepage.png'
+import nwdScreenshot from '../images/projects/nwd/nwd_home.png';
 import page3 from '../images/projects/belindas_closet/home_page_light.png'
 import page4 from '../images/projects/nsc_events/home_page_not_signed_in.png'
 import shiftAppScreenshot from '../images/projects/shiftapp/shiftapp_home.png';
@@ -17,116 +18,116 @@ import Footer from "../components/Footer";
 
 const projects = [
   {
-    title: 'Portfolio Site',
-    company: 'North Seattle College',
+    title: 'NWD Website',
+    company: 'Next Wave Dev',
     status: 'In Development',
     socialMedia: [
       {
         icon: faGithub,
-        link: 'https://github.com/SeattleColleges/SeattleColleges.github.io'
+        link: 'https://github.com/next-wave-dev-org/nwd-static-website'
       },
       {
         icon: faLink,
-        link: 'https://seattlecolleges.github.io/'
+        link: 'https://nextwavedev.org'
       },
     ],
-    description: "Our portfolio website, the website you are on, was built by our students in the Bachelor's program for North Seattle College.",
-    screenshot: page2
+    description: "Official website for Next Wave Dev, built by students in the Bachelor's program at North Seattle College.",
+    screenshot: nwdScreenshot
   },
-  {
-    title: 'Construction and Renovation Site',
-    company: 'Pelletier Construction',
-    status: 'Complete',
-    socialMedia: [
-      {
-        icon: faGithub,
-        link: 'https://github.com/PelletierConstructionGroup/PelletierConstructionGroup.github.io'
-      },
-      {
-        icon: faLink,
-        link: 'https://pelletierconstructiongroup.github.io/'
-      },
-    ],
-    description: "Pelletier Construction Group is a company based in the Seattle area specializing in home renovation. In 2023, Pelletier Construction had their website redesigned by bachelor's program students of the North Seattle College.",
-    screenshot: page1
-  },
-  {
-    title: 'Belinda\'s Closet',
-    company: 'North Seattle College',
-    status: 'In Development',
-    socialMedia: [
-      {
-        icon: faGithub,
-        link: 'https://github.com/SeattleColleges/belindas-closet-nextjs'
-      },
-    ],
-    description: "Belinda's closet is a store at North Seattle College which allows students to borrow and donate clothes for graduation. With the student built website, students will be able to see which clothes are available online.",
-    screenshot: page3
-  },
-  {
-    title: 'North Seattle College Events',
-    company: 'North Seattle College',
-    status: 'In Development',
-    socialMedia: [
-      {
-        icon: faGithub,
-        link: 'https://github.com/SeattleColleges/nsc-events-nextjs'
-      },
-    ],
-    description: "North Seattle College Events (NSC Events) is a student built website that allows all students to view upcoming events occurring at the college, and for administrators to add and manage event announcements through the website.",
-    screenshot: page4
-  },
-  {
-    title: 'Shift App',
-    company: 'North Seattle College',
-    status: 'In Development',
-    socialMedia: [
-      {
-        icon: faGithub,
-        link: 'https://github.com/SeattleColleges/shift-app-expo'
-      },
-      {
-        icon: faLink,
-        link: 'https://expo.dev/'
-      },
-    ],
-    description: "Shift App is a scheduling platform developed for interns and staff at Meta. It streamlines work shift management, check-ins, and admin oversight. Built with React Native and Firebase.",
-    screenshot: shiftAppScreenshot
-  },
-  {
-    title: 'GeekGirlCon Mobile App',
-    company: 'North Seattle College',
-    status: 'In Progress',
-    socialMedia: [
-      {
-        icon: faGithub,
-        link: 'https://github.com/GeekGirlCon'
-      },
-      {
-        icon: faLink,
-        link: 'https://geekgirlcon.com//'
-      }
-    ],
-    description: "GeekGirlCon Mobile App is a student-built mobile application developed for GeekGirlCon using React Native Expo, SQLite, and Tailwind. It aims to support event visibility and mobile experience.",
-    screenshot: geekGirlConScreenshot
-  },
-  {
-    title: 'Licton Springs Review',
-    company: 'North Seattle College',
-    status: 'In Progress',
-    socialMedia: [
-      {
-        icon: faGithub,
-        link: 'https://github.com/SeattleColleges/licton-springs-review-nextjs'
-      },
-      {
-        icon: faLink,
-        link: 'https://lictonspringsreview.com/'
-      },
-    ],
-    description: "Licton Springs Review is an immersive digital journal built by students at North Seattle College to showcase visual and literary art. Rebuilt from scratch with Next.js and Tailwind CSS for a modern, mobile-friendly experience.",
-    screenshot: lictonSpringsScreenshot
-  }
+//{
+  //  title: 'Construction and Renovation Site',
+  //  company: 'Pelletier Construction',
+  //  status: 'Complete',
+  //  socialMedia: [
+  //    {
+  //      icon: faGithub,
+  //      link: 'https://github.com/PelletierConstructionGroup/PelletierConstructionGroup.github.io'
+  //    },
+  //    {
+  //      icon: faLink,
+  //      link: 'https://pelletierconstructiongroup.github.io/'
+  //    },
+  //  ],
+  //  description: "Pelletier Construction Group is a company based in the Seattle area specializing in home renovation. In 2023, Pelletier Construction had their website redesigned by bachelor's program students of the North Seattle College.",
+  //  screenshot: page1
+  //},
+  //{
+  //  title: 'Belinda\'s Closet',
+  //  company: 'North Seattle College',
+  //  status: 'In Development',
+  //  socialMedia: [
+  //    {
+  //      icon: faGithub,
+  //      link: 'https://github.com/SeattleColleges/belindas-closet-nextjs'
+  //    },
+  //  ],
+  //  description: "Belinda's closet is a store at North Seattle College which allows students to borrow and donate clothes for graduation. With the student built website, students will be able to see which clothes are available online.",
+  //  screenshot: page3
+  //},
+  //{
+  //  title: 'North Seattle College Events',
+  //  company: 'North Seattle College',
+  //  status: 'In Development',
+  //  socialMedia: [
+  //    {
+  //      icon: faGithub,
+  //      link: 'https://github.com/SeattleColleges/nsc-events-nextjs'
+  //    },
+  //  ],
+  //  description: "North Seattle College Events (NSC Events) is a student built website that allows all students to view upcoming events occurring at the college, and for administrators to add and manage event announcements through the website.",
+  //  screenshot: page4
+  //},
+  //{
+  //  title: 'Shift App',
+  //  company: 'North Seattle College',
+  //  status: 'In Development',
+  //  socialMedia: [
+  //    {
+  //      icon: faGithub,
+  //      link: 'https://github.com/SeattleColleges/shift-app-expo'
+  //    },
+  //    {
+  //      icon: faLink,
+  //      link: 'https://expo.dev/'
+  //    },
+  //  ],
+  //  description: "Shift App is a scheduling platform developed for interns and staff at Meta. It streamlines work shift management, check-ins, and admin oversight. Built with React Native and Firebase.",
+  //  screenshot: shiftAppScreenshot
+  //},
+  //{
+  //  title: 'GeekGirlCon Mobile App',
+  //  company: 'North Seattle College',
+  //  status: 'In Progress',
+  //  socialMedia: [
+  //    {
+  //      icon: faGithub,
+  //      link: 'https://github.com/GeekGirlCon'
+  //    },
+  //    {
+  //      icon: faLink,
+  //      link: 'https://geekgirlcon.com//'
+  //    }
+  //  ],
+  //  description: "GeekGirlCon Mobile App is a student-built mobile application developed for GeekGirlCon using React Native Expo, SQLite, and Tailwind. It aims to support event visibility and mobile experience.",
+  //  screenshot: geekGirlConScreenshot
+  //},
+  //{
+  //  title: 'Licton Springs Review',
+  //  company: 'North Seattle College',
+  //  status: 'In Progress',
+  //  socialMedia: [
+  //    {
+  //      icon: faGithub,
+  //      link: 'https://github.com/SeattleColleges/licton-springs-review-nextjs'
+  //    },
+  //    {
+  //      icon: faLink,
+  //      link: 'https://lictonspringsreview.com/'
+  //    },
+  //  ],
+  //  description: "Licton Springs Review is an immersive digital journal built by students at North Seattle College to showcase visual and literary art. Rebuilt from scratch with Next.js and Tailwind CSS for a modern, mobile-friendly experience.",
+  //  screenshot: lictonSpringsScreenshot
+  //}
 ];
 
 const PortfolioPage = () => {
