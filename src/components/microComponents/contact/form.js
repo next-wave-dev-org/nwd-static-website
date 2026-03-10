@@ -42,8 +42,9 @@ export function FormComponent() {
 
       <form onSubmit={handleSubmit} style={{ width: "100%" }}>
         <div style={{ marginBottom: "1rem" }}>
-          <label>Name</label>
+          <label htmlFor="name">Name</label>
           <input
+            id="name"
             type="text"
             name="entry.2005620554"
             required
@@ -52,8 +53,9 @@ export function FormComponent() {
         </div>
 
         <div style={{ marginBottom: "1rem" }}>
-          <label>Email</label>
+          <label htmlFor="email">Email</label>
           <input
+            id="email"
             type="email"
             name="emailAddress"
             required
@@ -62,8 +64,9 @@ export function FormComponent() {
         </div>
 
         <div style={{ marginBottom: "1rem" }}>
-          <label>Company / Organization</label>
+          <label htmlFor="company">Company / Organization</label>
           <input
+            id="company"
             type="text"
             name="entry.1065046570"
             style={{ width: "100%", padding: "0.5rem" }}
@@ -71,8 +74,9 @@ export function FormComponent() {
         </div>
 
         <div style={{ marginBottom: "1rem" }}>
-          <label>Message</label>
+          <label htmlFor="message">Message</label>
           <textarea
+            id="message"
             name="entry.839337160"
             required
             rows={5}
@@ -87,3 +91,4 @@ export function FormComponent() {
     </>
   );
 }
+ 
