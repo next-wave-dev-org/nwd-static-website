@@ -790,23 +790,57 @@ svg {
 ====================================================== */
 @media (max-width: 800px) {
   .developer-prev {
-    height: auto;               
+    height: auto;
     min-height: auto;
-    padding: 3.5rem 1.5rem;      
-    flex-direction: column;      
-    gap: 2rem;                   
+    padding: 3rem 1rem;
+    flex-direction: column-reverse;
+    gap: 2rem;
     align-items: center;
     text-align: center;
   }
 
+  .developer-prev__gallery {
+    flex-basis: auto;
+    padding-inline-start: 0;
+    align-items: center;
+  }
+
+  .developer-prev__gallery__grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .developer-prev__quote {
+    flex-basis: auto;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    text-align: center;
+    padding-inline: 0.5rem;
+  }
+
   .developer-prev img {
-    max-width: 180px;            
+    max-width: 180px;
     height: auto;
   }
 
   .developer-prev h2,
   .developer-prev h3 {
     font-size: 1.6rem;
+    line-height: 1.25;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .developer-prev__quote {
+    font-size: 1.25rem;
+  }
+
+  .developer-prev__gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
