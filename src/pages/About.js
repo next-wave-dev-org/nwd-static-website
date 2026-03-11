@@ -79,10 +79,9 @@ function About() {
           alt="Picture of NWD"
           className="about-page-image"
           style={{
-            width: "100%",
-            display: "block",
-            height: "80vh",
-            objectFit: "fill",
+          width: "100%",
+          display: "block",
+          height: "auto"
           }}
         />
         
