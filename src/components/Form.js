@@ -1,62 +1,78 @@
 import * as React from 'react';
-import {useRef, useState} from "react";
+import { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 
 export function FormComponent(props) {
-    const [loading, setLoading] = useState(false);
     const form = useRef();
 
-    const sendEmail = (e) => {
-        setLoading(true)
-        e.preventDefault();
-        console.log(form.current)
+    const [loading, setLoading] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
-        emailjs.sendForm('service_v2z2ezq', 'template_m0u904m', form.current, {
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        if (loading) return;
+
+        setLoading(true);
+        setSuccessMessage("");
+        setErrorMessage("");
+
+        emailjs.sendForm(
+            'service_v2z2ezq',
+            'template_m0u904m',
+            form.current,
+            {
                 publicKey: 'OVBPyEMHCDEfZiFuo',
-        }).then(
+            }
+        ).then(
             () => {
-                console.log('SUCCESS!');
                 e.target.reset();
+                setSuccessMessage("Your message was sent successfully.");
                 setLoading(false);
             },
             (error) => {
                 console.log('FAILED...', error.text);
+                setErrorMessage("Something went wrong. Please try again.");
                 setLoading(false);
-            },
+            }
         );
     };
 
     return (
         <form ref={form} onSubmit={sendEmail}>
             <input
-                placeholder={"Name"}
+                placeholder="Name"
                 style={{
                     ...textBoxFormatting,
                     width: "100%"
                 }}
                 disabled={loading}
-                name={"from_name"}
+                name="from_name"
             />
+
             <input
-                placeholder={"Email"}
+                placeholder="Email"
                 style={{
                     ...textBoxFormatting,
                     width: "100%"
                 }}
                 disabled={loading}
-                name={"reply_to"}
+                name="reply_to"
             />
+
             <input
-                placeholder={"Business (Optional)"}
+                placeholder="Business (Optional)"
                 style={{
                     ...textBoxFormatting,
                     width: "100%",
                 }}
                 disabled={loading}
-                name={"user_business"}
+                name="user_business"
             />
+
             <textarea
-                placeholder={"Message"}
+                placeholder="Message"
                 style={{
                     ...textBoxFormatting,
                     width: "100%",
@@ -64,11 +80,12 @@ export function FormComponent(props) {
                     resize: "none",
                     textIndent: "10px"
                 }}
-                name={"message"}
+                name="message"
                 disabled={loading}
             />
+
             <button
-                type={"submit"}
+                type="submit"
                 style={{
                     width: "100%",
                     padding: ".5rem",
@@ -77,18 +94,51 @@ export function FormComponent(props) {
                     fontSize: "1.4rem",
                     fontFamily: '"Inter", sans-serif',
                     fontWeight: 300,
+                    opacity: loading ? 0.7 : 1,
+                    cursor: loading ? "not-allowed" : "pointer",
                 }}
                 disabled={loading}
                 className="contact-button"
+                aria-busy={loading}
             >
-                { loading ? "Sending"  : "Send" }
+                {loading ? "Sending..." : "Send"}
             </button>
-            <div style={{color: "#3E3E3E", marginTop: "1.2rem"}}>Or contact us by email at
-                northseattle.appdev@gmail.com or through our phone number at []
+
+            {loading && (
+                <div
+                    role="status"
+                    aria-live="polite"
+                    style={{ color: "#3E3E3E", marginTop: "1rem" }}
+                >
+                    Sending your message...
+                </div>
+            )}
+
+            {successMessage && (
+                <div
+                    role="status"
+                    aria-live="polite"
+                    style={{ color: "green", marginTop: "1rem" }}
+                >
+                    {successMessage}
+                </div>
+            )}
+
+            {errorMessage && (
+                <div
+                    role="alert"
+                    style={{ color: "red", marginTop: "1rem" }}
+                >
+                    {errorMessage}
+                </div>
+            )}
+
+            <div style={{ color: "#3E3E3E", marginTop: "1.2rem" }}>
+                Or contact us by email at northseattle.appdev@gmail.com or through our phone number at []
             </div>
         </form>
     );
-};
+}
 
 const textBoxFormatting = {
     fontSize: "1.1rem",
