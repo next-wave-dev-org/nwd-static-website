@@ -27,7 +27,7 @@ You need to have **Node.js** and **npm** (Node Package Manager) installed on you
 
 3.  **Install the dependencies:**
     ```bash
-    npm install
+    https://github.com/next-wave-dev-org/nwd-static-website.git
     ```
 
 ## ▶️ Available Scripts

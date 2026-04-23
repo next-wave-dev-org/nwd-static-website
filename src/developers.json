@@ -82,6 +82,15 @@
           "email": "zulbadamz@gmail.com",
           "github": "https://github.com/Zulbadamz",
           "linkedin": "https://www.linkedin.com/in/zulbadam-batdelger-aa91851b7/"
+    },
+    {
+      "name": "Diego Cano",
+      "photo": "Diego-Cano.webp",
+      "role": "Developer",
+      "about": "Application Development student focused on AI, data-driven systems, and building meaningful technology that improves people's lives.",
+      "email": "dcano2810@gmail.com",
+      "github": "https://github.com/Diego-Cano",
+      "linkedin": "https://www.linkedin.com/in/diegocanousa/"
     }
  
   ]
