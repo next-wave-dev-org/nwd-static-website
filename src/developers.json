@@ -1,6 +1,6 @@
 {
   "developers": [
-    { 
+    {
       "name": "Taylor Papke",
       "photo": "Taylor-Papke.webp",
       "role": "Product Owner / Technical Project Manager",
@@ -9,7 +9,7 @@
       "github": "https://github.com/orgs/SeattleColleges/people/taylorpapke",
       "linkedin": "https://www.linkedin.com/in/taylor-papke/"
     },
-    { 
+    {
       "name": "Nha Minh Pham",
       "photo": "Nha-Pham.webp",
       "role": "Developer",
@@ -18,7 +18,7 @@
       "github": "https://github.com/nhapham03",
       "linkedin": "https://www.linkedin.com/in/nha-pham-96a181295/"
     },
-    { 
+    {
       "name": "Jesse Caddell",
       "photo": "anon-profile-image.webp",
       "role": "Developer",
@@ -53,7 +53,6 @@
       "email": "luwamhabtu07@gmail.com",
       "github": "https://github.com/luwamhabtu07",
       "linkedin": "https://www.linkedin.com/in/luwam-habtu-803915300"
-
     },
     {
       "name": "Katrina Hill",
@@ -64,7 +63,7 @@
       "github": "https://github.com/katrina-l-hill",
       "linkedin": "https://www.linkedin.com/in/katrina-l-hill/"
     },
-    { 
+    {
       "name": "James Mathew",
       "photo": "James-Mathew.webp",
       "role": "Developer",
@@ -72,17 +71,24 @@
       "email": "mathewj2009@gmail.com",
       "github": "https://github.com/jmathew12",
       "linkedin": "https://www.linkedin.com/in/jmathew12/"
-
-        }, 
-        {
-          "name": "Zulbadam Batdelger",
-          "photo": "Zulbadam-Batdelger.webp",
-          "role": "Student Developer",
-          "about": "I am a senior in the AD graduate program. I am passionate about application design, illustration, and full-stack development.",
-          "email": "zulbadamz@gmail.com",
-          "github": "https://github.com/Zulbadamz",
-          "linkedin": "https://www.linkedin.com/in/zulbadam-batdelger-aa91851b7/"
+    },
+    {
+      "name": "Zulbadam Batdelger",
+      "photo": "Zulbadam-Batdelger.webp",
+      "role": "Student Developer",
+      "about": "I am a senior in the AD graduate program. I am passionate about application design, illustration, and full-stack development.",
+      "email": "zulbadamz@gmail.com",
+      "github": "https://github.com/Zulbadamz",
+      "linkedin": "https://www.linkedin.com/in/zulbadam-batdelger-aa91851b7/"
+    },
+    {
+      "name": "Khanh Trinh Nguyen",
+      "photo": "Khanh-Trinh-Nguyen.webp",
+      "role": "Developer",
+      "about": "I am a senior in the AD graduate program. Focused on developing mobile application.",
+      "email": "khanhtrinhvnguyen@gmail.com",
+      "github": "https://github.com/LiteWilliamNguyen",
+      "linkedin": "https://www.linkedin.com/in/khanhtrinh-nguyen/"
     }
- 
   ]
 }
