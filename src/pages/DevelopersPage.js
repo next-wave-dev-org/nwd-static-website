@@ -12,15 +12,21 @@ const DevelopersPage = () => {
   return (
     <div>
       <Helmet>
-        <title> Next Wave Dev - Developers </title>
+        <title>Next Wave Dev - Developers</title>
       </Helmet>
+
       <Navbar />
-      <div className="developers-flexcolumn">
-        <h1 className="developers-flexcolumn__h1">Our Developers</h1>
-        {developers.map((developer, index) => (
-          <Developer key={index} {...developer} />
-        ))}
+
+      <div className="developers-container">
+        <h1 className="developers-title">Our Developers</h1>
+
+        <div className="developers-grid">
+          {developers.map((developer, index) => (
+            <Developer key={index} {...developer} />
+          ))}
+        </div>
       </div>
+
       <Footer />
     </div>
   );
