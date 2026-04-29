@@ -9,6 +9,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isHireDropdownOpen, setIsHireDropdownOpen] = useState(false);
+  const [isGraduateDropdownOpen, setIsGraduateDropdownOpen] = useState(false);
 
   const [hireTimeout, setHireTimeout] = useState(null);
   const [joinTimeout, setJoinTimeout] = useState(null);
@@ -17,6 +18,7 @@ const Navbar = () => {
     setMenuOpen(false);
     setIsDropdownOpen(false);
     setIsHireDropdownOpen(false);
+    setIsGraduateDropdownOpen(false);
   };
 
   useEffect(() => {
@@ -27,6 +29,7 @@ const Navbar = () => {
         setMenuOpen(false);
         setIsDropdownOpen(false);
         setIsHireDropdownOpen(false);
+        setIsGraduateDropdownOpen(false);
       }
     };
 
@@ -182,13 +185,43 @@ const Navbar = () => {
 
             {isDropdownOpen && (
               <div className="nav-dropdown-menu">
-                <Link
-                  to="/graduates"
+                <div
                   className="nav-dropdown-item"
-                  onClick={closeMenus}
+                  onMouseEnter={() => {
+                    if (!isMobile) setIsGraduateDropdownOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    if (!isMobile) setIsGraduateDropdownOpen(false);
+                  }}
+                  onClick={() => {
+                    if (isMobile)
+                      setIsGraduateDropdownOpen(!isGraduateDropdownOpen);
+                  }}
+                  style={{ position: "relative", cursor: "pointer" }}
+                  aria-haspopup="true"
+                  aria-expanded={isGraduateDropdownOpen}
                 >
                   Graduates
-                </Link>
+                  {isGraduateDropdownOpen && (
+                    <div
+                      className="nav-dropdown-menu"
+                      style={{
+                        position: isMobile ? "static" : "absolute",
+                        left: isMobile ? "0" : "100%",
+                        top: isMobile ? "0" : "0",
+                        marginLeft: isMobile ? "1rem" : "0",
+                      }}
+                    >
+                      <Link
+                        to="/apply"
+                        className="nav-dropdown-item"
+                        onClick={closeMenus}
+                      >
+                        Apply
+                      </Link>
+                    </div>
+                  )}
+                </div>
 
                 <Link
                   to="/companies"
