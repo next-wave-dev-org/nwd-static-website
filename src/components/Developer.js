@@ -21,17 +21,31 @@ const Developer = ({ name, photo, about, email, github, linkedin, role }) => {
         </div>
 
         <div className='st-fl__st-fl-i__in-div__links'>
-          {github && (
-            <a href={github} target="_blank" rel="noopener noreferrer" style={{ color: "black" }}>
-              <FontAwesomeIcon icon={faGithub} style={{ fontSize: "40px" }} />
-            </a>
-          )}
-
-          {linkedin && (
-            <a href={linkedin} target="_blank" rel="noopener noreferrer" style={{ color: "black" }}>
-              <FontAwesomeIcon icon={faLinkedin} style={{ fontSize: "40px" }} />
-            </a>
-          )}
+        {github && (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+            title="GitHub profile"
+            style={{ color: "black" }}
+          >
+            <FontAwesomeIcon icon={faGithub} style={{ fontSize: "40px" }} />
+          </a>
+        )}
+        
+        {linkedin && (
+          <a
+            href={linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+            title="LinkedIn profile"
+            style={{ color: "black" }}
+          >
+            <FontAwesomeIcon icon={faLinkedin} style={{ fontSize: "40px" }} />
+          </a>
+        )}
 
           <p style={styles.contact}>
             <a href={`mailto:${email}`} style={styles.link}>{email}</a>
