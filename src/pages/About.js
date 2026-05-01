@@ -2,12 +2,38 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
 import NWD_about_photo from "../images/about/New_NWD_about_photo.png";
+import { pageMetadata, BASE_URL } from "../utils/metadataConfig";
 
 function About() {
+  const metadata = pageMetadata.about;
+  
   return (
     <>
       <Helmet>
-        <title> Next Wave Dev - About </title>
+        {/* Primary Meta Tags */}
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href={`${BASE_URL}/#${metadata.pageUrl}`} />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content={metadata.type} />
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:description" content={metadata.description} />
+        <meta property="og:image" content={`${BASE_URL}/og-logo.png`} />
+        <meta property="og:image:alt" content="Next Wave Dev Logo" />
+        <meta property="og:url" content={`${BASE_URL}/#${metadata.pageUrl}`} />
+        <meta property="og:site_name" content="Next Wave Dev" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metadata.title} />
+        <meta name="twitter:description" content={metadata.description} />
+        <meta name="twitter:image" content={`${BASE_URL}/og-logo.png`} />
+        
+        {/* Additional Meta Tags */}
+        <meta name="keywords" content="about, mission, tech education, career development, mentorship" />
+        <meta name="author" content="Next Wave Dev" />
       </Helmet>
       <Navbar />
 
