@@ -1216,3 +1216,43 @@ h1, h2, h3 {
   }
 }
 
+/* ===== SERVICES PAGE SPACING (MATCH COMPANIES PAGE) ===== */
+
+.services-page {
+  display: block; /* remove flex gap system */
+}
+
+.services-page h1 {
+  margin-bottom: 25px;
+}
+
+.services-page h2 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.services-page h3 {
+  margin-bottom: 10px;
+}
+
+.services-page p {
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.services-page ul {
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+.services-page li {
+  margin-bottom: 10px;
+}
+
+.services-page table {
+  margin-bottom: 60px;
+}
+
+.services-page button {
+  margin-top: 10px;
+}
