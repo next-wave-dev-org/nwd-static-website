@@ -2,32 +2,27 @@ const { test, expect } = require('@playwright/test');
 
 test('Navigation loop test for all top-level pages', async ({ page }) => {
   const pages = [
-    { name: 'Home', hash: '#/Home' },
-    { name: 'Contact', hash: '#/Contact' },
-    { name: 'About', hash: '#/About' },
-    { name: 'Developers', hash: '#/Developers' },
-    { name: 'Portfolio', hash: '#/Portfolio' },
+    { name: 'Home', path: '#/Home' },
+    { name: 'Contact', path: '#/Contact' },
+    { name: 'About', path: '#/About' },
+    { name: 'Developers', path: '#/Developers' },
+    { name: 'Portfolio', path: '#/Portfolio' },
   ];
 
-  // Start on Home
   await page.goto('/#/Home');
 
-  for (const p of pages) {
-    // Click the link that matches the route (works even if there are duplicates by text)
-    const link = page.locator(`a[href="${p.hash}"]`).first();
-    await expect(link, `Link for ${p.name} (${p.hash}) should exist`).toBeVisible();
+  for (const pageInfo of pages) {
+    const link = page.locator(`a[href="${pageInfo.path}"]`).first();
 
-    const hashRegex = new RegExp(`${p.hash.replace('#', '\\#')}$`);
+    await expect(link).toBeVisible();
 
     await Promise.all([
-      page.waitForURL(hashRegex, { timeout: 10000 }),
+      page.waitForURL(new RegExp(`${pageInfo.path.replace('#', '\\#')}$`)),
       link.click(),
     ]);
 
-    // ✅ URL changed
-    await expect(page).toHaveURL(hashRegex);
+    await expect(page).toHaveURL(new RegExp(`${pageInfo.path.replace('#', '\\#')}$`));
 
-    // ✅ Page rendered content
     await expect(page.getByRole('heading').first()).toBeVisible();
   }
 });
