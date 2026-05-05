@@ -58,7 +58,7 @@ export function FormComponent() {
   return (
     <>
       <h2 style={{ marginBottom: "1rem" }}>
-        Ready to work on a project with us? Contact us below!
+        Ready for us to take on your project? Contact us below!
       </h2>
 
       <form onSubmit={handleSubmit} style={{ width: "100%" }}>
