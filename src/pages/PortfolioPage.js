@@ -15,6 +15,9 @@ import geekGirlConScreenshot from '../images/projects/geekgirlcon/geekgirl_home.
 import lictonSpringsScreenshot from '../images/projects/licton_springs/licton_springs_home.png';
 import {faLink} from "@fortawesome/free-solid-svg-icons";
 import Footer from "../components/Footer";
+import { pageMetadata, BASE_URL } from "../utils/metadataConfig";
+
+const metadata = pageMetadata.portfolio;
 
 const projects = [
   {
@@ -134,7 +137,30 @@ const PortfolioPage = () => {
   return (
     <div>
       <Helmet>
-        <title> Next Wave Dev - Portfolio </title>
+        {/* Primary Meta Tags */}
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href={`${BASE_URL}/#${metadata.pageUrl}`} />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content={metadata.type} />
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:description" content={metadata.description} />
+        <meta property="og:image" content={`${BASE_URL}/og-logo.png`} />
+        <meta property="og:image:alt" content="Next Wave Dev Portfolio" />
+        <meta property="og:url" content={`${BASE_URL}/#${metadata.pageUrl}`} />
+        <meta property="og:site_name" content="Next Wave Dev" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metadata.title} />
+        <meta name="twitter:description" content={metadata.description} />
+        <meta name="twitter:image" content={`${BASE_URL}/og-logo.png`} />
+        
+        {/* Additional Meta Tags */}
+        <meta name="keywords" content="portfolio, projects, development, web apps, real-world projects" />
+        <meta name="author" content="Next Wave Dev" />
       </Helmet>
       <Navbar />
       <div style={{ minHeight: "calc(100vh - 95px)", height: "1px" }}>
