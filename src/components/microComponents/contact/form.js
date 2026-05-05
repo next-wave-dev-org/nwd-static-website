@@ -4,12 +4,17 @@ import { useNavigate } from "react-router-dom";
 export function FormComponent() {
   const navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
+<<<<<<< 206-contact-page-add-character-counter-to-contact-form
   const [message, setMessage] = useState("");
 
   const maxLength = 500;
 
   const isOverLimit = message.length >= maxLength;
   const isNearLimit = message.length >= 450 && message.length < maxLength;
+=======
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+>>>>>>> main
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,7 +37,8 @@ export function FormComponent() {
       alert("Message must be under 500 characters.");
       return;
     }
-
+    setSuccessMessage("");
+    setErrorMessage("");
     setSubmitting(true);
 
     const formData = new FormData(e.target);
@@ -53,10 +59,19 @@ export function FormComponent() {
         });
       }
 
+<<<<<<< 206-contact-page-add-character-counter-to-contact-form
       setMessage("");
       navigate("/contact-thank-you");
+=======
+      setSuccessMessage("Message sent successfully!");
+
+      setTimeout(() => {
+        navigate("/contact-thank-you");
+      }, 1000);
+>>>>>>> main
     } catch (err) {
       console.error(err);
+      setErrorMessage("Something went wrong. Please try again.");
       setSubmitting(false);
     }
   };
@@ -148,6 +163,8 @@ export function FormComponent() {
         <button type="submit" disabled={submitting || isOverLimit}>
           {submitting ? "Submitting..." : "Submit"}
         </button>
+        {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
+        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       </form>
     </>
   );
