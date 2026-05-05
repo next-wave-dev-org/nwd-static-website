@@ -42,7 +42,7 @@ function About() {
                 About Next Wave Dev
             </h1>
 
-            <h2 style={{ fontSize: "2rem", font:"bold", marginBottom: "1rem", color:"gray-800" }}>Our Mission: Launching Tech Careers</h2>
+            <h2 style={{ fontSize: "2rem", font:"bold", marginBottom: "1rem", color:"gray-800" }}>Launching Tech Careers is Our Mission</h2>
             <p style={{ fontSize: "1rem", marginBottom: "1rem", color:"gray-600" }}>
                 At Next Wave Dev, our core purpose is to solve the classic conundrum of the tech world: Graduates need experience to get a job, but they need a job to get experience.
                 <br/>
@@ -52,7 +52,7 @@ function About() {
 
         <div style={{ paddingLeft: "3vw", paddingRight:"3vw", maxWidth: "2200px", margin: "0 auto" }}>
             <div>
-                <h3 style={{ fontSize: "1.5rem", font:"bold", marginBottom: "1rem", color:"gray-800", mb:4 }}>For Graduates: Your Launchpad</h3>
+                <h3 style={{ fontSize: "1.5rem", font:"bold", marginBottom: "1rem", color:"gray-800", mb:4 }}>Offering a Place to Start For Graduates</h3>
                 <p style={{ fontSize: "1rem", marginBottom: "0.5rem", color:"gray-600" }}>You’ve put in the work, earned the degree, and mastered the theory. Now, it’s time to build your professional portfolio.</p>
                 <ul style={{ paddingBottom:"1rem", marginLeft:"1rem"}}>
                     <li className="flex items-start">
@@ -70,7 +70,7 @@ function About() {
                 </ul>
             </div>
             <div>
-                <h3 style={{ fontSize: "1.5rem", font:"bold", marginBottom: "1rem", color:"gray-800" }}>For Companies: Unlocking Future Talent</h3>
+                <h3 style={{ fontSize: "1.5rem", font:"bold", marginBottom: "1rem", color:"gray-800" }}>Unlocking Future Talent For Companies</h3>
                 <p style={{ fontSize: "1rem", marginBottom: "0.5rem", color:"gray-600" }}>Tap into a pool of fresh, enthusiastic, and academically current talent ready to contribute immediately.</p>
                 <ul style={{ paddingBottom:"1rem", marginLeft:"1rem"}}>
                         <li className="flex items-start">
