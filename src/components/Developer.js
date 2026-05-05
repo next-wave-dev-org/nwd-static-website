@@ -3,7 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-const Developer = ({ name, photo, about, email, github, linkedin, role }) => {
+const Developer = ({ name, photo, degree, website, github, linkedin, role }) => {
   return (
     <div className='developers-flexcolumn__developer-flex-item'>
       <img
@@ -17,7 +17,9 @@ const Developer = ({ name, photo, about, email, github, linkedin, role }) => {
             <h2 style={styles.name}>{name}</h2>
             <p className='developer-role'>{role}</p>
           </div>
-          <p style={styles.about}>{about}</p>
+
+          {/* REPLACED about → degree */}
+          <p style={styles.about}>{degree}</p>
         </div>
 
         <div className='st-fl__st-fl-i__in-div__links'>
@@ -33,9 +35,14 @@ const Developer = ({ name, photo, about, email, github, linkedin, role }) => {
             </a>
           )}
 
-          <p style={styles.contact}>
-            <a href={`mailto:${email}`} style={styles.link}>{email}</a>
-          </p>
+          {/* REPLACED email → website */}
+          {website && (
+            <p style={styles.contact}>
+              <a href={website} target="_blank" rel="noopener noreferrer" style={styles.link}>
+                Portfolio
+              </a>
+            </p>
+          )}
         </div>
       </div>
     </div>
