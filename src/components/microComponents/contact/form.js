@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 export function FormComponent() {
   const navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +29,8 @@ export function FormComponent() {
       alert("Message must be under 500 characters.");
       return;
     }
-
+    setSuccessMessage("");
+    setErrorMessage("");
     setSubmitting(true);
 
     const formData = new FormData(e.target);
@@ -48,9 +51,14 @@ export function FormComponent() {
         });
       }
 
-      navigate("/contact-thank-you");
+      setSuccessMessage("Message sent successfully!");
+
+      setTimeout(() => {
+        navigate("/contact-thank-you");
+      }, 1000);
     } catch (err) {
       console.error(err);
+      setErrorMessage("Something went wrong. Please try again.");
       setSubmitting(false);
     }
   };
@@ -58,7 +66,7 @@ export function FormComponent() {
   return (
     <>
       <h2 style={{ marginBottom: "1rem" }}>
-        Ready to work on a project with us? Contact us below!
+        Ready for us to take on your project? Contact us below!
       </h2>
 
       <form onSubmit={handleSubmit} style={{ width: "100%" }}>
@@ -108,6 +116,8 @@ export function FormComponent() {
         <button type="submit" disabled={submitting}>
           {submitting ? "Submitting..." : "Submit"}
         </button>
+        {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
+        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       </form>
     </>
   );
