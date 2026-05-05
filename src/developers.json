@@ -89,6 +89,15 @@
       "email": "khanhtrinhvnguyen@gmail.com",
       "github": "https://github.com/LiteWilliamNguyen",
       "linkedin": "https://www.linkedin.com/in/khanhtrinh-nguyen/"
+    },
+    {
+      "name": "Bradley Charles",
+      "photo": "bradley-charles.webp",
+      "role": "Developer",
+      "about": "I love making things. Both in the physical world and in the digital one.",
+      "email": "bradgcharles@gmail.com",
+      "github": "https://github.com/bradgcharles",
+      "linkedin": "https://www.linkedin.com/in/bradgcharles/"
     }
   ]
 }
