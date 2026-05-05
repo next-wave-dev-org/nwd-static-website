@@ -1202,3 +1202,19 @@ h1, h2, h3 {
     font-size: 1.5rem;
   }
 }
+
+.gain-list {
+  list-style: none;
+  padding: 0;
+}
+
+.gain-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.icon {
+  font-size: 18px;
+}
