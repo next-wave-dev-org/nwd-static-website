@@ -1235,3 +1235,18 @@ h1, h2, h3 {
   }
 }
 
+.apply-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.iframe-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  border: none;
+}
