@@ -667,25 +667,6 @@ navbar
   padding-block-start: 0.5rem;
 }
 
-/* ======================================================
-   FIX: Developer Images Uniform on Mobile
-====================================================== */
-@media (max-width: 800px) {
-
-  .developer-thumbnail {
-    width: 100%;
-    max-width: 120px;       /* consistent size */
-    aspect-ratio: 1 / 1;    /* force square */
-    height: auto;
-    object-fit: cover;      /* prevent distortion */
-    border-radius: 16px;
-  }
-
-  .developer-prev__gallery__grid {
-    justify-items: center;  /* keeps layout aligned */
-  }
-}
-
 .st-fl__st-fl-i__in-div__links {
   display: flex;
   flex-direction: row;
@@ -1068,17 +1049,6 @@ svg {
 }
 
 
-
-.section-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.section-light { background: #ffffff; }
-.section-dark { background: #111111; color: white; }
-.section-muted { background: #f5f5f5; }
-
 /* Testimonials */
 .testimonials {
   background-color: rgb(119, 172, 221);
@@ -1110,7 +1080,6 @@ svg {
     grid-template-columns: 1fr;
   }
 }
-
 
 /* ===== 404 PAGE ===== */
 
@@ -1153,7 +1122,6 @@ svg {
 .notfound-button:hover {
   background-color: #003a7a;
 }
-
 
 /* Fix section titles wrapping on mobile */
 
@@ -1235,3 +1203,18 @@ h1, h2, h3 {
   }
 }
 
+.gain-list {
+  list-style: none;
+  padding: 0;
+}
+
+.gain-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.icon {
+  font-size: 18px;
+}
