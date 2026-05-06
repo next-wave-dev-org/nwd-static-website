@@ -1240,6 +1240,20 @@ h1, h2, h3 {
   margin: 0 auto;
   padding: 40px 20px;
 }
+body {
+  background-color: #dbeeff; /* baby blue */
+}
+
+.apply-page h1,
+.form-note {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-note {
+  margin-bottom: 30px;
+} 
 
 .iframe-container {
   width: 100%;
@@ -1250,3 +1264,4 @@ h1, h2, h3 {
   width: 100%;
   border: none;
 }
+
