@@ -2,7 +2,9 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Button from "../components/Button";
 import { pageMetadata, BASE_URL } from "../utils/metadataConfig";
+
 
 function ServicesPage() {
   const metadata = pageMetadata.services;
@@ -47,21 +49,9 @@ function ServicesPage() {
         high-performance solutions your business deserves.
       </p>
 
-      <a
-        href="#/Contact"
-        style={{
-          display: "inline-block",
-          padding: "12px 20px",
-          backgroundColor: "#007BFF",
-          color: "white",
-          borderRadius: "6px",
-          textDecoration: "none",
-          fontWeight: "bold",
-          marginBottom: "50px"
-        }}
-      >
+      <Button to="/contact" variant="primary">
         Let’s Build Together
-      </a>
+      </Button>
 
       {/* Services Section */}
       <h2>Our Services</h2>
@@ -139,20 +129,9 @@ function ServicesPage() {
         our developers are ready to jump in.
       </p>
 
-      <a
-        href="#/Contact"
-        style={{
-          display: "inline-block",
-          padding: "12px 20px",
-          backgroundColor: "#28a745",
-          color: "white",
-          borderRadius: "6px",
-          textDecoration: "none",
-          fontWeight: "bold"
-        }}
-      >
+      <Button to="/contact" variant="primary">
         Contact Us
-      </a>
+      </Button>
 
       </div>
 
