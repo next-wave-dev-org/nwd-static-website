@@ -1257,9 +1257,10 @@ h1, h2, h3 {
 /* IMAGE */
 .developer-card__image {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
+  height: 220px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 12px;
 }
 
 /* TEXT */
