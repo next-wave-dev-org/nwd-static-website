@@ -2,12 +2,38 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
 import NWD_about_photo from "../images/about/New_NWD_about_photo.png";
+import { pageMetadata, BASE_URL } from "../utils/metadataConfig";
 
 function About() {
+  const metadata = pageMetadata.about;
+  
   return (
     <>
       <Helmet>
-        <title> Next Wave Dev - About </title>
+        {/* Primary Meta Tags */}
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href={`${BASE_URL}/#${metadata.pageUrl}`} />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content={metadata.type} />
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:description" content={metadata.description} />
+        <meta property="og:image" content={`${BASE_URL}/og-logo.png`} />
+        <meta property="og:image:alt" content="Next Wave Dev Logo" />
+        <meta property="og:url" content={`${BASE_URL}/#${metadata.pageUrl}`} />
+        <meta property="og:site_name" content="Next Wave Dev" />
+        
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metadata.title} />
+        <meta name="twitter:description" content={metadata.description} />
+        <meta name="twitter:image" content={`${BASE_URL}/og-logo.png`} />
+        
+        {/* Additional Meta Tags */}
+        <meta name="keywords" content="about, mission, tech education, career development, mentorship" />
+        <meta name="author" content="Next Wave Dev" />
       </Helmet>
       <Navbar />
 
@@ -16,7 +42,7 @@ function About() {
                 About Next Wave Dev
             </h1>
 
-            <h2 style={{ fontSize: "2rem", font:"bold", marginBottom: "1rem", color:"gray-800" }}>Our Mission: Launching Tech Careers</h2>
+            <h2 style={{ fontSize: "2rem", font:"bold", marginBottom: "1rem", color:"gray-800" }}>Launching Tech Careers is Our Mission</h2>
             <p style={{ fontSize: "1rem", marginBottom: "1rem", color:"gray-600" }}>
                 At Next Wave Dev, our core purpose is to solve the classic conundrum of the tech world: Graduates need experience to get a job, but they need a job to get experience.
                 <br/>
@@ -26,7 +52,7 @@ function About() {
 
         <div style={{ paddingLeft: "3vw", paddingRight:"3vw", maxWidth: "2200px", margin: "0 auto" }}>
             <div>
-                <h3 style={{ fontSize: "1.5rem", font:"bold", marginBottom: "1rem", color:"gray-800", mb:4 }}>For Graduates: Your Launchpad</h3>
+                <h3 style={{ fontSize: "1.5rem", font:"bold", marginBottom: "1rem", color:"gray-800", mb:4 }}>Offering a Place to Start For Graduates</h3>
                 <p style={{ fontSize: "1rem", marginBottom: "0.5rem", color:"gray-600" }}>You’ve put in the work, earned the degree, and mastered the theory. Now, it’s time to build your professional portfolio.</p>
                 <ul style={{ paddingBottom:"1rem", marginLeft:"1rem"}}>
                     <li className="flex items-start">
@@ -44,7 +70,7 @@ function About() {
                 </ul>
             </div>
             <div>
-                <h3 style={{ fontSize: "1.5rem", font:"bold", marginBottom: "1rem", color:"gray-800" }}>For Companies: Unlocking Future Talent</h3>
+                <h3 style={{ fontSize: "1.5rem", font:"bold", marginBottom: "1rem", color:"gray-800" }}>Unlocking Future Talent For Companies</h3>
                 <p style={{ fontSize: "1rem", marginBottom: "0.5rem", color:"gray-600" }}>Tap into a pool of fresh, enthusiastic, and academically current talent ready to contribute immediately.</p>
                 <ul style={{ paddingBottom:"1rem", marginLeft:"1rem"}}>
                         <li className="flex items-start">

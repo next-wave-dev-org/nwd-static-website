@@ -667,6 +667,25 @@ navbar
   padding-block-start: 0.5rem;
 }
 
+/* ======================================================
+   FIX: Developer Images Uniform on Mobile
+====================================================== */
+@media (max-width: 800px) {
+
+  .developer-thumbnail {
+    width: 100%;
+    max-width: 120px;       /* consistent size */
+    aspect-ratio: 1 / 1;    /* force square */
+    height: auto;
+    object-fit: cover;      /* prevent distortion */
+    border-radius: 16px;
+  }
+
+  .developer-prev__gallery__grid {
+    justify-items: center;  /* keeps layout aligned */
+  }
+}
+
 .st-fl__st-fl-i__in-div__links {
   display: flex;
   flex-direction: row;
