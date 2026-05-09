@@ -1301,3 +1301,62 @@ h1, h2, h3 {
     margin-top: 2rem;
   }
 }
+
+
+/* DEVELOPERS GRID */
+.developers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+/* CARD */
+.developer-card {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* IMAGE */
+.developer-card__image {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 12px;
+}
+
+/* TEXT */
+.developer-card__name {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.developer-card__degree {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.developer-card__role {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+/* LINKS */
+.developer-card__links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .developers-grid {
+    grid-template-columns: 1fr;
+  }
+}
