@@ -1294,3 +1294,9 @@ h1, h2, h3 {
     grid-template-columns: 1fr;
   }
 }
+.active-nav-link {
+  color: #ffd54a !important;
+  font-weight: 700 !important;
+  border-bottom: 3px solid #ffd54a;
+  padding-bottom: 4px;
+}

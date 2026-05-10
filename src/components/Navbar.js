@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import NWDLogo from "../images/NextWaveDevLogo/NextWaveDev_FINAL_SMALL.jpg";
 import { WhiteSpacing } from "./microComponents/navbar/whiteSpacing";
 import { Item } from "./microComponents/navbar/item";
 
 const Navbar = () => {
+  const location = useLocation();
+
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -23,6 +25,7 @@ const Navbar = () => {
     const handleResize = () => {
       const mobile = window.innerWidth <= 768;
       setIsMobile(mobile);
+
       if (!mobile) {
         setMenuOpen(false);
         setIsDropdownOpen(false);
@@ -114,12 +117,18 @@ const Navbar = () => {
                 const timeout = setTimeout(() => {
                   setIsHireDropdownOpen(false);
                 }, 200);
+
                 setHireTimeout(timeout);
               }
             }}
           >
             <span
-              className="nav-dropdown-toggle"
+              className={`nav-dropdown-toggle ${
+                location.pathname === "/companies" ||
+                location.pathname === "/pricing"
+                  ? "active-nav-link"
+                  : ""
+              }`}
               onClick={() => {
                 setIsHireDropdownOpen(!isHireDropdownOpen);
                 setIsDropdownOpen(false);
@@ -138,6 +147,7 @@ const Navbar = () => {
                 >
                   Companies
                 </Link>
+
                 <Link
                   to="/pricing"
                   className="nav-dropdown-item"
@@ -165,12 +175,17 @@ const Navbar = () => {
                 const timeout = setTimeout(() => {
                   setIsDropdownOpen(false);
                 }, 200);
+
                 setJoinTimeout(timeout);
               }
             }}
           >
             <span
-              className="nav-dropdown-toggle"
+              className={`nav-dropdown-toggle ${
+                location.pathname === "/graduates"
+                  ? "active-nav-link"
+                  : ""
+              }`}
               onClick={() => {
                 setIsDropdownOpen(!isDropdownOpen);
                 setIsHireDropdownOpen(false);
