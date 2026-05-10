@@ -5,15 +5,25 @@ export function FormComponent() {
   const navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
 
+  const [message, setMessage] = useState("");
+
+  const maxLength = 500;
+
+  const isOverLimit = message.length >= maxLength;
+  const isNearLimit = message.length >= 450 && message.length < maxLength;
+
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-     // validation here
     const name = e.target["entry.2005620554"].value.trim();
     const email = e.target["emailAddress"].value.trim();
-    const message = e.target["entry.839337160"].value.trim();
+    const msg = message.trim();
 
-    if (!name || !email || !message) {
+    if (!name || !email || !msg) {
       alert("Fields cannot be empty.");
       return;
     }
@@ -23,11 +33,12 @@ export function FormComponent() {
       return;
     }
 
-    if (message.length > 500) {
+    if (msg.length > 500) {
       alert("Message must be under 500 characters.");
       return;
     }
-
+    setSuccessMessage("");
+    setErrorMessage("");
     setSubmitting(true);
 
     const formData = new FormData(e.target);
@@ -48,9 +59,19 @@ export function FormComponent() {
         });
       }
 
+
+      setMessage("");
       navigate("/contact-thank-you");
+
+      setSuccessMessage("Message sent successfully!");
+
+      setTimeout(() => {
+        navigate("/contact-thank-you");
+      }, 1000);
+
     } catch (err) {
       console.error(err);
+      setErrorMessage("Something went wrong. Please try again.");
       setSubmitting(false);
     }
   };
@@ -58,7 +79,7 @@ export function FormComponent() {
   return (
     <>
       <h2 style={{ marginBottom: "1rem" }}>
-        Ready to work on a project with us? Contact us below!
+        Ready for us to take on your project? Contact us below!
       </h2>
 
       <form onSubmit={handleSubmit} style={{ width: "100%" }}>
@@ -96,20 +117,55 @@ export function FormComponent() {
 
         <div style={{ marginBottom: "1rem" }}>
           <label htmlFor="message">Message</label>
+
           <textarea
             id="message"
             name="entry.839337160"
             required
             rows={5}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            maxLength={500}
             style={{ width: "100%", padding: "0.5rem" }}
           />
+
+          {/* Status line */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              fontSize: "0.85rem",
+              marginTop: "0.25rem",
+              color: isOverLimit
+                ? "red"
+                : isNearLimit
+                ? "orange"
+                : "#666",
+            }}
+          >
+
+            <div>
+              {isOverLimit
+                ? "Character limit reached"
+                : isNearLimit
+                ? "Approaching character limit"
+                : ""}
+            </div>
+
+            {/* RIGHT: counter */}
+            <div>
+              {message.length}/{maxLength}
+            </div>
+          </div>
         </div>
 
-        <button type="submit" disabled={submitting}>
+        <button type="submit" disabled={submitting || isOverLimit}>
           {submitting ? "Submitting..." : "Submit"}
         </button>
+        {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
+        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       </form>
     </>
   );
 }
- 
