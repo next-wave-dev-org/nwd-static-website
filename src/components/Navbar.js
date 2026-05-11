@@ -90,6 +90,8 @@ const Navbar = () => {
             alignItems: isMobile ? "flex-start" : "center",
             gap: "1rem",
             marginTop: "0.5rem",
+            flexWrap: isMobile ? "nowrap" : "wrap",
+            maxWidth: "100%",
           }}
         >
           <Item name="Contact" onClick={closeMenus} />
@@ -193,15 +195,53 @@ const Navbar = () => {
                   onMouseLeave={() => {
                     if (!isMobile) setIsGraduateDropdownOpen(false);
                   }}
-                  onClick={() => {
-                    if (isMobile)
-                      setIsGraduateDropdownOpen(!isGraduateDropdownOpen);
-                  }}
+                  // onClick={() => {
+                  //   if (isMobile)
+                  //     setIsGraduateDropdownOpen(!isGraduateDropdownOpen);
+                  // }}
                   style={{ position: "relative", cursor: "pointer" }}
                   aria-haspopup="true"
                   aria-expanded={isGraduateDropdownOpen}
                 >
-                  Graduates
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      gap: "0.5rem",
+                    }}
+                  >
+                    <Link
+                      to="/graduates"
+                      onClick={closeMenus}
+                      style={{
+                        color: "inherit",
+                        textDecoration: "none",
+                        display: "block",
+                        width: "100%",
+                      }}
+                    >
+                      Graduates
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={(event) => {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        setIsGraduateDropdownOpen(!isGraduateDropdownOpen);
+                      }}
+                      aria-label="Toggle graduates submenu"
+                      style={{
+                        background: "none",
+                        border: "none",
+                        color: "inherit",
+                        cursor: "pointer",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      ▸
+                    </button>
+                  </div>
                   {isGraduateDropdownOpen && (
                     <div
                       className="nav-dropdown-menu"
