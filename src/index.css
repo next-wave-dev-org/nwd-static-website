@@ -1295,55 +1295,60 @@ h1, h2, h3 {
   }
 }
 
-/* MOBILE TOP SPACING FIX  */
+/* ======================================================
+   MOBILE HERO SPACING FIX
+====================================================== */
 
 @media (max-width: 800px) {
 
-  /* Remove excess top spacing globally */
+  /* Remove excess top spacing */
   .homepage-content,
-  .pricing-container,
-  .developers-flexcolumn,
-  .section-container,
-  .notfound-container,
-  .contact-div,
-  .about-flex-parent {
+  .hero,
+  .hero__wrapper {
     margin-top: 0 !important;
     padding-top: 0 !important;
   }
 
-  /* Tighten hero section */
+  /* Prevent tall-phone whitespace */
   .hero__wrapper {
-    height: 55vh;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+    height: auto !important;
+    min-height: 420px;
   }
 
   .hero {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+    min-height: 420px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  /* Pull content closer to navbar */
+  .hero__text {
+    padding-top: 1rem;
+    padding-inline: 1rem;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  /* Tighten heading spacing */
+  .hero__text__heading {
+    margin-top: 0;
+    line-height: 1.1;
+  }
+
+  .hero__text__subheading {
+    line-height: 1.25;
+  }
+}
+
+/* Extra-tight spacing for taller phones */
+@media (min-width: 390px) and (max-width: 800px) {
+
+  .hero__wrapper,
+  .hero {
+    min-height: 380px;
   }
 
   .hero__text {
-    padding-top: 0.25rem;
-    gap: 1rem;
-    justify-content: center;
-  }
-
-  /* Pull first sections closer to navbar */
-  .portfolio-div,
-  .developer-prev,
-  .donation-div,
-  .graduates-companies-section,
-  .testimonials,
-  .pricing-hero,
-  .developers-grid,
-  .section-container {
-    margin-top: 0 !important;
-    padding-top: 2rem;
-  }
-
-  /* Prevent navbar overlap */
-  body {
-    overflow-x: hidden;
+    padding-top: 0.75rem;
   }
 }
