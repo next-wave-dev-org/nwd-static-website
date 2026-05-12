@@ -21,7 +21,7 @@ const Developer = ({ name, photo, degree, website, github, linkedin, role }) => 
           {/* REPLACED about → degree */}
           <p style={styles.about}>{degree}</p>
         </div>
-
+                     </div>
       <div className="developer-card__body">
         <h2 className="developer-card__name">{name}</h2>
 
