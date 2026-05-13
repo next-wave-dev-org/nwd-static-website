@@ -13,7 +13,7 @@ function ServicesPage() {
     <>
       <Navbar />
   
-      <div>
+      <div className="section-container services-page">
 
       <Helmet>
         {/* Primary Meta Tags */}

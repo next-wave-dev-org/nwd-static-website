@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 export function FormComponent() {
   const navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
+
   const [message, setMessage] = useState("");
 
   const maxLength = 500;
@@ -13,12 +14,17 @@ export function FormComponent() {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
     
+
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const name = e.target["entry.2005620554"].value.trim();
     const email = e.target["emailAddress"].value.trim();
-    const msg = message.trim();
+    const msg = message.trim();   
 
     if (!name || !email || !msg) {
       alert("Fields cannot be empty.");
@@ -56,11 +62,16 @@ export function FormComponent() {
         });
       }
 
+
+      setMessage("");
+      navigate("/contact-thank-you");
+
       setSuccessMessage("Message sent successfully!");
 
       setTimeout(() => {
         navigate("/contact-thank-you");
       }, 1000);
+
     } catch (err) {
       console.error(err);
       setErrorMessage("Something went wrong. Please try again.");
