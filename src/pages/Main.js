@@ -114,7 +114,7 @@ function Main() {
             Support the Next Wave of Developers
           </p>
           <p className="donation-div__flexcol__paragraph">
-            Your contribution helps us provide essential resources, mentorship, and real-world project opportunities to aspiring student developers, empowering them to launch successful careers in tech.
+          Your contribution helps us to provide real-world project opportunities to graduates and empower them to launch successful careers in tech.
           </p>
           <Button to="/Donation" variant="primary">
             Donate Now
