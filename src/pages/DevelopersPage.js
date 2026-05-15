@@ -15,6 +15,9 @@ const DevelopersPage = () => {
   return (
     <div>
       <Helmet>
+
+        <title>Next Wave Dev - Developers</title>
+
         {/* Primary Meta Tags */}
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
@@ -39,14 +42,21 @@ const DevelopersPage = () => {
         {/* Additional Meta Tags */}
         <meta name="keywords" content="developers, team, profiles, projects, portfolio" />
         <meta name="author" content="Next Wave Dev" />
+
       </Helmet>
+
       <Navbar />
-      <div className="developers-flexcolumn">
-        <h1 className="developers-flexcolumn__h1">Our Developers</h1>
-        {developers.map((developer, index) => (
-          <Developer key={index} {...developer} />
-        ))}
+
+      <div className="developers-container">
+        <h1 className="developers-title">Our Developers</h1>
+
+        <div className="developers-grid">
+          {developers.map((developer, index) => (
+            <Developer key={index} {...developer} />
+          ))}
+        </div>
       </div>
+
       <Footer />
     </div>
   );
