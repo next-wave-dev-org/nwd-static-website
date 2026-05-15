@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-const Developer = ({ name, photo, degree, email, github, linkedin, role }) => {
+const Developer = ({ name, photo, degree, website, github, linkedin, role }) => {
   return (
     <div className="developer-card">
       <img
@@ -11,7 +11,17 @@ const Developer = ({ name, photo, degree, email, github, linkedin, role }) => {
         alt={name}
         className="developer-card__image"
       />
+      <div className='developers-flexcolumn__developer-flex-item__info-div'>
+        <div className='st-fl__st-fl-i__in-div__text'>
+          <div className='st-fl__st-fl-i__in-div__text__heading'>
+            <h2 style={styles.name}>{name}</h2>
+            <p className='developer-role'>{role}</p>
+          </div>
 
+          {/* REPLACED about → degree */}
+          <p style={styles.about}>{degree}</p>
+        </div>
+                     </div>
       <div className="developer-card__body">
         <h2 className="developer-card__name">{name}</h2>
 
@@ -31,15 +41,25 @@ const Developer = ({ name, photo, degree, email, github, linkedin, role }) => {
             </a>
           )}
 
-          {email && (
-            <a href={`mailto:${email}`} className="developer-card__email">
-              Email
-            </a>
+          {/* REPLACED email → website */}
+          {website && (
+            <p style={styles.contact}>
+              <a href={website} target="_blank" rel="noopener noreferrer" style={styles.link}>
+                Portfolio
+              </a>
+            </p>
           )}
         </div>
       </div>
     </div>
   );
+};
+
+const styles = {
+  name: { fontSize: '1.5rem', marginBottom: '8px' },
+  about: { fontSize: '1rem', marginBottom: '8px' },
+  contact: { fontSize: '1rem', marginBottom: '8px' },
+  link: { color: '#007bff', textDecoration: 'none', fontSize: '1rem' },
 };
 
 export default Developer;
