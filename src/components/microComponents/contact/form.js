@@ -13,11 +13,6 @@ export function FormComponent() {
   const isNearLimit = message.length >= 450 && message.length < maxLength;
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-    
-
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
