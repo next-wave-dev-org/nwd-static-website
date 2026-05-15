@@ -6,7 +6,8 @@ const graduateTestimonials = [
     role: "Software Developer",
     company: "",
     rating: 5,
-    quote: "Next Wave Dev helped me build real industry skills."
+    quote:
+      "Next Wave Dev gave me the confidence to apply for real developer roles. The hands-on projects and mentorship helped me build the skills employers are looking for."
   }
 ];
 
@@ -16,7 +17,8 @@ const companyTestimonials = [
     role: "Hiring Manager",
     company: "Startup Labs",
     rating: 5,
-    quote: "Great developers with strong practical experience."
+    quote:
+      "The graduates from Next Wave Dev stand out because they have practical experience and strong problem-solving skills. They are ready to contribute from day one."
   }
 ];
 

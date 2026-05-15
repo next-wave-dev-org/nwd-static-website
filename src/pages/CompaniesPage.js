@@ -2,28 +2,63 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
+import Section from "../components/Section";
 import TestimonialsSection from "../components/TestimonialsSection";
+import Button from "../components/Button";
+import { pageMetadata, BASE_URL } from "../utils/metadataConfig";
+
 
 function CompaniesPage() {
+    const metadata = pageMetadata.companies;
     const CTA_LINK = "#/Contact";
     
     return (
         <>
             <Navbar />
 
+
+            <div>
+
+        <Section>
+
             <div style={{ padding: "60px 40px", maxWidth: "1200px", margin: "0 auto"}}>
+
                 <Helmet>
-                    <title>Next Wave Dev - Companies</title>
+                    {/* Primary Meta Tags */}
+                    <title>{metadata.title}</title>
+                    <meta name="description" content={metadata.description} />
+                    <meta name="viewport" content="width=device-width, initial-scale=1" />
+                    <link rel="canonical" href={`${BASE_URL}/#${metadata.pageUrl}`} />
+                    
+                    {/* Open Graph Meta Tags */}
+                    <meta property="og:type" content={metadata.type} />
+                    <meta property="og:title" content={metadata.title} />
+                    <meta property="og:description" content={metadata.description} />
+                    <meta property="og:image" content={`${BASE_URL}/og-logo.png`} />
+                    <meta property="og:image:alt" content="Next Wave Dev Companies" />
+                    <meta property="og:url" content={`${BASE_URL}/#${metadata.pageUrl}`} />
+                    <meta property="og:site_name" content="Next Wave Dev" />
+                    
+                    {/* Twitter Card Meta Tags */}
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:title" content={metadata.title} />
+                    <meta name="twitter:description" content={metadata.description} />
+                    <meta name="twitter:image" content={`${BASE_URL}/og-logo.png`} />
+                    
+                    {/* Additional Meta Tags */}
+                    <meta name="keywords" content="companies, partnerships, talent pipeline, project collaboration" />
+                    <meta name="author" content="Next Wave Dev" />
                 </Helmet>
 
                 <h1 style={{marginBottom: "25px"}}>
+
                     For Companies – Secure Your Future Talent Pipeline
                 </h1>
 
                 <h2 style={{ marginTop: "40px", marginBottom: "15px"}}>
                     Get Project Momentum and Identify Future Hires
                 </h2>
-                <p style={{ marginBottom: "30px", lineHeight: "1.7" }}>
+                <p style={{ marginBottom: "40px", lineHeight: "1.7" }}>
                     Are your junior developers overwhelmed? Do you have small, high-value projects 
                     waiting on the back burner? Next Wave Dev connects your business with enthusiastic, 
                     trained, and academically fresh graduates ready to deliver immediate value.
@@ -32,7 +67,7 @@ function CompaniesPage() {
                 <h2 style={{ marginTop: "40px", marginBottom: "15px"}}>
                     The Next Wave Advantage
                 </h2>
-                <p style={{ marginBottom: "30px" }}>
+                <p style={{ marginBottom: "40px", lineHeight: "1.7" }}>
                     We provide a zero-risk way to address project needs while scouting high-potential 
                     talent before they hit the general job market.
                 </p>
@@ -120,23 +155,15 @@ function CompaniesPage() {
                     We are committed to providing you with talent that is eager, capable, and ready to learn. Start solving your project challenges today and build your talent pipeline for tomorrow.
                 </p>
 
-                <a
-                    href={CTA_LINK}
-                    style={{
-                        display: "inline-block",
-                        padding: "12px 20px",
-                        backgroundColor: "#007BFF",
-                        color: "white",
-                        borderRadius: "6px",
-                        textDecoration: "none",
-                        fontWeight: "bold"
-                    }}
-                    aria-label="Schedule a Call to Discuss Your Project Needs"
-                >
+                <Button to="/contact" variant="primary">
                     Schedule a Call to Discuss Your Project Needs
-                </a>
+                </Button>
             </div>
+
+            </Section>
+
             <TestimonialsSection type="companies" />
+            </div>
             <Footer />
         </>
     );

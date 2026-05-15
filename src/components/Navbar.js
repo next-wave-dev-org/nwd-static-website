@@ -8,11 +8,15 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isHireDropdownOpen, setIsHireDropdownOpen] = useState(false);
 
-  // ✅ FIXED: Added missing closeMenus function
+  const [hireTimeout, setHireTimeout] = useState(null);
+  const [joinTimeout, setJoinTimeout] = useState(null);
+
   const closeMenus = () => {
     setMenuOpen(false);
     setIsDropdownOpen(false);
+    setIsHireDropdownOpen(false);
   };
 
   useEffect(() => {
@@ -22,6 +26,7 @@ const Navbar = () => {
       if (!mobile) {
         setMenuOpen(false);
         setIsDropdownOpen(false);
+        setIsHireDropdownOpen(false);
       }
     };
 
@@ -95,15 +100,81 @@ const Navbar = () => {
           <Item name="Services" onClick={closeMenus} />
           <WhiteSpacing />
 
-          {/* Pricing */}
-          <Item name="Pricing" onClick={closeMenus} />
+          {/* Hire Us Dropdown */}
+          <div
+            className="nav-dropdown"
+            onMouseEnter={() => {
+              if (!isMobile) {
+                if (hireTimeout) clearTimeout(hireTimeout);
+                setIsHireDropdownOpen(true);
+              }
+            }}
+            onMouseLeave={() => {
+              if (!isMobile) {
+                const timeout = setTimeout(() => {
+                  setIsHireDropdownOpen(false);
+                }, 200);
+                setHireTimeout(timeout);
+              }
+            }}
+          >
+            <span
+              className="nav-dropdown-toggle"
+              onClick={() => {
+                setIsHireDropdownOpen(!isHireDropdownOpen);
+                setIsDropdownOpen(false);
+              }}
+              style={{ cursor: "pointer", color: "white" }}
+            >
+              Hire Us
+            </span>
+
+            {isHireDropdownOpen && (
+              <div className="nav-dropdown-menu">
+                <Link
+                  to="/companies"
+                  className="nav-dropdown-item"
+                  onClick={closeMenus}
+                >
+                  Companies
+                </Link>
+                <Link
+                  to="/pricing"
+                  className="nav-dropdown-item"
+                  onClick={closeMenus}
+                >
+                  Pricing
+                </Link>
+              </div>
+            )}
+          </div>
+
           <WhiteSpacing />
 
           {/* Join Us Dropdown */}
-          <div className="nav-dropdown">
+          <div
+            className="nav-dropdown"
+            onMouseEnter={() => {
+              if (!isMobile) {
+                if (joinTimeout) clearTimeout(joinTimeout);
+                setIsDropdownOpen(true);
+              }
+            }}
+            onMouseLeave={() => {
+              if (!isMobile) {
+                const timeout = setTimeout(() => {
+                  setIsDropdownOpen(false);
+                }, 200);
+                setJoinTimeout(timeout);
+              }
+            }}
+          >
             <span
               className="nav-dropdown-toggle"
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              onClick={() => {
+                setIsDropdownOpen(!isDropdownOpen);
+                setIsHireDropdownOpen(false);
+              }}
               style={{ cursor: "pointer", color: "white" }}
             >
               Join Us
@@ -118,14 +189,7 @@ const Navbar = () => {
                 >
                   Graduates
                 </Link>
-                <Link
-                  to="/apply"
-                  className="nav-dropdown-item"
-                  onClick={closeMenus}
-                >
-                  Apply
-                </Link>
-                {/* ✅ Fixed case sensitivity */}
+
                 <Link
                   to="/companies"
                   className="nav-dropdown-item"
@@ -137,12 +201,6 @@ const Navbar = () => {
             )}
           </div>
 
-          <WhiteSpacing />
-          <Item
-            name="Shop"
-            to="https://bonfire.com/store/next-wave-dev-store/"
-            external
-          />
           <WhiteSpacing />
           <Item name="Donate" onClick={closeMenus} />
         </div>

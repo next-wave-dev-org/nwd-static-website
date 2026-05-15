@@ -53,31 +53,17 @@ const Footer = () => {
             <li><FooterLink name="Developers" /></li>
             <li><FooterLink name="Portfolio" /></li>
             <li><FooterLink name="Services" /></li>
-            <li><FooterLink name="Pricing" /></li>
-
-            <a
-              href="https://bonfire.com/store/next-wave-dev-store"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              Shop
-            </a>
+            {/* Removed Pricing from here */}
             <li><FooterLink name="Donate" /></li>
           </ul>
         </ul>
 
         {/* Contact */}
-        <ul>
-          <h4 style={footerCategory}>Contact Us</h4>
+        <ul style={footerList}>
+          <h4 style={footerCategory}>Contact</h4>
           <Separator />
-          <Link
-            to={"mailto:nextwavedev.org@gmail.com"}
-            style={{ textDecoration: "none" }}
-          >
-            <li style={footerList}>nextwavedev.org@gmail.com</li>
-          </Link>
-        </ul>
+          <li><FooterLink name="Contact" to="/contact" /></li>
+        </ul> 
 
         {/* Join Us */}
         <ul style={footerList}>
@@ -93,7 +79,24 @@ const Footer = () => {
             }}
           >
             <li><FooterLink name="Graduates" to="/graduates" /></li>
+          </ul>
+        </ul>
+
+        {/* Hire Us */}
+        <ul style={footerList}>
+          <h4 style={footerCategory}>Hire Us</h4>
+          <Separator />
+          <ul
+            style={{
+              ...footerList,
+              display: "flex",
+              flexDirection: "row",
+              gap: "1rem",
+              flexWrap: "wrap",
+            }}
+          >
             <li><FooterLink name="Companies" to="/companies" /></li>
+            <li><FooterLink name="Pricing" to="/pricing" /></li>
           </ul>
         </ul>
       </div>

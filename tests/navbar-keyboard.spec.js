@@ -17,7 +17,6 @@ test('navbar links are reachable via keyboard', async ({ page }) => {
     'Portfolio',
     'Services',
     'Pricing',
-    'Shop',
     'Donate'
   ];
 
