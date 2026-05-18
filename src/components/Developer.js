@@ -11,17 +11,7 @@ const Developer = ({ name, photo, degree, website, github, linkedin, role }) => 
         alt={name}
         className="developer-card__image"
       />
-      <div className='developers-flexcolumn__developer-flex-item__info-div'>
-        <div className='st-fl__st-fl-i__in-div__text'>
-          <div className='st-fl__st-fl-i__in-div__text__heading'>
-            <h2 style={styles.name}>{name}</h2>
-            <p className='developer-role'>{role}</p>
-          </div>
-
-          {/* REPLACED about → degree */}
-          <p style={styles.about}>{degree}</p>
-        </div>
-                     </div>
+      
       <div className="developer-card__body">
         <h2 className="developer-card__name">{name}</h2>
 
