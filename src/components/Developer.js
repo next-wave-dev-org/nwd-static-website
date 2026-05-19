@@ -11,84 +11,47 @@ const Developer = ({ name, photo, degree, website, github, linkedin, role }) => 
         alt={name}
         className="developer-card__image"
       />
-      <div className='developers-flexcolumn__developer-flex-item__info-div'>
-        <div className='st-fl__st-fl-i__in-div__text'>
-          <div className='st-fl__st-fl-i__in-div__text__heading'>
-            <h2 style={styles.name}>{name}</h2>
-            <p className='developer-role'>{role}</p>
-          </div>
 
-          {/* REPLACED about → degree */}
-          <p style={styles.about}>{degree}</p>
-        </div>
-                     </div>
       <div className="developer-card__body">
         <h2 className="developer-card__name">{name}</h2>
 
         {degree && <p className="developer-card__degree">{degree}</p>}
         {role && <p className="developer-card__role">{role}</p>}
 
-
-        <div className='st-fl__st-fl-i__in-div__links'>
-        {github && (
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub profile"
-            title="GitHub profile"
-            style={{ color: "black" }}
-          >
-            <FontAwesomeIcon icon={faGithub} style={{ fontSize: "40px" }} />
-          </a>
-        )}
-        
-        {linkedin && (
-          <a
-            href={linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn profile"
-            title="LinkedIn profile"
-            style={{ color: "black" }}
-          >
-            <FontAwesomeIcon icon={faLinkedin} style={{ fontSize: "40px" }} />
-          </a>
-        )}
-
         <div className="developer-card__links">
           {github && (
-            <a href={github} target="_blank" rel="noopener noreferrer">
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+              title="GitHub profile"
+            >
               <FontAwesomeIcon icon={faGithub} />
             </a>
           )}
 
           {linkedin && (
-            <a href={linkedin} target="_blank" rel="noopener noreferrer">
+            <a
+              href={linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              title="LinkedIn profile"
+            >
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
           )}
 
-
-          {/* REPLACED email → website */}
           {website && (
-            <p style={styles.contact}>
-              <a href={website} target="_blank" rel="noopener noreferrer" style={styles.link}>
-                Portfolio
-              </a>
-            </p>
+            <a href={website} target="_blank" rel="noopener noreferrer">
+              Portfolio
+            </a>
           )}
         </div>
       </div>
     </div>
   );
-};
-
-const styles = {
-  name: { fontSize: '1.5rem', marginBottom: '8px' },
-  about: { fontSize: '1rem', marginBottom: '8px' },
-  contact: { fontSize: '1rem', marginBottom: '8px' },
-  link: { color: '#007bff', textDecoration: 'none', fontSize: '1rem' },
 };
 
 export default Developer;
