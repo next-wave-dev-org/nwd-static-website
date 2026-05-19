@@ -20,36 +20,38 @@ const Developer = ({ name, photo, degree, website, github, linkedin, role }) => 
 
         <div className="developer-card__links">
           {github && (
-            <a href={github} target="_blank" rel="noopener noreferrer">
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+              title="GitHub profile"
+            >
               <FontAwesomeIcon icon={faGithub} />
             </a>
           )}
 
           {linkedin && (
-            <a href={linkedin} target="_blank" rel="noopener noreferrer">
+            <a
+              href={linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              title="LinkedIn profile"
+            >
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
           )}
 
-          {/* REPLACED email → website */}
           {website && (
-            <p style={styles.contact}>
-              <a href={website} target="_blank" rel="noopener noreferrer" style={styles.link}>
-                Portfolio
-              </a>
-            </p>
+            <a href={website} target="_blank" rel="noopener noreferrer">
+              Portfolio
+            </a>
           )}
         </div>
       </div>
     </div>
   );
-};
-
-const styles = {
-  name: { fontSize: '1.5rem', marginBottom: '8px' },
-  about: { fontSize: '1rem', marginBottom: '8px' },
-  contact: { fontSize: '1rem', marginBottom: '8px' },
-  link: { color: '#007bff', textDecoration: 'none', fontSize: '1rem' },
 };
 
 export default Developer;
