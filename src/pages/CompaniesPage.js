@@ -7,7 +7,6 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import Button from "../components/Button";
 import { pageMetadata, BASE_URL } from "../utils/metadataConfig";
 
-
 function CompaniesPage() {
     const metadata = pageMetadata.companies;
     const CTA_LINK = "#/Contact";
@@ -17,9 +16,7 @@ function CompaniesPage() {
             <Navbar />
 
             <div>
-
                 <Section>
-
                     <div style={{ padding: "60px 40px", maxWidth: "1200px", margin: "0 auto" }}>
 
                         <Helmet>
@@ -45,7 +42,10 @@ function CompaniesPage() {
                             <meta name="twitter:image" content={`${BASE_URL}/og-logo.png`} />
 
                             {/* Additional Meta Tags */}
-                            <meta name="keywords" content="companies, partnerships, talent pipeline, project collaboration" />
+                            <meta
+                                name="keywords"
+                                content="companies, partnerships, talent pipeline, project collaboration"
+                            />
                             <meta name="author" content="Next Wave Dev" />
                         </Helmet>
 
@@ -87,12 +87,15 @@ function CompaniesPage() {
                             job market.
                         </p>
 
-                        
                         <div style={{ marginBottom: "60px" }}>
                             <div style={cardContainer}>
 
                                 <div style={card}>
                                     <h3 style={cardTitle}>Project Acceleration</h3>
+
+                                    <p style={cardText}>
+                                        Get motivated and current talent to tackle projects like:
+                                    </p>
 
                                     <ul style={cardList}>
                                         <li>
@@ -154,7 +157,6 @@ function CompaniesPage() {
                             A Simple, Structured Partnership
                         </h2>
 
-                    
                         <div style={{ marginBottom: "60px" }}>
                             <div style={cardContainer}>
 
@@ -233,18 +235,15 @@ function CompaniesPage() {
                         </Button>
 
                     </div>
-
                 </Section>
 
                 <TestimonialsSection type="companies" />
-
             </div>
 
             <Footer />
         </>
     );
 }
-
 
 const cardContainer = {
     display: "flex",
