@@ -9,6 +9,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isHireDropdownOpen, setIsHireDropdownOpen] = useState(false);
+  const [isGraduateDropdownOpen, setIsGraduateDropdownOpen] = useState(false);
 
   const [hireTimeout, setHireTimeout] = useState(null);
   const [joinTimeout, setJoinTimeout] = useState(null);
@@ -17,6 +18,7 @@ const Navbar = () => {
     setMenuOpen(false);
     setIsDropdownOpen(false);
     setIsHireDropdownOpen(false);
+    setIsGraduateDropdownOpen(false);
   };
 
   useEffect(() => {
@@ -27,6 +29,7 @@ const Navbar = () => {
         setMenuOpen(false);
         setIsDropdownOpen(false);
         setIsHireDropdownOpen(false);
+        setIsGraduateDropdownOpen(false);
       }
     };
 
@@ -87,6 +90,8 @@ const Navbar = () => {
             alignItems: isMobile ? "flex-start" : "center",
             gap: "1rem",
             marginTop: "0.5rem",
+            flexWrap: isMobile ? "nowrap" : "wrap",
+            maxWidth: "100%",
           }}
         >
           <Item name="Contact" onClick={closeMenus} />
@@ -182,13 +187,81 @@ const Navbar = () => {
 
             {isDropdownOpen && (
               <div className="nav-dropdown-menu">
-                <Link
-                  to="/graduates"
+                <div
                   className="nav-dropdown-item"
-                  onClick={closeMenus}
+                  onMouseEnter={() => {
+                    if (!isMobile) setIsGraduateDropdownOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    if (!isMobile) setIsGraduateDropdownOpen(false);
+                  }}
+                  // onClick={() => {
+                  //   if (isMobile)
+                  //     setIsGraduateDropdownOpen(!isGraduateDropdownOpen);
+                  // }}
+                  style={{ position: "relative", cursor: "pointer" }}
+                  aria-haspopup="true"
+                  aria-expanded={isGraduateDropdownOpen}
                 >
-                  Graduates
-                </Link>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      gap: "0.5rem",
+                    }}
+                  >
+                    <Link
+                      to="/graduates"
+                      onClick={closeMenus}
+                      style={{
+                        color: "inherit",
+                        textDecoration: "none",
+                        display: "block",
+                        width: "100%",
+                      }}
+                    >
+                      Graduates
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={(event) => {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        setIsGraduateDropdownOpen(!isGraduateDropdownOpen);
+                      }}
+                      aria-label="Toggle graduates submenu"
+                      style={{
+                        background: "none",
+                        border: "none",
+                        color: "inherit",
+                        cursor: "pointer",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      ▸
+                    </button>
+                  </div>
+                  {isGraduateDropdownOpen && (
+                    <div
+                      className="nav-dropdown-menu"
+                      style={{
+                        position: isMobile ? "static" : "absolute",
+                        left: isMobile ? "0" : "100%",
+                        top: isMobile ? "0" : "0",
+                        marginLeft: isMobile ? "1rem" : "0",
+                      }}
+                    >
+                      <Link
+                        to="/apply"
+                        className="nav-dropdown-item"
+                        onClick={closeMenus}
+                      >
+                        Apply
+                      </Link>
+                    </div>
+                  )}
+                </div>
 
                 <Link
                   to="/companies"
