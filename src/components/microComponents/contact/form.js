@@ -11,17 +11,15 @@ export function FormComponent() {
 
   const isOverLimit = message.length >= maxLength;
   const isNearLimit = message.length >= 450 && message.length < maxLength;
-
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const name = e.target["entry.2005620554"].value.trim();
     const email = e.target["emailAddress"].value.trim();
-    const msg = message.trim();
+    const msg = message.trim();   
 
     if (!name || !email || !msg) {
       alert("Fields cannot be empty.");
