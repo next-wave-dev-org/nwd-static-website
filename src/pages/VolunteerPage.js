@@ -43,7 +43,7 @@ const VolunteerPage = () => {
           </p>
         </section>
 
-        <h2>Ready to Volunteer?</h2>
+        <h2>Start Your Volunteer Journey</h2>
 
         <Button to="/apply" variant="primary">
           Apply Now
