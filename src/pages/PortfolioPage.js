@@ -243,7 +243,23 @@ function PortfolioComponent(props) {
               href={obj.link}
               key={index}
               style={{ textDecoration: "none", color: "#282828" }}
-              target={"_blank"}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={
+                obj.icon === faGithub
+                ? "GitHub repository"
+                : obj.icon === faLink
+                ? "Project website"
+                : "External link"
+              }
+              title={
+                obj.icon === faGithub
+                ? "GitHub repository"
+                : obj.icon === faLink
+                ? "Project website"
+                : "External link"
+              }
+
             >
               <FontAwesomeIcon
                 icon={obj.icon}

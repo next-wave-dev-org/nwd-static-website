@@ -1418,3 +1418,11 @@ h1, h2, h3 {
     padding-top: 0.75rem;
   }
 }
+
+/* Active navbar link */
+.active-nav-link {
+  color: #ffd54a !important;
+  font-weight: 700 !important;
+  border-bottom: 3px solid #ffd54a;
+  padding-bottom: 4px;
+}
