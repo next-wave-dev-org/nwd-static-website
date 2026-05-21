@@ -55,7 +55,7 @@ const ApplyPage = () => {
             marginHeight="0"
             marginWidth="0"
             width="100%"
-            height="900"
+            height="1800"
             title="Graduate Application Form"
             onLoad={() => window.scrollTo(0, 0)}
           >
