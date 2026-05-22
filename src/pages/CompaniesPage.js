@@ -51,7 +51,7 @@ function CompaniesPage() {
                 </Helmet>
 
                 <h1 style={{marginBottom: "25px"}}>
-                    For Companies – Secure Your Future Talent Pipeline
+                    Secure Your Future Talent Pipeline
                 </h1>
 
                 <h2 style={{ marginTop: "40px", marginBottom: "15px"}}>
