@@ -123,13 +123,16 @@ function Main() {
       </div>
     <Section>  
       <div className="graduates-companies-section">
-        <h2 className="graduates-companies-section__title">Graduates & Companies</h2>
+        <h2 className="graduates-companies-section__title">Hire Us</h2>
+        <p className="graduates-companies-section__text">
+          Hire our skilled developers through clear pricing packages, tailored service options, and collaborative project support designed to help your team grow faster.
+        </p>
         <div className="graduates-companies-section__tiles">
-          <Link to="/graduates" className="graduates-companies-section__tile">
+          <Link to="/pricing" className="graduates-companies-section__tile">
             <div className="graduates-companies-section__tile-content">
-              <h3 className="graduates-companies-section__tile-heading">Graduates</h3>
+              <h3 className="graduates-companies-section__tile-heading">Pricing</h3>
               <p className="graduates-companies-section__tile-description">
-                Explore success stories and career journeys of our program graduates
+                Review service packages for hiring developers, mentorship, and project engagement.
               </p>
             </div>
           </Link>
@@ -137,7 +140,7 @@ function Main() {
             <div className="graduates-companies-section__tile-content">
               <h3 className="graduates-companies-section__tile-heading">Companies</h3>
               <p className="graduates-companies-section__tile-description">
-                Discover how companies partner with us to build exceptional talent
+                Partner with us to access fresh talent, accelerate delivery, and collaborate on meaningful product work.
               </p>
             </div>
           </Link>
