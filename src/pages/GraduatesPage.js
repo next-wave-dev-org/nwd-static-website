@@ -41,7 +41,7 @@ function GraduatesPage() {
               Welcome
             </h1>
             <p style={{ marginBottom: "30px", lineHeight: "1.7", fontSize: "1.2rem" }}>
-              For Graduates – Launch Your Career with The Next Wave Dev
+              Launch Your Career with The Next Wave Dev
             </p>
 
             <h2 style={{ marginTop: "40px", marginBottom: "15px" }}>
