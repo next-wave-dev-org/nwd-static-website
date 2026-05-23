@@ -264,7 +264,6 @@ const tdStyle = {
   padding: "10px",
 };
 
-<<<<<<< HEAD
 const gainItemStyle = {
   display: "flex",
   alignItems: "center",
@@ -279,6 +278,3 @@ const iconStyle = {
 
 export default GraduatesPage;
 
-=======
-export default GraduatesPage;
->>>>>>> origin/main

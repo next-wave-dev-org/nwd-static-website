@@ -1235,7 +1235,6 @@ h1, h2, h3 {
   }
 }
 
-<<<<<<< HEAD
 .gain-list {
   list-style: none;
   padding: 0;
@@ -1251,7 +1250,7 @@ h1, h2, h3 {
 .icon {
   font-size: 18px;
 }
-=======
+
 /* ===== SERVICES PAGE SPACING  ===== */
 
 .services-page {
@@ -1377,4 +1376,3 @@ h1, h2, h3 {
     grid-template-columns: 1fr;
   }
 }
->>>>>>> origin/main
