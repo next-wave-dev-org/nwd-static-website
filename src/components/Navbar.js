@@ -187,9 +187,7 @@ const Navbar = () => {
           >
             <span
               className={`nav-dropdown-toggle ${
-                location.pathname === "/graduates"
-                  ? "active-nav-link"
-                  : ""
+                location.pathname === "/graduates" ? "active-nav-link" : ""
               }`}
               onClick={() => {
                 setIsDropdownOpen(!isDropdownOpen);
@@ -277,14 +275,6 @@ const Navbar = () => {
                     </div>
                   )}
                 </div>
-
-                <Link
-                  to="/companies"
-                  className="nav-dropdown-item"
-                  onClick={closeMenus}
-                >
-                  Companies
-                </Link>
               </div>
             )}
           </div>
