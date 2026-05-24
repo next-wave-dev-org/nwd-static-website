@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { FormComponent } from "../components/microComponents/contact/form";
+import { Helmet } from "react-helmet";
+import { pageMetadata, BASE_URL } from "../utils/metadataConfig";
 
 const pricingModel = {
   webApp: 3000,
@@ -41,12 +43,27 @@ const servicePackages = [
 
 const PricingPage = () => {
   const [selectedFeatures, setSelectedFeatures] = useState([]);
+  const contactFormRef = useRef(null);
+
+  const metadata = pageMetadata.pricing;
+
+  const scrollToContactForm = () => {
+    contactFormRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   const toggleFeature = (feature) => {
     if (selectedFeatures.includes(feature)) {
-      setSelectedFeatures(selectedFeatures.filter((f) => f !== feature));
+      setSelectedFeatures(
+        selectedFeatures.filter((f) => f !== feature)
+      );
     } else {
-      setSelectedFeatures([...selectedFeatures, feature]);
+      setSelectedFeatures([
+        ...selectedFeatures,
+        feature,
+      ]);
     }
   };
 
@@ -57,100 +74,211 @@ const PricingPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{metadata.title}</title>
+        <meta
+          name="description"
+          content={metadata.description}
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        />
+
+        <link
+          rel="canonical"
+          href={`${BASE_URL}/#${metadata.pageUrl}`}
+        />
+
+        <meta
+          property="og:type"
+          content={metadata.type}
+        />
+        <meta
+          property="og:title"
+          content={metadata.title}
+        />
+        <meta
+          property="og:description"
+          content={metadata.description}
+        />
+        <meta
+          property="og:image"
+          content={`${BASE_URL}/og-logo.png`}
+        />
+        <meta
+          property="og:image:alt"
+          content="Next Wave Dev Pricing"
+        />
+        <meta
+          property="og:url"
+          content={`${BASE_URL}/#${metadata.pageUrl}`}
+        />
+
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
+        />
+      </Helmet>
+
       <Navbar />
 
       <div className="pricing-container">
-        {/* HERO */}
+
         <section className="pricing-hero">
           <h1>Simple, Transparent Pricing</h1>
+
           <p>
             High-end engineering at{" "}
-            <strong>60% of standard agency rates.</strong> We pass the savings
-            of our graduate-led model directly to you.
+            <strong>
+              60% of standard agency rates.
+            </strong>{" "}
+            We pass the savings of our graduate-led
+            model directly to you.
           </p>
         </section>
 
-        {/* PACKAGES */}
         <section className="pricing-packages">
           <h2>Service Packages</h2>
 
           <div className="package-grid">
-            {servicePackages.map((pkg, index) => (
-              <div key={index} className="pricing-card">
-                <h3>
-                  {pkg.title} – {pkg.price}
-                </h3>
-                <p>{pkg.description}</p>
-              </div>
-            ))}
+            {servicePackages.map(
+              (pkg, index) => (
+                <div
+                  key={index}
+                  className="pricing-card"
+                >
+                  <h3>
+                    {pkg.title} – {pkg.price}
+                  </h3>
+
+                  <p>
+                    {pkg.description}
+                  </p>
+                </div>
+              )
+            )}
           </div>
         </section>
 
-        {/* CALCULATOR */}
         <section className="pricing-calculator">
-          <h2>Custom Quote Calculator</h2>
-          <p>Select features below to estimate your project cost.</p>
+          <h2>
+            Custom Quote Calculator
+          </h2>
+
+          <p>
+            Select features below to estimate
+            your project cost.
+          </p>
 
           <div className="calculator-layout">
+
             <div className="calculator-options">
-              {Object.entries(pricingModel).map(([key, value]) => (
-                <label key={key} className="calculator-option">
+
+              {Object.entries(
+                pricingModel
+              ).map(([key, value]) => (
+
+                <label
+                  key={key}
+                  className="calculator-option"
+                >
+
                   <input
                     type="checkbox"
-                    checked={selectedFeatures.includes(key)}
-                    onChange={() => toggleFeature(key)}
+                    checked={selectedFeatures.includes(
+                      key
+                    )}
+                    onChange={() =>
+                      toggleFeature(key)
+                    }
                   />
+
                   <span>
                     {key === "webApp" &&
                       "Core Web App (Next.js/React)"}
+
                     {key === "mobile" &&
                       "Mobile App Extension (React Native)"}
+
                     {key === "database" &&
                       "Database Architecture"}
+
                     {key === "ai" &&
                       "AI / Chatbot Integration"}
+
                     {key === "cloud" &&
                       "Cloud Infrastructure"}
+
                     {key === "design" &&
-                      "UI/UX Design Phase"}{" "}
-                    – +${value.toLocaleString()}
+                      "UI/UX Design Phase"}
+
+                    {" "}– +$
+                    {value.toLocaleString()}
                   </span>
+
                 </label>
               ))}
             </div>
 
-            {/* TOTAL */}
             <div className="calculator-summary">
+
               <h3>
                 Current Estimated Quote: $
                 {total.toLocaleString()}
               </h3>
 
               <p>
-                This estimate is based on an average ~$75/hr graduate
-                rate. Final pricing is provided after a technical
-                discovery call.
+                This estimate is based on an
+                average ~$75/hr graduate rate.
+                Final pricing is provided after
+                a technical discovery call.
               </p>
 
-              <Link to="/Contact">
-                <button className="pricing-cta">
-                  Lock in This Quote
-                </button>
-              </Link>
+              <button
+                className="pricing-cta"
+                onClick={scrollToContactForm}
+              >
+                Lock in This Quote
+              </button>
+
             </div>
           </div>
         </section>
 
-        {/* WHY */}
         <section className="pricing-why">
-          <h2>Why Our Prices Are Lower</h2>
+
+          <h2>
+            Why Our Prices Are Lower
+          </h2>
+
           <p>
-            We do not carry the overhead of traditional agencies.
-            You get Next Wave Dev graduates  trained in modern
-            technology stacks and supported by senior architects 
-            delivering 100% of the quality at 60% of the cost.
+            We do not carry the overhead of
+            traditional agencies. You get Next
+            Wave Dev graduates trained in modern
+            technology stacks and supported by
+            senior architects delivering 100% of
+            the quality at 60% of the cost.
           </p>
+
         </section>
+
+        <section
+          ref={contactFormRef}
+          className="pricing-contact-form"
+          style={{
+            maxWidth: "1000px",
+            margin: "50px auto",
+            padding: "40px",
+          }}
+        >
+          <h2>
+            Contact Us About Your Quote
+          </h2>
+
+          <FormComponent />
+        </section>
+
       </div>
 
       <Footer />

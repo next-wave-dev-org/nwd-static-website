@@ -667,6 +667,25 @@ navbar
   padding-block-start: 0.5rem;
 }
 
+/* ======================================================
+   FIX: Developer Images Uniform on Mobile
+====================================================== */
+@media (max-width: 800px) {
+
+  .developer-thumbnail {
+    width: 100%;
+    max-width: 120px;       /* consistent size */
+    aspect-ratio: 1 / 1;    /* force square */
+    height: auto;
+    object-fit: cover;      /* prevent distortion */
+    border-radius: 16px;
+  }
+
+  .developer-prev__gallery__grid {
+    justify-items: center;  /* keeps layout aligned */
+  }
+}
+
 .st-fl__st-fl-i__in-div__links {
   display: flex;
   flex-direction: row;
@@ -1049,6 +1068,17 @@ svg {
 }
 
 
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.section-light { background: #ffffff; }
+.section-dark { background: #111111; color: white; }
+.section-muted { background: #f5f5f5; }
+
 /* Testimonials */
 .testimonials {
   background-color: rgb(119, 172, 221);
@@ -1080,6 +1110,7 @@ svg {
     grid-template-columns: 1fr;
   }
 }
+
 
 /* ===== 404 PAGE ===== */
 
@@ -1122,6 +1153,7 @@ svg {
 .notfound-button:hover {
   background-color: #003a7a;
 }
+
 
 /* Fix section titles wrapping on mobile */
 
@@ -1201,4 +1233,136 @@ h1, h2, h3 {
   .contact-div__p-title {
     font-size: 1.5rem;
   }
+}
+
+/* ===== SERVICES PAGE SPACING  ===== */
+
+.services-page {
+  padding-top: 2.5rem; 
+}
+
+/* Title */
+.services-page h1 {
+  margin-bottom: 1.75rem;
+  line-height: 1.2;
+}
+
+/* Section headers */
+.services-page h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.9rem;
+}
+
+/* Card titles */
+.services-page h3 {
+  margin-bottom: 0.6rem;
+}
+
+/* Paragraphs */
+.services-page p {
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+
+/* Lists */
+.services-page ul {
+  margin-top: 0.4rem;
+  margin-bottom: 1.25rem;
+  padding-left: 1.2rem;
+}
+
+.services-page li {
+  margin-bottom: 0.45rem;
+}
+
+/* Tables */
+.services-page table {
+  margin-top: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Buttons */
+.services-page button {
+  margin-top: 1.25rem;
+}
+
+/* Grid spacing refinement */
+.services-page .services-grid {
+  gap: 25px;
+}
+
+/* Mobile tuning to match other pages */
+@media (max-width: 800px) {
+  .services-page {
+    padding-top: 2rem;
+  }
+
+  .services-page h2 {
+    margin-top: 2rem;
+  }
+}
+
+
+/* DEVELOPERS GRID */
+.developers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+/* CARD */
+.developer-card {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* IMAGE */
+.developer-card__image {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 12px;
+}
+
+/* TEXT */
+.developer-card__name {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.developer-card__degree {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.developer-card__role {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+/* LINKS */
+.developer-card__links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .developers-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.active-nav-link {
+  color: #ffd54a !important;
+  font-weight: 700 !important;
+  border-bottom: 3px solid #ffd54a;
+  padding-bottom: 4px;
 }
