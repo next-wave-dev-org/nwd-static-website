@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import NWDLogo from "../images/NextWaveDevLogo/NextWaveDev_FINAL_SMALL.jpg";
 import { WhiteSpacing } from "./microComponents/navbar/whiteSpacing";
 import { Item } from "./microComponents/navbar/item";
 
 const Navbar = () => {
+  const location = useLocation();
+
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -25,6 +27,7 @@ const Navbar = () => {
     const handleResize = () => {
       const mobile = window.innerWidth <= 768;
       setIsMobile(mobile);
+
       if (!mobile) {
         setMenuOpen(false);
         setIsDropdownOpen(false);
@@ -90,6 +93,8 @@ const Navbar = () => {
             alignItems: isMobile ? "flex-start" : "center",
             gap: "1rem",
             marginTop: "0.5rem",
+            flexWrap: isMobile ? "nowrap" : "wrap",
+            maxWidth: "100%",
           }}
         >
           <Item name="Contact" onClick={closeMenus} />
@@ -117,12 +122,18 @@ const Navbar = () => {
                 const timeout = setTimeout(() => {
                   setIsHireDropdownOpen(false);
                 }, 200);
+
                 setHireTimeout(timeout);
               }
             }}
           >
             <span
-              className="nav-dropdown-toggle"
+              className={`nav-dropdown-toggle ${
+                location.pathname === "/companies" ||
+                location.pathname === "/pricing"
+                  ? "active-nav-link"
+                  : ""
+              }`}
               onClick={() => {
                 setIsHireDropdownOpen(!isHireDropdownOpen);
                 setIsDropdownOpen(false);
@@ -141,6 +152,7 @@ const Navbar = () => {
                 >
                   Companies
                 </Link>
+
                 <Link
                   to="/pricing"
                   className="nav-dropdown-item"
@@ -168,12 +180,17 @@ const Navbar = () => {
                 const timeout = setTimeout(() => {
                   setIsDropdownOpen(false);
                 }, 200);
+
                 setJoinTimeout(timeout);
               }
             }}
           >
             <span
-              className="nav-dropdown-toggle"
+              className={`nav-dropdown-toggle ${
+                location.pathname === "/graduates"
+                  ? "active-nav-link"
+                  : ""
+              }`}
               onClick={() => {
                 setIsDropdownOpen(!isDropdownOpen);
                 setIsHireDropdownOpen(false);
@@ -193,15 +210,53 @@ const Navbar = () => {
                   onMouseLeave={() => {
                     if (!isMobile) setIsGraduateDropdownOpen(false);
                   }}
-                  onClick={() => {
-                    if (isMobile)
-                      setIsGraduateDropdownOpen(!isGraduateDropdownOpen);
-                  }}
+                  // onClick={() => {
+                  //   if (isMobile)
+                  //     setIsGraduateDropdownOpen(!isGraduateDropdownOpen);
+                  // }}
                   style={{ position: "relative", cursor: "pointer" }}
                   aria-haspopup="true"
                   aria-expanded={isGraduateDropdownOpen}
                 >
-                  Graduates
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      gap: "0.5rem",
+                    }}
+                  >
+                    <Link
+                      to="/graduates"
+                      onClick={closeMenus}
+                      style={{
+                        color: "inherit",
+                        textDecoration: "none",
+                        display: "block",
+                        width: "100%",
+                      }}
+                    >
+                      Graduates
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={(event) => {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        setIsGraduateDropdownOpen(!isGraduateDropdownOpen);
+                      }}
+                      aria-label="Toggle graduates submenu"
+                      style={{
+                        background: "none",
+                        border: "none",
+                        color: "inherit",
+                        cursor: "pointer",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      ▸
+                    </button>
+                  </div>
                   {isGraduateDropdownOpen && (
                     <div
                       className="nav-dropdown-menu"

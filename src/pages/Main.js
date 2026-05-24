@@ -8,7 +8,9 @@ import { FormComponent } from "../components/microComponents/contact/form";
 import Footer from "../components/Footer";
 import Section from '../components/Section'
 import TestimonialsSection from "../components/TestimonialsSection";
+import Button from "../components/Button";
 import { pageMetadata, BASE_URL } from "../utils/metadataConfig";
+
 
 
 const developerDatafiltered = developerData.developers.filter(
@@ -112,13 +114,12 @@ function Main() {
             Support the Next Wave of Developers
           </p>
           <p className="donation-div__flexcol__paragraph">
-            Your contribution helps us provide essential resources, mentorship, and real-world project opportunities to aspiring student developers, empowering them to launch successful careers in tech.
+          Your contribution helps us to provide real-world project opportunities to graduates and empower them to launch successful careers in tech.
           </p>
-          <Link to={"/Donation"}>
-            <button className="donation-div__button" type="button">
-              Donate Now
-            </button>
-          </Link>
+          <Button to="/Donation" variant="primary">
+            Donate Now
+          </Button>
+    
         </div> 
       </div>
     <Section>  
