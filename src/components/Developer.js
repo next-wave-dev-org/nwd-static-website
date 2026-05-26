@@ -11,7 +11,6 @@ const Developer = ({ name, photo, degree, website, github, linkedin, role }) => 
         alt={name}
         className="developer-card__image"
       />
-      
       <div className="developer-card__body">
         <h2 className="developer-card__name">{name}</h2>
 
