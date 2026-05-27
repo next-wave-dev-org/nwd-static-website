@@ -94,8 +94,8 @@ navbar
  ========== */
 .homepage-content,
 .portfolio-div,
-.developer-prev,
-.donation-div,
+.de.donation-divveloper-prev,
+,
 .contact-div {
   max-width: 2200px;
   margin: 0 auto;
@@ -337,12 +337,13 @@ navbar
 .donation-div {
   min-height: 40vh;
   padding: 4rem 2rem;
-  background: linear-gradient(
-    90deg,
-    rgba(55, 55, 55, 0) 0%,
-    rgba(149, 202, 89, 0) 18%,
-    rgba(149, 202, 89, 1) 69%
-  );
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -350,9 +351,11 @@ navbar
 .donation-div__flexcol {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  padding: 0.5rem;
   justify-content: center;
+  align-items: center;
   text-align: center;
+  color: white;
 }
 .donation-div__flexcol__heading {
   font-size: 3rem;
@@ -366,16 +369,7 @@ navbar
   margin-right: auto;
   width: 75%;
 }
-.donation-div__button {
-  display: inline-block;
-  background-color: #3b82f3;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #ffff;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
 
-}
 @media (max-width: 800px) {
   .donation-div {
     height: fit-content;
