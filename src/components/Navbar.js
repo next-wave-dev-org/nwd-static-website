@@ -84,24 +84,33 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Navigation Items (NOW ABSOLUTE ON MOBILE) */}
+      {/* Navigation Items (OVERLAY FIX + CENTER FIX) */}
       <div
         style={{
           display: isMobile && !menuOpen ? "none" : "flex",
+
           flexDirection: isMobile ? "column" : "row",
-          alignItems: isMobile ? "flex-start" : "center",
+
+          // ✅ CENTER FIX (keeps tabs centered like before)
+          alignItems: isMobile ? "center" : "center",
+          justifyContent: isMobile ? "center" : "flex-start",
+          textAlign: isMobile ? "center" : "left",
+
           gap: "1rem",
           marginTop: isMobile ? 0 : "0.5rem",
           flexWrap: isMobile ? "nowrap" : "wrap",
           maxWidth: "100%",
 
-          // ✅ KEY FIX: mobile overlay behavior
+          // ✅ OVERLAY REQUIREMENT (no layout shift)
           position: isMobile ? "absolute" : "static",
           top: isMobile ? "100%" : "auto",
           left: isMobile ? 0 : "auto",
           right: isMobile ? 0 : "auto",
           width: isMobile ? "100%" : "auto",
+
+          // ✅ HIGH Z-INDEX STACKING LAYER (z-50 equivalent)
           zIndex: isMobile ? 50 : "auto",
+
           backgroundColor: isMobile ? "#004da8" : "transparent",
           padding: isMobile ? "1rem" : 0,
         }}
