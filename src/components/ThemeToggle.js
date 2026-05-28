@@ -8,10 +8,10 @@ export default function ThemeToggle() {
 
   return (
     <div className="theme-toggle">
-        <FaSun onClick={() => setTheme("light")}/>
-        <FaMoon onClick={() => setTheme("dark")}/>
+        <FaSun className={theme === "light" ? "active" : "inactive"} onClick={() => setTheme("light")}/>
+        <FaMoon className={theme === "dark" ? "active" : "inactive"} onClick={() => setTheme("dark")}/>
 
-            
+
         {/* <MdLightMode onClick={() => setTheme("light")}/>
         <MdDarkMode onClick={() => setTheme("dark")}/> */}
     </div>
