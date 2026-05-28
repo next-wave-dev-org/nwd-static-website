@@ -83,6 +83,7 @@ const Navbar = () => {
             ☰
           </button>
         )}
+        <ThemeToggle></ThemeToggle>
       </div>
 
       {/* Navigation Items */}
@@ -300,11 +301,7 @@ const Navbar = () => {
           </div>
 
           <WhiteSpacing />
-          <Item name="Donate" onClick={closeMenus} />
-          <WhiteSpacing />
-          <WhiteSpacing />
-          <WhiteSpacing />
-          <ThemeToggle></ThemeToggle>
+          <Item name="Donate" onClick={closeMenus} />          
         </div>
       )}
       
