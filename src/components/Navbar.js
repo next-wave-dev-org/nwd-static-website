@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ThemeToggle from "./ThemeToggle";
 import { Link, useLocation } from "react-router-dom";
 import NWDLogo from "../images/NextWaveDevLogo/NextWaveDev_FINAL_SMALL.jpg";
 import { WhiteSpacing } from "./microComponents/navbar/whiteSpacing";
@@ -300,8 +301,13 @@ const Navbar = () => {
 
           <WhiteSpacing />
           <Item name="Donate" onClick={closeMenus} />
+          <WhiteSpacing />
+          <WhiteSpacing />
+          <WhiteSpacing />
+          <ThemeToggle></ThemeToggle>
         </div>
       )}
+      
     </nav>
   );
 };
