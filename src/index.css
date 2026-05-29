@@ -398,8 +398,16 @@ navbar
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   color: var(--primary-blue);
+}
+.graduates-companies-section__text {
+  max-width: 56rem;
+  margin: 0 auto 3rem;
+  text-align: center;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #1f3d55;
 }
 .graduates-companies-section__tiles {
   display: flex;
@@ -1360,6 +1368,66 @@ h1, h2, h3 {
     grid-template-columns: 1fr;
   }
 }
+
+/* ======================================================
+   MOBILE HERO SPACING FIX
+====================================================== */
+
+@media (max-width: 800px) {
+
+  /* Remove excess top spacing */
+  .homepage-content,
+  .hero,
+  .hero__wrapper {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Prevent tall-phone whitespace */
+  .hero__wrapper {
+    height: auto !important;
+    min-height: 420px;
+  }
+
+  .hero {
+    min-height: 420px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  /* Pull content closer to navbar */
+  .hero__text {
+    padding-top: 1rem;
+    padding-inline: 1rem;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  /* Tighten heading spacing */
+  .hero__text__heading {
+    margin-top: 0;
+    line-height: 1.1;
+  }
+
+  .hero__text__subheading {
+    line-height: 1.25;
+  }
+}
+
+/* Extra-tight spacing for taller phones */
+@media (min-width: 390px) and (max-width: 800px) {
+
+  .hero__wrapper,
+  .hero {
+    min-height: 380px;
+  }
+
+  .hero__text {
+    padding-top: 0.75rem;
+  }
+}
+
+/* Active navbar link */
 .active-nav-link {
   color: #ffd54a !important;
   font-weight: 700 !important;

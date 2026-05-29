@@ -299,6 +299,14 @@ const Navbar = () => {
                 </div>
 
                 <Link
+                  to="/volunteer"
+                  className="nav-dropdown-item"
+                  onClick={closeMenus}
+                >
+                  Volunteer
+                </Link>
+
+                <Link
                   to="/companies"
                   className="nav-dropdown-item"
                   onClick={closeMenus}
