@@ -107,10 +107,10 @@ const Footer = () => {
           display: "flex",
           flexDirection: "row",
           width: "auto",
-          gap: "2rem",
+          gap: "1rem",
           alignItems: "center",
           justifyContent: "flex-end",
-          flexWrap: "wrap",
+          flexWrap: "nowrap",
         }}
       >
         {/* LinkedIn Icon */}
@@ -122,7 +122,7 @@ const Footer = () => {
           <img
             src={LINKEDIN_ICON}
             alt="LinkedIn Icon"
-            style={{ width: "64px", height: "64px" }}
+            style={{ width: "48px", height: "48px" }}
           />
         </a>
 
@@ -134,7 +134,7 @@ const Footer = () => {
           <img
             src={NEXTWAVEDEV}
             alt="Next Wave Dev logo"
-            style={{ width: "6rem", height: "auto" }}
+            style={{ width: "5rem", height: "auto" }}
           />
         </Link>
       </div>
