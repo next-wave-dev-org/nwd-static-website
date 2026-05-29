@@ -238,6 +238,7 @@ const Navbar = () => {
                     >
                       Graduates
                     </Link>
+
                     <button
                       type="button"
                       onClick={(event) => {
@@ -277,6 +278,14 @@ const Navbar = () => {
                     </div>
                   )}
                 </div>
+
+                <Link
+                  to="/volunteer"
+                  className="nav-dropdown-item"
+                  onClick={closeMenus}
+                >
+                  Volunteer
+                </Link>
 
                 <Link
                   to="/companies"
