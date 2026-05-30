@@ -398,8 +398,16 @@ navbar
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   color: var(--primary-blue);
+}
+.graduates-companies-section__text {
+  max-width: 56rem;
+  margin: 0 auto 3rem;
+  text-align: center;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #1f3d55;
 }
 .graduates-companies-section__tiles {
   display: flex;

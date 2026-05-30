@@ -17,6 +17,7 @@ import ServicesPage from './pages/ServicesPage';
 import PricingPage from "./pages/PricingPage";
 import NotFound from "./pages/NotFound";
 import { BASE_URL } from './utils/metadataConfig';
+import VolunteerPage from "./pages/VolunteerPage";
 
 // Pageview tracker component
 function PageTracker() {
@@ -99,6 +100,7 @@ function App() {
           <Route path="/Services" element={<ServicesPage />} />
           <Route path="/Apply" element={<ApplyPage />} />
           <Route path="/Pricing" element={<PricingPage />} />
+          <Route path="/volunteer" element={<VolunteerPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
