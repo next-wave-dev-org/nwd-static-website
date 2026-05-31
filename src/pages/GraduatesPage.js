@@ -95,17 +95,26 @@ function GraduatesPage() {
         <h2 style={{ marginTop: "40px", marginBottom: "15px"}}>
           What You Will Gain
         </h2>
-        <ul style={{ marginBottom: "60px", paddingLeft: "20px" }}>
-          <li style={{ marginBottom: "15px" }}>Verified Experience Hours: A proven track record of professional development work.</li>
-          <li style={{ marginBottom: "15px" }}>
-            Strong Professional References: Connect with project managers and developers who can vouch for
-            your skills.
+        <ul style={{ marginBottom: "60px", paddingLeft: "0", listStyle: "none" }}>
+          <li style={gainItemStyle}>
+            <span style={iconStyle}>⏱️</span>
+            <span><strong>Verified Experience Hours:</strong>A proven track record of professional development work.</span>
           </li>
-          <li style={{ marginBottom: "15px" }}>Networking Opportunities: Build relationships with key contacts at potential hiring companies.</li>
-          <li style={{ marginBottom: "15px" }}>
-            Confidence: Step into your next interview knowing you have already successfully contributed to
-            a company’s success.
+
+          <li style={gainItemStyle}>
+            <span style={iconStyle}>🤝</span>
+            <span><strong>Strong Professional References:</strong> Connect with project managers and developers who can vouch for your skills.</span>
           </li>
+
+          <li style={gainItemStyle}>
+            <span style={iconStyle}>🌐</span>
+            <span><strong>Networking Opportunities:</strong> Build relationships with key contacts at potential hiring companies.</span>
+          </li>
+
+          <li style={gainItemStyle}>
+            <span style={iconStyle}>💪</span>
+            <span><strong>Confidence:</strong> Step into your next interview knowing you have already successfully contributed to a company’s success.</span>
+           </li>
         </ul>
 
         <h2 style={{ marginBottom: "20px" }}>
@@ -255,4 +264,17 @@ const tdStyle = {
   padding: "10px",
 };
 
+const gainItemStyle = {
+  display: "flex",
+  alignItems: "center",
+  gap: "10px",
+  marginBottom: "15px",
+};
+
+const iconStyle = {
+  fontSize: "1.2rem",
+  lineHeight: "1.5",
+};
+
 export default GraduatesPage;
+
