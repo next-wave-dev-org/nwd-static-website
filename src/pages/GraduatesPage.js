@@ -139,11 +139,11 @@ function GraduatesPage() {
         </h2>
 
         <Button to="/apply" variant="primary">
-          Apply Now
+          Start Now
         </Button>
       </div>
       
-=======
+{/* =======
       <Section>
         <div style={{ padding: "60px 40px", maxWidth: "1200px", margin: "0 auto" }}>
           <Helmet>
@@ -247,7 +247,7 @@ function GraduatesPage() {
             Apply Now &amp; Start Building Your Portfolio
           </Link>
         </div>
-      </Section>
+      </Section> */}
 
       <TestimonialsSection type="graduates" />
       <Footer />
