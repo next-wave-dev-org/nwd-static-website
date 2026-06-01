@@ -15,7 +15,6 @@ function GraduatesPage() {
     <>
       <Navbar />
 
-
       <div
         style={{
           padding: "60px 40px",
@@ -29,7 +28,7 @@ function GraduatesPage() {
         </Helmet>
 
         <h1 style={{ marginBottom: "25px"}}>
-          For Graduates – Launch Your Career with The Next Wave Dev
+          Launch Your Career with The Next Wave Dev
         </h1>
 
         <h2 style={{ marginTop: "40px", marginBottom: "15px"}}>
