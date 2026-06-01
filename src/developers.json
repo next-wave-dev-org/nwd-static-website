@@ -72,15 +72,15 @@
       "github": "https://github.com/jmathew12",
       "linkedin": "https://www.linkedin.com/in/jmathew12/"
 
-        }, 
-            {
-          "name": "Azarias A'Neals",
-          "photo": "Azarias-ANeals.webp",
-          "role": "Student Developer",
-          "about": "I am a senior in the AD graduate program. I am passionate about application design, illustration, and full-stack development.",
-          "email": "zulbadamz@gmail.com",
-          "github": "https://github.com/Zulbadamz",
-          "linkedin": "https://www.linkedin.com/in/zulbadam-batdelger-aa91851b7/"
+    }, 
+    {
+      "name": "Azarias A'Neals",
+      "photo": "Azarias-ANeals.webp",
+      "role": "Student Developer",
+      "about": "I am a senior in the AD graduate program. I am passionate about application design, illustration, and full-stack development.",
+      "email": "zulbadamz@gmail.com",
+      "github": "https://github.com/Zulbadamz",
+      "linkedin": "https://www.linkedin.com/in/zulbadam-batdelger-aa91851b7/"
     },
     {
       "name": "Diego Cano",
@@ -90,15 +90,6 @@
       "email": "dcano2810@gmail.com",
       "github": "https://github.com/Diego-Cano",
       "linkedin": "https://www.linkedin.com/in/diegocanousa/"
-    },
-    {
-      "name": "Azarias A'Neals",
-      "photo": "Azarias-ANeals.webp",
-      "role": "Student Developer",
-      "degree": "BAS in Application Development",
-      "website": "",
-      "github": "https://github.com/AzariasANeals",
-      "linkedin": "https://www.linkedin.com/in/azarias-a-neals-64113a188/"
     },
     {
       "name": "Zulbadam Batdelger",
