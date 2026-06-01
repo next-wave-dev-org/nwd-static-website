@@ -59,7 +59,7 @@ function About() {
 
         <section style={sectionStyle}>
           <h2 style={{ fontSize: "2rem", fontWeight: "700", marginBottom: "1rem", color: "#1f2937" }}>
-            For Graduates
+            What We Do for Graduates
           </h2>
           <p style={{ fontSize: "1rem", marginBottom: "0.5rem", color: "gray-600" }}>
             You’ve put in the work, earned the degree, and mastered the theory. Now, it’s time to build your professional portfolio.
@@ -74,7 +74,7 @@ function About() {
 
         <section style={sectionStyle}>
           <h2 style={{ fontSize: "2rem", fontWeight: "700", marginBottom: "1rem", color: "#1f2937" }}>
-            For Companies
+            How We Work with Companies
           </h2>
           <p style={{ fontSize: "1rem", marginBottom: "0.5rem", color: "gray-600" }}>
             Tap into a pool of fresh, enthusiastic, and academically current talent ready to contribute immediately.
