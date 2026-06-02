@@ -51,7 +51,7 @@ function CompaniesPage() {
 
                         {/* Hero Section */}
                         <h1 style={{ marginBottom: "25px" }}>
-                            For Companies – Secure Your Future Talent Pipeline
+                            Secure Your Future Talent Pipeline
                         </h1>
 
                         <p style={{ marginBottom: "20px", lineHeight: "1.7" }}>
@@ -178,13 +178,11 @@ function CompaniesPage() {
                                     <h3 style={cardTitle}>2. Matching</h3>
 
                                     <p>
-                                        <strong>Our Role:</strong> We vet and match the top
-                                        candidates for your project.
+                                        <strong>Our Role:</strong> We vet, interview, and match you with our top candidates whose skills align perfectly.
                                     </p>
 
                                     <p>
-                                        <strong>Your Role:</strong> Interview final candidates
-                                        and select your preferred team members.
+                                        <strong>Your Role:</strong> Once your team has been selected, introduce yourselves through our integrated messaging system.
                                     </p>
                                 </div>
 
