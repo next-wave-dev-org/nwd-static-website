@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ThemeToggle from "./ThemeToggle";
 import { Link, useLocation } from "react-router-dom";
 import NWDLogo from "../images/NextWaveDevLogo/NextWaveDev_FINAL_SMALL.jpg";
 import { WhiteSpacing } from "./microComponents/navbar/whiteSpacing";
@@ -67,6 +68,10 @@ const Navbar = () => {
           />
         </Link>
 
+        {!isMobile &&(<ThemeToggle></ThemeToggle>)} 
+
+        
+        
         {isMobile && (
           <button
             aria-label="Toggle navigation menu"
@@ -82,6 +87,7 @@ const Navbar = () => {
             ☰
           </button>
         )}
+        
       </div>
 
       {/* Navigation Items */}
@@ -299,9 +305,11 @@ const Navbar = () => {
           </div>
 
           <WhiteSpacing />
-          <Item name="Donate" onClick={closeMenus} />
+          <Item name="Donate" onClick={closeMenus} />    
+          {isMobile &&(<ThemeToggle></ThemeToggle>)}       
         </div>
       )}
+      
     </nav>
   );
 };

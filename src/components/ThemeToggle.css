@@ -1,0 +1,20 @@
+.theme-toggle {
+    display: flex; 
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+.theme-toggle .active {
+  opacity: 1;
+}
+
+.theme-toggle .inactive {
+  opacity: 0.3;
+}
+
+.theme-toggle .inactive:hover {
+  opacity: 0.6;
+  
+}
+
+
