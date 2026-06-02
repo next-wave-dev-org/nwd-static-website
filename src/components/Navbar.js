@@ -176,202 +176,130 @@ const Navbar = () => {
 
         <WhiteSpacing />
 
-        {/* Join Us Dropdown */}
-        <div
-          className="nav-dropdown"
-          onMouseEnter={() => {
-            if (!isMobile) {
-              if (joinTimeout) clearTimeout(joinTimeout);
-              setIsDropdownOpen(true);
-            }
-          }}
-          onMouseLeave={() => {
-            if (!isMobile) {
-              const timeout = setTimeout(() => {
-                setIsDropdownOpen(false);
-              }, 200);
+{/* Join Us Dropdown */}
+<div
+  className="nav-dropdown"
+  onMouseEnter={() => {
+    if (!isMobile) {
+      if (joinTimeout) clearTimeout(joinTimeout);
+      setIsDropdownOpen(true);
+    }
+  }}
+  onMouseLeave={() => {
+    if (!isMobile) {
+      const timeout = setTimeout(() => {
+        setIsDropdownOpen(false);
+      }, 200);
 
-              setJoinTimeout(timeout);
-            }
-          }}
-        >
-          <span
-            className={`nav-dropdown-toggle ${
-              location.pathname === "/graduates" ? "active-nav-link" : ""
-            }`}
-            onClick={() => {
-              setIsDropdownOpen(!isDropdownOpen);
-              setIsHireDropdownOpen(false);
-            }}
-            style={{ cursor: "pointer", color: "white" }}
-          >
-            Join Us
-          </span>
+      setJoinTimeout(timeout);
+    }
+  }}
+>
+  <span
+    className={`nav-dropdown-toggle ${
+      location.pathname === "/graduates" ? "active-nav-link" : ""
+    }`}
+    onClick={() => {
+      setIsDropdownOpen(!isDropdownOpen);
+      setIsHireDropdownOpen(false);
+    }}
+    style={{ cursor: "pointer", color: "white" }}
+  >
+    Join Us
+  </span>
 
-          {isDropdownOpen && (
-            <div className="nav-dropdown-menu">
-              <div
-                className="nav-dropdown-item"
-                style={{ position: "relative", cursor: "pointer" }}
-                onMouseEnter={() => {
-                  if (!isMobile) setIsGraduateDropdownOpen(true);
-                }}
-                onMouseLeave={() => {
-                  if (!isMobile) setIsGraduateDropdownOpen(false);
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    gap: "0.5rem",
-                  }}
-                >
-                  <Link
-                    to="/graduates"
-                    onClick={closeMenus}
-                    style={{
-                      color: "inherit",
-                      textDecoration: "none",
-                      display: "block",
-                      width: "100%",
-                    }}
-                  >
-                    Graduates
-                  </Link>
-
-                  <button
-                    type="button"
-                    onClick={(event) => {
-                      event.preventDefault();
-                      event.stopPropagation();
-                      setIsGraduateDropdownOpen(!isGraduateDropdownOpen);
-                    }}
-                    style={{
-                      background: "none",
-                      border: "none",
-                      color: "inherit",
-                      cursor: "pointer",
-                      fontSize: "1rem",
-                    }}
-                  >
-                    ▸
-                  </button>
-                </div>
-
-                {isGraduateDropdownOpen && (
-                  <div
-                    className="nav-dropdown-menu"
-                    style={{
-                      position: isMobile ? "static" : "absolute",
-                      left: isMobile ? "0" : "100%",
-                      top: "0",
-                      marginLeft: isMobile ? "1rem" : "0",
-                    }}
-                  >
-                    <Link to="/apply" className="nav-dropdown-item" onClick={closeMenus}>
-                      Apply
-                    </Link>
-{isDropdownOpen && (
-  <div className="nav-dropdown-menu">
-    <div
-      className="nav-dropdown-item"
-      style={{ position: "relative", cursor: "pointer" }}
-      onMouseEnter={() => {
-        if (!isMobile) setIsGraduateDropdownOpen(true);
-      }}
-      onMouseLeave={() => {
-        if (!isMobile) setIsGraduateDropdownOpen(false);
-      }}
-    >
+  {isDropdownOpen && (
+    <div className="nav-dropdown-menu">
       <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: "0.5rem",
+        className="nav-dropdown-item"
+        style={{ position: "relative", cursor: "pointer" }}
+        onMouseEnter={() => {
+          if (!isMobile) setIsGraduateDropdownOpen(true);
+        }}
+        onMouseLeave={() => {
+          if (!isMobile) setIsGraduateDropdownOpen(false);
         }}
       >
-        <Link
-          to="/graduates"
-          onClick={closeMenus}
-          style={{
-            color: "inherit",
-            textDecoration: "none",
-            display: "block",
-            width: "100%",
-          }}
-        >
-          Graduates
-        </Link>
-
-        <button
-          type="button"
-          onClick={(event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            setIsGraduateDropdownOpen(!isGraduateDropdownOpen);
-          }}
-          aria-label="Toggle graduates submenu"
-          style={{
-            background: "none",
-            border: "none",
-            color: "inherit",
-            cursor: "pointer",
-            fontSize: "1rem",
-          }}
-        >
-          ▸
-        </button>
-      </div>
-
-      {isGraduateDropdownOpen && (
         <div
-          className="nav-dropdown-menu"
           style={{
-            position: isMobile ? "static" : "absolute",
-            left: isMobile ? "0" : "100%",
-            top: "0",
-            marginLeft: isMobile ? "1rem" : "0",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "0.5rem",
           }}
         >
           <Link
-            to="/apply"
-            className="nav-dropdown-item"
+            to="/graduates"
             onClick={closeMenus}
+            style={{
+              color: "inherit",
+              textDecoration: "none",
+              display: "block",
+              width: "100%",
+            }}
           >
-            Apply
+            Graduates
           </Link>
+
+          <button
+            type="button"
+            aria-label="Toggle graduates submenu"
+            onClick={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              setIsGraduateDropdownOpen(!isGraduateDropdownOpen);
+            }}
+            style={{
+              background: "none",
+              border: "none",
+              color: "inherit",
+              cursor: "pointer",
+              fontSize: "1rem",
+            }}
+          >
+            ▸
+          </button>
         </div>
-      )}
+
+        {isGraduateDropdownOpen && (
+          <div
+            className="nav-dropdown-menu"
+            style={{
+              position: isMobile ? "static" : "absolute",
+              left: isMobile ? "0" : "100%",
+              top: "0",
+              marginLeft: isMobile ? "1rem" : "0",
+            }}
+          >
+            <Link
+              to="/apply"
+              className="nav-dropdown-item"
+              onClick={closeMenus}
+            >
+              Apply
+            </Link>
+          </div>
+        )}
+      </div>
+
+      <Link
+        to="/volunteer"
+        className="nav-dropdown-item"
+        onClick={closeMenus}
+      >
+        Volunteer
+      </Link>
+
+      <Link
+        to="/companies"
+        className="nav-dropdown-item"
+        onClick={closeMenus}
+      >
+        Companies
+      </Link>
     </div>
-
-    <Link
-      to="/volunteer"
-      className="nav-dropdown-item"
-      onClick={closeMenus}
-    >
-      Volunteer
-    </Link>
-
-    <Link
-      to="/companies"
-      className="nav-dropdown-item"
-      onClick={closeMenus}
-    >
-      Companies
-    </Link>
-  </div>
-)}
-
-              <Link to="/companies" className="nav-dropdown-item" onClick={closeMenus}>
-                Companies
-              </Link>
-            </div>
-          )}
-        </div>
-
+  )}
+</div>
         <WhiteSpacing />
         <Item name="Donate" onClick={closeMenus} />
       </div>
