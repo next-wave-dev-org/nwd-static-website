@@ -1241,7 +1241,7 @@ h1, h2, h3 {
 
 /* Full-page wrapper */
 .services-page-wrapper {
-  background-color: #bdd8fb;
+  background-color: #bbd7fa;
   width: 100%;
   padding: 2rem 0;
 }
@@ -1266,7 +1266,7 @@ h1, h2, h3 {
   font-size: 3rem;
   line-height: 1.15;
   margin-bottom: 1.5rem;
-  color: var(--primary-blue);
+  color: var(--primary-black);
 }
 
 .services-page__hero p {
