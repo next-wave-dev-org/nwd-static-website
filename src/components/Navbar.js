@@ -91,7 +91,7 @@ const Navbar = () => {
 
           flexDirection: isMobile ? "column" : "row",
 
-          // ✅ CENTER FIX (keeps tabs centered like before)
+          // keeps tabs centered
           alignItems: isMobile ? "center" : "center",
           justifyContent: isMobile ? "center" : "flex-start",
           textAlign: isMobile ? "center" : "left",
@@ -101,14 +101,14 @@ const Navbar = () => {
           flexWrap: isMobile ? "nowrap" : "wrap",
           maxWidth: "100%",
 
-          // ✅ OVERLAY REQUIREMENT (no layout shift)
+          // no layout shift
           position: isMobile ? "absolute" : "static",
           top: isMobile ? "100%" : "auto",
           left: isMobile ? 0 : "auto",
           right: isMobile ? 0 : "auto",
           width: isMobile ? "100%" : "auto",
 
-          // ✅ HIGH Z-INDEX STACKING LAYER (z-50 equivalent)
+          // HIGH Z-INDEX STACKING LAYER (z-50 equivalent)
           zIndex: isMobile ? 50 : "auto",
 
           backgroundColor: isMobile ? "#004da8" : "transparent",
