@@ -273,9 +273,97 @@ const Navbar = () => {
                     <Link to="/apply" className="nav-dropdown-item" onClick={closeMenus}>
                       Apply
                     </Link>
-                  </div>
-                )}
-              </div>
+{isDropdownOpen && (
+  <div className="nav-dropdown-menu">
+    <div
+      className="nav-dropdown-item"
+      style={{ position: "relative", cursor: "pointer" }}
+      onMouseEnter={() => {
+        if (!isMobile) setIsGraduateDropdownOpen(true);
+      }}
+      onMouseLeave={() => {
+        if (!isMobile) setIsGraduateDropdownOpen(false);
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "0.5rem",
+        }}
+      >
+        <Link
+          to="/graduates"
+          onClick={closeMenus}
+          style={{
+            color: "inherit",
+            textDecoration: "none",
+            display: "block",
+            width: "100%",
+          }}
+        >
+          Graduates
+        </Link>
+
+        <button
+          type="button"
+          onClick={(event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            setIsGraduateDropdownOpen(!isGraduateDropdownOpen);
+          }}
+          aria-label="Toggle graduates submenu"
+          style={{
+            background: "none",
+            border: "none",
+            color: "inherit",
+            cursor: "pointer",
+            fontSize: "1rem",
+          }}
+        >
+          ▸
+        </button>
+      </div>
+
+      {isGraduateDropdownOpen && (
+        <div
+          className="nav-dropdown-menu"
+          style={{
+            position: isMobile ? "static" : "absolute",
+            left: isMobile ? "0" : "100%",
+            top: "0",
+            marginLeft: isMobile ? "1rem" : "0",
+          }}
+        >
+          <Link
+            to="/apply"
+            className="nav-dropdown-item"
+            onClick={closeMenus}
+          >
+            Apply
+          </Link>
+        </div>
+      )}
+    </div>
+
+    <Link
+      to="/volunteer"
+      className="nav-dropdown-item"
+      onClick={closeMenus}
+    >
+      Volunteer
+    </Link>
+
+    <Link
+      to="/companies"
+      className="nav-dropdown-item"
+      onClick={closeMenus}
+    >
+      Companies
+    </Link>
+  </div>
+)}
 
               <Link to="/companies" className="nav-dropdown-item" onClick={closeMenus}>
                 Companies
