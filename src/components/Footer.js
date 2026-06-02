@@ -105,36 +105,65 @@ const Footer = () => {
           display: "flex",
           flexDirection: "row",
           width: "auto",
-          gap: "2rem",
           alignItems: "center",
           justifyContent: "center",
-          flexWrap: "wrap",
         }}
       >
-        {/* LinkedIn Icon */}
-        <a
-          href="https://www.linkedin.com/company/next-wave-dev/"
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* Footer Brand / Social Row */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            flexWrap: "nowrap",
+            gap: "12px",
+          }}
         >
-          <img
-            src={LINKEDIN_ICON}
-            alt="LinkedIn Icon"
-            style={{ width: "64px", height: "64px" }}
-          />
-        </a>
+          {/* LinkedIn Icon */}
+          <a
+            href="https://www.linkedin.com/company/next-wave-dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={LINKEDIN_ICON}
+              alt="LinkedIn Icon"
+              style={{
+                width: "64px",
+                height: "64px",
+                objectFit: "contain",
+              }}
+            />
+          </a>
 
-        {/* Dynamic Candid Seal */}
-        <CandidSeal />
+          {/* Dynamic Candid Seal */}
+          <div
+            style={{
+              width: "64px",
+              height: "64px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              overflow: "hidden",
+            }}
+          >
+            <CandidSeal />
+          </div>
 
-        {/* Logo */}
-        <Link to={"/"}>
-          <img
-            src={NEXTWAVEDEV}
-            alt="Next Wave Dev logo"
-            style={{ width: "6rem", height: "auto" }}
-          />
-        </Link>
+          {/* Logo */}
+          <Link to={"/"}>
+            <img
+              src={NEXTWAVEDEV}
+              alt="Next Wave Dev logo"
+              style={{
+                width: "64px",
+                height: "64px",
+                objectFit: "contain",
+              }}
+            />
+          </Link>
+        </div>
       </div>
     </div>
   );
