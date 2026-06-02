@@ -1243,6 +1243,22 @@ h1, h2, h3 {
   }
 }
 
+.gain-list {
+  list-style: none;
+  padding: 0;
+}
+
+.gain-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.icon {
+  font-size: 18px;
+}
+
 /* ===== SERVICES PAGE SPACING  ===== */
 
 .services-page {
