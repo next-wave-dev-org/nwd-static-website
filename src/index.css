@@ -109,9 +109,10 @@ navbar
 /* ======= hero ======= */
 .hero__wrapper {
   height: 70vh;
-  background-image: url("images/NWD_AI_generated_photo.png");
+  background-image: url("images/NWD_AI_generated_photo.webp");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero {
@@ -251,8 +252,10 @@ navbar
 /* ======= developer preview ======= */
 .developer-prev {
   height: 55vh;
-  background-image: url("images/Arts_and_Sciences.jpg");
+  background-image: url("images/Arts_and_Sciences.webp");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   box-shadow: inset 0 0 0 1000px rgba(0, 77, 168, 0.85);
   display: flex;
   flex-direction: row;
