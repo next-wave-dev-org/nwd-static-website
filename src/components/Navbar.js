@@ -106,105 +106,158 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Navigation Items */}
-      {(!isMobile || menuOpen) && (
+      {/* Navigation Items (OVERLAY FIX + CENTER FIX) */}
+      <div
+        style={{
+          display: isMobile && !menuOpen ? "none" : "flex",
+
+          flexDirection: isMobile ? "column" : "row",
+
+          // keeps tabs centered
+          alignItems: isMobile ? "center" : "center",
+          justifyContent: isMobile ? "center" : "flex-start",
+          textAlign: isMobile ? "center" : "left",
+
+          gap: "1rem",
+          marginTop: isMobile ? 0 : "0.5rem",
+          flexWrap: isMobile ? "nowrap" : "wrap",
+          maxWidth: "100%",
+
+          // no layout shift
+          position: isMobile ? "absolute" : "static",
+          top: isMobile ? "100%" : "auto",
+          left: isMobile ? 0 : "auto",
+          right: isMobile ? 0 : "auto",
+          width: isMobile ? "100%" : "auto",
+
+          // HIGH Z-INDEX STACKING LAYER (z-50 equivalent)
+          zIndex: isMobile ? 50 : "auto",
+
+          backgroundColor: isMobile ? "#004da8" : "transparent",
+          padding: isMobile ? "1rem" : 0,
+        }}
+      >
+        <Item name="Contact" onClick={closeMenus} />
+        <WhiteSpacing />
+        <Item name="About" onClick={closeMenus} />
+        <WhiteSpacing />
+        <Item name="Developers" onClick={closeMenus} />
+        <WhiteSpacing />
+        <Item name="Portfolio" onClick={closeMenus} />
+        <WhiteSpacing />
+        <Item name="Services" onClick={closeMenus} />
+        <WhiteSpacing />
+
+        {/* Hire Us Dropdown */}
+        <div
+          className="nav-dropdown"
+          onMouseEnter={() => {
+            if (!isMobile) {
+              if (hireTimeout) clearTimeout(hireTimeout);
+              setIsHireDropdownOpen(true);
+            }
+          }}
+          onMouseLeave={() => {
+            if (!isMobile) {
+              const timeout = setTimeout(() => {
+                setIsHireDropdownOpen(false);
+              }, 200);
+
+              setHireTimeout(timeout);
+            }
+          }}
+        >
+          <span
+            className={`nav-dropdown-toggle ${
+              location.pathname === "/companies" ||
+              location.pathname === "/pricing"
+                ? "active-nav-link"
+                : ""
+            }`}
+            onClick={() => {
+              setIsHireDropdownOpen(!isHireDropdownOpen);
+              setIsDropdownOpen(false);
+            }}
+            style={{ cursor: "pointer", color: "white" }}
+          >
+            Hire Us
+          </span>
+
+          {isHireDropdownOpen && (
+            <div className="nav-dropdown-menu">
+              <Link to="/companies" className="nav-dropdown-item" onClick={closeMenus}>
+                Companies
+              </Link>
+
+              <Link to="/pricing" className="nav-dropdown-item" onClick={closeMenus}>
+                Pricing
+              </Link>
+            </div>
+          )}
+        </div>
+
+        <WhiteSpacing />
+
+{/* Join Us Dropdown */}
+<div
+  className="nav-dropdown"
+  onMouseEnter={() => {
+    if (!isMobile) {
+      if (joinTimeout) clearTimeout(joinTimeout);
+      setIsDropdownOpen(true);
+    }
+  }}
+  onMouseLeave={() => {
+    if (!isMobile) {
+      const timeout = setTimeout(() => {
+        setIsDropdownOpen(false);
+      }, 200);
+
+      setJoinTimeout(timeout);
+    }
+  }}
+>
+  <span
+    className={`nav-dropdown-toggle ${
+      location.pathname === "/graduates" ? "active-nav-link" : ""
+    }`}
+    onClick={() => {
+      setIsDropdownOpen(!isDropdownOpen);
+      setIsHireDropdownOpen(false);
+    }}
+    style={{ cursor: "pointer", color: "white" }}
+  >
+    Join Us
+  </span>
+
+  {isDropdownOpen && (
+    <div className="nav-dropdown-menu">
+      <div
+        className="nav-dropdown-item"
+        style={{ position: "relative", cursor: "pointer" }}
+        onMouseEnter={() => {
+          if (!isMobile) setIsGraduateDropdownOpen(true);
+        }}
+        onMouseLeave={() => {
+          if (!isMobile) setIsGraduateDropdownOpen(false);
+        }}
+      >
         <div
           style={{
             display: "flex",
-            flexDirection: isMobile ? "column" : "row",
-            alignItems: isMobile ? "flex-start" : "center",
-            gap: "1rem",
-            marginTop: "0.5rem",
-            flexWrap: isMobile ? "nowrap" : "wrap",
-            maxWidth: "100%",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "0.5rem",
           }}
         >
-          <Item name="Contact" onClick={closeMenus} />
-          <WhiteSpacing />
-          <Item name="About" onClick={closeMenus} />
-          <WhiteSpacing />
-          <Item name="Developers" onClick={closeMenus} />
-          <WhiteSpacing />
-          <Item name="Portfolio" onClick={closeMenus} />
-          <WhiteSpacing />
-          <Item name="Services" onClick={closeMenus} />
-          <WhiteSpacing />
-
-          {/* Hire Us Dropdown */}
-          <div
-            className="nav-dropdown"
-            onMouseEnter={() => {
-              if (!isMobile) {
-                if (hireTimeout) clearTimeout(hireTimeout);
-                setIsHireDropdownOpen(true);
-              }
-            }}
-            onMouseLeave={() => {
-              if (!isMobile) {
-                const timeout = setTimeout(() => {
-                  setIsHireDropdownOpen(false);
-                }, 200);
-
-                setHireTimeout(timeout);
-              }
-            }}
-          >
-            <span
-              className={`nav-dropdown-toggle ${
-                location.pathname === "/companies" ||
-                location.pathname === "/pricing"
-                  ? "active-nav-link"
-                  : ""
-              }`}
-              onClick={() => {
-                setIsHireDropdownOpen(!isHireDropdownOpen);
-                setIsDropdownOpen(false);
-              }}
-              style={{ cursor: "pointer", color: "white" }}
-            >
-              Hire Us
-            </span>
-
-            {isHireDropdownOpen && (
-              <div className="nav-dropdown-menu">
-                <Link
-                  to="/companies"
-                  className="nav-dropdown-item"
-                  onClick={closeMenus}
-                >
-                  Companies
-                </Link>
-
-                <Link
-                  to="/pricing"
-                  className="nav-dropdown-item"
-                  onClick={closeMenus}
-                >
-                  Pricing
-                </Link>
-              </div>
-            )}
-          </div>
-
-          <WhiteSpacing />
-
-          {/* Join Us Dropdown */}
-          <div
-            className="nav-dropdown"
-            onMouseEnter={() => {
-              if (!isMobile) {
-                if (joinTimeout) clearTimeout(joinTimeout);
-                setIsDropdownOpen(true);
-              }
-            }}
-            onMouseLeave={() => {
-              if (!isMobile) {
-                const timeout = setTimeout(() => {
-                  setIsDropdownOpen(false);
-                }, 200);
-
-                setJoinTimeout(timeout);
-              }
+          <Link
+            to="/graduates"
+            onClick={closeMenus}
+            style={{
+              color: "inherit",
+              textDecoration: "none",
+              display: "block",
+              width: "100%",
             }}
           >
             <span
@@ -306,16 +359,26 @@ const Navbar = () => {
                   Volunteer
                 </Link>
 
-                <Link
-                  to="/companies"
-                  className="nav-dropdown-item"
-                  onClick={closeMenus}
-                >
-                  Companies
-                </Link>
-              </div>
-            )}
+        {isGraduateDropdownOpen && (
+          <div
+            className="nav-dropdown-menu"
+            style={{
+              position: isMobile ? "static" : "absolute",
+              left: isMobile ? "0" : "100%",
+              top: "0",
+              marginLeft: isMobile ? "1rem" : "0",
+            }}
+          >
+            <Link
+              to="/apply"
+              className="nav-dropdown-item"
+              onClick={closeMenus}
+            >
+              Apply
+            </Link>
           </div>
+        )}
+      </div>
 
           <WhiteSpacing />
           <Item name="Donate" onClick={closeMenus} />
