@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FooterLink } from "./microComponents/footer/footerLink";
 import { Separator } from "./microComponents/footer/separator";
 import NEXTWAVEDEV from "../images/NextWaveDevLogo/NextWaveDev_FINAL_SMALL.jpg";
@@ -6,7 +6,7 @@ import LINKEDIN_ICON from "../images/linkedin_logo.png";
 import CandidSeal from "./CandidSeal";
 
 const Footer = () => {
-  const location = useLocation();
+  
   return (
     <div
       style={{
