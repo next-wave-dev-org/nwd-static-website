@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FooterLink } from "./microComponents/footer/footerLink";
 import { Separator } from "./microComponents/footer/separator";
 import NEXTWAVEDEV from "../images/NextWaveDevLogo/NextWaveDev_FINAL_SMALL.jpg";
@@ -6,6 +6,7 @@ import LINKEDIN_ICON from "../images/linkedin_logo.png";
 import CandidSeal from "./CandidSeal";
 
 const Footer = () => {
+  const location = useLocation();
   return (
     <div
       style={{
@@ -49,13 +50,13 @@ const Footer = () => {
               padding: 0,
             }}
           >
-            <li><FooterLink name="Home" /></li>
-            <li><FooterLink name="Contact" /></li>
-            <li><FooterLink name="About" /></li>
-            <li><FooterLink name="Developers" /></li>
-            <li><FooterLink name="Portfolio" /></li>
-            <li><FooterLink name="Services" /></li>
-            <li><FooterLink name="Donate" /></li>
+            <li><FooterLink name="Contact" currentPath={location.pathname} /></li>
+            <li><FooterLink name="About" currentPath={location.pathname} /></li>
+            <li><FooterLink name="Developers" currentPath={location.pathname} /></li>
+            <li><FooterLink name="Portfolio" currentPath={location.pathname} /></li>
+            <li><FooterLink name="Services" currentPath={location.pathname} /></li>
+            <li><FooterLink name="Donate" currentPath={location.pathname} /></li>
+            
           </ul>
         </ul>
 
@@ -74,7 +75,9 @@ const Footer = () => {
               padding: 0,
             }}
           >
-            <li><FooterLink name="Graduates" to="/graduates" /></li>
+            <li><FooterLink name="Graduates" to="/graduates" currentPath={location.pathname} /></li>
+            <li><FooterLink name="Volunteer" to="/volunteer" /></li>
+            <li><FooterLink name="Apply" to="/apply" /></li>
           </ul>
         </ul>
 
@@ -93,8 +96,8 @@ const Footer = () => {
               padding: 0,
             }}
           >
-            <li><FooterLink name="Companies" to="/companies" /></li>
-            <li><FooterLink name="Pricing" to="/pricing" /></li>
+            <li><FooterLink name="Companies" to="/companies" currentPath={location.pathname} /></li>
+            <li><FooterLink name="Pricing" to="/pricing" currentPath={location.pathname} /></li>
           </ul>
         </ul>
       </div>

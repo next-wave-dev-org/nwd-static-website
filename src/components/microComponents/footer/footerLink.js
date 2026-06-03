@@ -3,9 +3,12 @@ import { Link, useLocation } from "react-router-dom";
 export function FooterLink(props) {
   const location = useLocation();
 
-  const linkPath = "/" + props.name.toLowerCase();
+  const linkPath = props.to || "/" + props.name.toLowerCase();
 
-  const isActive = location.pathname === linkPath;
+  const currentPath = location.pathname.toLowerCase();
+  const currentHash = location.hash.replace("#", "").toLowerCase();
+
+  const isActive = currentPath === linkPath || currentHash === linkPath;
 
   return (
     <Link
