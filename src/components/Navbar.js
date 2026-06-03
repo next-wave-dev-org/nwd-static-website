@@ -57,6 +57,7 @@ const Navbar = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          gap: "1rem",
         }}
       >
         <Link to="/Home" onClick={closeMenus}>
@@ -66,6 +67,27 @@ const Navbar = () => {
             style={{ width: "4rem", height: "4rem" }}
           />
         </Link>
+
+        {/* Desktop Sign In Button */}
+        {!isMobile && (
+          <a
+            href="https://nwd-central-hub-prototype.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              backgroundColor: "#ffd54a",
+              color: "#004da8",
+              padding: "0.65rem 1.25rem",
+              borderRadius: "8px",
+              fontWeight: "700",
+              textDecoration: "none",
+              transition: "0.2s ease",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Sign In
+          </a>
+        )}
 
         {isMobile && (
           <button
@@ -210,10 +232,6 @@ const Navbar = () => {
                   onMouseLeave={() => {
                     if (!isMobile) setIsGraduateDropdownOpen(false);
                   }}
-                  // onClick={() => {
-                  //   if (isMobile)
-                  //     setIsGraduateDropdownOpen(!isGraduateDropdownOpen);
-                  // }}
                   style={{ position: "relative", cursor: "pointer" }}
                   aria-haspopup="true"
                   aria-expanded={isGraduateDropdownOpen}
@@ -258,6 +276,7 @@ const Navbar = () => {
                       ▸
                     </button>
                   </div>
+
                   {isGraduateDropdownOpen && (
                     <div
                       className="nav-dropdown-menu"
@@ -300,6 +319,32 @@ const Navbar = () => {
 
           <WhiteSpacing />
           <Item name="Donate" onClick={closeMenus} />
+
+          {/* Mobile Sign In Button */}
+          {isMobile && (
+            <>
+              <WhiteSpacing />
+
+              <a
+                href="https://nwd-central-hub-prototype.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMenus}
+                style={{
+                  backgroundColor: "#ffd54a",
+                  color: "#004da8",
+                  padding: "0.75rem 1.25rem",
+                  borderRadius: "8px",
+                  fontWeight: "700",
+                  textDecoration: "none",
+                  display: "inline-block",
+                  marginTop: "0.5rem",
+                }}
+              >
+                Sign In
+              </a>
+            </>
+          )}
         </div>
       )}
     </nav>
