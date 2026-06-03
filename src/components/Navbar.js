@@ -57,6 +57,7 @@ const Navbar = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          gap: "1rem",
         }}
       >
         <Link to="/Home" onClick={closeMenus}>
@@ -66,6 +67,27 @@ const Navbar = () => {
             style={{ width: "4rem", height: "4rem" }}
           />
         </Link>
+
+        {/* Desktop Sign In Button */}
+        {!isMobile && (
+          <a
+            href="https://nwd-central-hub-prototype.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              backgroundColor: "#ffd54a",
+              color: "#004da8",
+              padding: "0.65rem 1.25rem",
+              borderRadius: "8px",
+              fontWeight: "700",
+              textDecoration: "none",
+              transition: "0.2s ease",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Sign In
+          </a>
+        )}
 
         {isMobile && (
           <button
@@ -238,28 +260,104 @@ const Navbar = () => {
               width: "100%",
             }}
           >
-            Graduates
-          </Link>
+            <span
+              className={`nav-dropdown-toggle ${
+                location.pathname === "/graduates"
+                  ? "active-nav-link"
+                  : ""
+              }`}
+              onClick={() => {
+                setIsDropdownOpen(!isDropdownOpen);
+                setIsHireDropdownOpen(false);
+              }}
+              style={{ cursor: "pointer", color: "white" }}
+            >
+              Join Us
+            </span>
 
-          <button
-            type="button"
-            aria-label="Toggle graduates submenu"
-            onClick={(event) => {
-              event.preventDefault();
-              event.stopPropagation();
-              setIsGraduateDropdownOpen(!isGraduateDropdownOpen);
-            }}
-            style={{
-              background: "none",
-              border: "none",
-              color: "inherit",
-              cursor: "pointer",
-              fontSize: "1rem",
-            }}
-          >
-            ▸
-          </button>
-        </div>
+            {isDropdownOpen && (
+              <div className="nav-dropdown-menu">
+                <div
+                  className="nav-dropdown-item"
+                  onMouseEnter={() => {
+                    if (!isMobile) setIsGraduateDropdownOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    if (!isMobile) setIsGraduateDropdownOpen(false);
+                  }}
+                  style={{ position: "relative", cursor: "pointer" }}
+                  aria-haspopup="true"
+                  aria-expanded={isGraduateDropdownOpen}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      gap: "0.5rem",
+                    }}
+                  >
+                    <Link
+                      to="/graduates"
+                      onClick={closeMenus}
+                      style={{
+                        color: "inherit",
+                        textDecoration: "none",
+                        display: "block",
+                        width: "100%",
+                      }}
+                    >
+                      Graduates
+                    </Link>
+
+                    <button
+                      type="button"
+                      onClick={(event) => {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        setIsGraduateDropdownOpen(!isGraduateDropdownOpen);
+                      }}
+                      aria-label="Toggle graduates submenu"
+                      style={{
+                        background: "none",
+                        border: "none",
+                        color: "inherit",
+                        cursor: "pointer",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      ▸
+                    </button>
+                  </div>
+
+                  {isGraduateDropdownOpen && (
+                    <div
+                      className="nav-dropdown-menu"
+                      style={{
+                        position: isMobile ? "static" : "absolute",
+                        left: isMobile ? "0" : "100%",
+                        top: isMobile ? "0" : "0",
+                        marginLeft: isMobile ? "1rem" : "0",
+                      }}
+                    >
+                      <Link
+                        to="/apply"
+                        className="nav-dropdown-item"
+                        onClick={closeMenus}
+                      >
+                        Apply
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                <Link
+                  to="/volunteer"
+                  className="nav-dropdown-item"
+                  onClick={closeMenus}
+                >
+                  Volunteer
+                </Link>
 
         {isGraduateDropdownOpen && (
           <div
@@ -282,27 +380,36 @@ const Navbar = () => {
         )}
       </div>
 
-      <Link
-        to="/volunteer"
-        className="nav-dropdown-item"
-        onClick={closeMenus}
-      >
-        Volunteer
-      </Link>
+          <WhiteSpacing />
+          <Item name="Donate" onClick={closeMenus} />
 
-      <Link
-        to="/companies"
-        className="nav-dropdown-item"
-        onClick={closeMenus}
-      >
-        Companies
-      </Link>
-    </div>
-  )}
-</div>
-        <WhiteSpacing />
-        <Item name="Donate" onClick={closeMenus} />
-      </div>
+          {/* Mobile Sign In Button */}
+          {isMobile && (
+            <>
+              <WhiteSpacing />
+
+              <a
+                href="https://nwd-central-hub-prototype.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMenus}
+                style={{
+                  backgroundColor: "#ffd54a",
+                  color: "#004da8",
+                  padding: "0.75rem 1.25rem",
+                  borderRadius: "8px",
+                  fontWeight: "700",
+                  textDecoration: "none",
+                  display: "inline-block",
+                  marginTop: "0.5rem",
+                }}
+              >
+                Sign In
+              </a>
+            </>
+          )}
+        </div>
+      )}
     </nav>
   );
 };
