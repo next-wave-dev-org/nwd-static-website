@@ -13,10 +13,10 @@ const Footer = () => {
         flexDirection: "row",
         width: "100%",
         minHeight: "120px",
-        gap: "5rem",
+        gap: "3rem",
         backgroundColor: "#004da8",
         alignItems: "center",
-        justifyContent: "space-evenly",
+        justifyContent: "center",
         flexWrap: "wrap",
         padding: "1rem 2rem",
         boxSizing: "border-box",
@@ -28,9 +28,9 @@ const Footer = () => {
           display: "flex",
           flexDirection: "row",
           width: "auto",
-          gap: "5rem",
+          gap: "4rem",
           flexWrap: "wrap",
-          justifyContent: "flex-start",
+          justifyContent: "center",
           alignItems: "center",
         }}
       >
@@ -45,6 +45,8 @@ const Footer = () => {
               flexDirection: "row",
               gap: "1rem",
               flexWrap: "wrap",
+              justifyContent: "center",
+              padding: 0,
             }}
           >
             <li><FooterLink name="Home" /></li>
@@ -53,17 +55,9 @@ const Footer = () => {
             <li><FooterLink name="Developers" /></li>
             <li><FooterLink name="Portfolio" /></li>
             <li><FooterLink name="Services" /></li>
-            {/* Removed Pricing from here */}
             <li><FooterLink name="Donate" /></li>
           </ul>
         </ul>
-
-        {/* Contact */}
-        <ul style={footerList}>
-          <h4 style={footerCategory}>Contact</h4>
-          <Separator />
-          <li><FooterLink name="Contact" to="/contact" /></li>
-        </ul> 
 
         {/* Join Us */}
         <ul style={footerList}>
@@ -76,6 +70,8 @@ const Footer = () => {
               flexDirection: "row",
               gap: "1rem",
               flexWrap: "wrap",
+              justifyContent: "center",
+              padding: 0,
             }}
           >
             <li><FooterLink name="Graduates" to="/graduates" /></li>
@@ -93,6 +89,8 @@ const Footer = () => {
               flexDirection: "row",
               gap: "1rem",
               flexWrap: "wrap",
+              justifyContent: "center",
+              padding: 0,
             }}
           >
             <li><FooterLink name="Companies" to="/companies" /></li>
@@ -109,7 +107,7 @@ const Footer = () => {
           width: "auto",
           gap: "2rem",
           alignItems: "center",
-          justifyContent: "flex-end",
+          justifyContent: "center",
           flexWrap: "wrap",
         }}
       >
@@ -152,6 +150,8 @@ const footerList = {
   listStyleType: "none",
   fontWeight: 200,
   color: "white",
+  padding: 0,
+  margin: 0,
 };
 
 export default Footer;

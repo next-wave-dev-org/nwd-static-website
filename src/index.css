@@ -15,8 +15,8 @@ body {
 :root {
   --bg-color: white;
   --primary-blue: rgb(0, 77, 168);
-  --primary-green: rgb(149, 202, 89);
-  --secondary-green: rgb(223, 240, 216);
+  --primary-green: rgb(120, 190, 255);
+  --secondary-green: rgb(220, 240, 255);
 }
 
 * {
@@ -164,8 +164,8 @@ navbar
   background-color: var(--bg-color);
   background: linear-gradient(90deg,
       rgba(55, 55, 55, 0) 0%,
-      rgba(149, 202, 89, 0) 18%,
-      rgba(149, 202, 89, 1) 69%);
+      rgba(120, 190, 255, 0) 18%,
+      rgba(120, 190, 255, 1) 69%);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -340,8 +340,8 @@ navbar
   background: linear-gradient(
     90deg,
     rgba(55, 55, 55, 0) 0%,
-    rgba(149, 202, 89, 0) 18%,
-    rgba(149, 202, 89, 1) 69%
+    rgba(120, 190, 255, 0) 18%,
+    rgba(120, 190, 255, 1) 69%
   );
   display: flex;
   align-items: center;
@@ -398,8 +398,16 @@ navbar
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   color: var(--primary-blue);
+}
+.graduates-companies-section__text {
+  max-width: 56rem;
+  margin: 0 auto 3rem;
+  text-align: center;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #1f3d55;
 }
 .graduates-companies-section__tiles {
   display: flex;
@@ -1233,6 +1241,22 @@ h1, h2, h3 {
   .contact-div__p-title {
     font-size: 1.5rem;
   }
+}
+
+.gain-list {
+  list-style: none;
+  padding: 0;
+}
+
+.gain-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.icon {
+  font-size: 18px;
 }
 
 /* ===== SERVICES PAGE SPACING  ===== */
