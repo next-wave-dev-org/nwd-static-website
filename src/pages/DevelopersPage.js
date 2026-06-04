@@ -47,7 +47,12 @@ const DevelopersPage = () => {
 
       <Navbar />
 
-      <div className="developers-container">
+      <div 
+        className="developers-container"
+        style={{
+          backgroundColor: "rgb(220, 240, 255)",
+        }}
+      >
         <h1 className="developers-title">Our Developers</h1>
 
         <div className="developers-grid">

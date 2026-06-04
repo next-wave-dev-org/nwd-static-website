@@ -41,7 +41,12 @@ const ApplyPage = () => {
       </Helmet>
       <Navbar />
 
-      <div className="apply-page">
+      <div 
+        className="apply-page"
+        style={{
+          backgroundColor: "rgb(220, 240, 255)",
+        }}
+      >
         <h1>Graduate Application</h1>
 
         <p className="form-note">

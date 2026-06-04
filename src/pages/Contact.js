@@ -38,7 +38,13 @@ function Contact() {
         <meta name="author" content="Next Wave Dev" />
       </Helmet>
       <Navbar />
-      <div style={{ minHeight: "calc(100vh - 95px)" }}>
+      <div 
+        style={{ 
+          minHeight: "calc(100vh - 95px)",
+          backgroundColor: "rgb(220, 240, 255)",
+          paddingTop: "1rem",
+        }}
+      >
         <div
           style={{
             marginTop: "10vh",

@@ -38,8 +38,14 @@ function About() {
 
       <Navbar />
 
+      <div style={{ backgroundColor: "rgb(220, 240, 255)" }}>
+
       <main
-        style={{ padding: "2rem 3vw", maxWidth: "1200px", margin: "0 auto" }}
+        style={{ 
+          padding: "2rem 3vw", 
+          maxWidth: "1200px", 
+          margin: "0 auto",
+        }}
       >
         <h1
           style={{
@@ -181,7 +187,7 @@ function About() {
           height: "auto",
         }}
       />
-
+      </div>
       <Footer />
     </>
   );
@@ -190,7 +196,7 @@ function About() {
 const sectionStyle = {
   padding: "2rem",
   marginBottom: "2rem",
-  backgroundColor: "#f8f9fa",
+  backgroundColor: "rgb(220, 240, 255)",
   borderLeft: "6px solid #004da8",
   borderRadius: "12px",
 };
