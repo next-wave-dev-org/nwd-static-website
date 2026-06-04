@@ -123,9 +123,16 @@ const PricingPage = () => {
 
       <Navbar />
 
-      <div className="pricing-container">
+      <div 
+        className="pricing-container"
+        style={{
+          backgroundColor: "#eaf6ff",
+          minHeight: "100vh",
+          padding: "3rem 1rem",
+        }}
+      >
 
-        <section className="pricing-hero">
+        <section className="pricing-hero pricing-card-section">
           <h1>Simple, Transparent Pricing</h1>
 
           <p>
@@ -138,7 +145,7 @@ const PricingPage = () => {
           </p>
         </section>
 
-        <section className="pricing-packages">
+        <section className="pricing-packages pricing-card-section">
           <h2>Service Packages</h2>
 
           <div className="package-grid">
@@ -161,7 +168,7 @@ const PricingPage = () => {
           </div>
         </section>
 
-        <section className="pricing-calculator">
+        <section className="pricing-calculator pricing-card-section">
           <h2>
             Custom Quote Calculator
           </h2>
@@ -246,7 +253,7 @@ const PricingPage = () => {
           </div>
         </section>
 
-        <section className="pricing-why">
+        <section className="pricing-why pricing-card-section">
 
           <h2>
             Why Our Prices Are Lower
@@ -265,7 +272,7 @@ const PricingPage = () => {
 
         <section
           ref={contactFormRef}
-          className="pricing-contact-form"
+          className="pricing-contact-form pricing-card-section"
           style={{
             maxWidth: "1000px",
             margin: "50px auto",
