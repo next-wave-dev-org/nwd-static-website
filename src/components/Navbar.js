@@ -68,10 +68,8 @@ const Navbar = () => {
           />
         </Link>
 
-        {!isMobile &&(<ThemeToggle></ThemeToggle>)} 
+        {!isMobile &&(<ThemeToggle/>)} 
 
-        
-        
         {isMobile && (
           <button
             aria-label="Toggle navigation menu"
@@ -306,7 +304,7 @@ const Navbar = () => {
 
           <WhiteSpacing />
           <Item name="Donate" onClick={closeMenus} />    
-          {isMobile &&(<ThemeToggle></ThemeToggle>)}       
+          {isMobile &&(<ThemeToggle/>)}       
         </div>
       )}
       
