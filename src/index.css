@@ -15,8 +15,8 @@ body {
 :root {
   --bg-color: white;
   --primary-blue: rgb(0, 77, 168);
-  --primary-green: rgb(149, 202, 89);
-  --secondary-green: rgb(223, 240, 216);
+  --primary-green: rgb(120, 190, 255);
+  --secondary-green: rgb(220, 240, 255);
 }
 
 * {
@@ -164,8 +164,8 @@ navbar
   background-color: var(--bg-color);
   background: linear-gradient(90deg,
       rgba(55, 55, 55, 0) 0%,
-      rgba(149, 202, 89, 0) 18%,
-      rgba(149, 202, 89, 1) 69%);
+      rgba(120, 190, 255, 0) 18%,
+      rgba(120, 190, 255, 1) 69%);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -337,6 +337,7 @@ navbar
 .donation-div {
   min-height: 40vh;
   padding: 4rem 2rem;
+
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
     url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3");
@@ -344,6 +345,14 @@ navbar
   background-position: center;
   background-repeat: no-repeat;
   
+
+  background: linear-gradient(
+    90deg,
+    rgba(55, 55, 55, 0) 0%,
+    rgba(120, 190, 255, 0) 18%,
+    rgba(120, 190, 255, 1) 69%
+  );
+
   display: flex;
   align-items: center;
   justify-content: center;
