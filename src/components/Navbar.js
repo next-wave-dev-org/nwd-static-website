@@ -23,6 +23,8 @@ const Navbar = () => {
         setIsGraduateDropdownOpen(false);
     };
 
+
+
     useEffect(() => {
         const handleResize = () => {
             const mobile = window.innerWidth <= 768;
@@ -348,6 +350,7 @@ const Navbar = () => {
             </div>
         </nav>
     );
+
 };
 
 export default Navbar;
