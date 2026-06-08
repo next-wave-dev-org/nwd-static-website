@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8c7cd05b.css",
+    "main.js": "/static/js/main.bffca68f.js",
+    "static/media/Diego-Cano.webp": "/static/media/Diego-Cano.8b3dcce2cc67c02011d2.webp",
+    "static/media/licton_springs_home.png": "/static/media/licton_springs_home.a0695451994eef0cb012.png",
+    "static/media/nwd_home.png": "/static/media/nwd_home.f386f61b1825e200ffe4.png",
+    "static/media/next-wave-dev.png": "/static/media/next-wave-dev.6c1fd252beaf0bffa2b2.png",
+    "static/media/NWD_AI_generated_photo.png": "/static/media/NWD_AI_generated_photo.7ed63d95bf147899c45c.png",
+    "static/media/pelletier.png": "/static/media/pelletier.93c28dd282dc3bab963c.png",
+    "static/media/geekgirl_home.png": "/static/media/geekgirl_home.5eb301adcb07ffdc06ef.png",
+    "static/media/luwam-habtu.webp": "/static/media/luwam-habtu.a6ff048087142abbf3bb.webp",
+    "static/media/homepage.png": "/static/media/homepage.323eddf3475ff335fb6c.png",
+    "static/media/Taylor-Papke.webp": "/static/media/Taylor-Papke.7bc4e5d171a42cc907ee.webp",
+    "static/media/Khanh-Trinh-Nguyen.webp": "/static/media/Khanh-Trinh-Nguyen.1f57e749c2cdaa8dcdbc.webp",
+    "static/media/bradley-charles.webp": "/static/media/bradley-charles.14d061871ded0fa3fb62.webp",
+    "static/media/Azarias-ANeals.webp": "/static/media/Azarias-ANeals.3942f23b6d95bb5a5be7.webp",
+    "static/media/Beimnet-Tesfaye.webp": "/static/media/Beimnet-Tesfaye.dd96d3de2dd5bf12d381.webp",
+    "static/media/shiftapp_home.png": "/static/media/shiftapp_home.b4a039ba2cb8fcda5af5.png",
+    "static/media/John-Farnandez.webp": "/static/media/John-Farnandez.39b00f745322ffcf250b.webp",
+    "static/media/New_NWD_about_photo.png": "/static/media/New_NWD_about_photo.ac4f3bb43db98adb3df7.png",
+    "static/media/Arts_and_Sciences.jpg": "/static/media/Arts_and_Sciences.a177ac3c9f2543301cb4.jpg",
+    "static/media/James-Mathew.webp": "/static/media/James-Mathew.08ebf422445ae57b7188.webp",
+    "static/media/NextWaveDev_FINAL_SMALL.jpg": "/static/media/NextWaveDev_FINAL_SMALL.4cba80d79710d88aae80.jpg",
+    "static/media/Nha-Pham.webp": "/static/media/Nha-Pham.f61da9ebe03cded35e69.webp",
+    "static/media/home_page_light.png": "/static/media/home_page_light.8af4d7b3da2f920a3476.png",
+    "static/media/home_page_not_signed_in.png": "/static/media/home_page_not_signed_in.eb76630144fe06477854.png",
+    "static/media/Katrina-Hill.webp": "/static/media/Katrina-Hill.9edc2e247d58c5dc5213.webp",
+    "static/media/Zulbadam-Batdelger.webp": "/static/media/Zulbadam-Batdelger.1bfe90b3b97f86c43142.webp",
+    "static/media/linkedin_logo.png": "/static/media/linkedin_logo.f249b38224ca41a0b909.png",
+    "static/media/anon-profile-image.webp": "/static/media/anon-profile-image.52d42aa81b9d8b9a6fb2.webp",
+    "index.html": "/index.html",
+    "main.8c7cd05b.css.map": "/static/css/main.8c7cd05b.css.map",
+    "main.bffca68f.js.map": "/static/js/main.bffca68f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8c7cd05b.css",
+    "static/js/main.bffca68f.js"
+  ]
+}
