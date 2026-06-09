@@ -175,7 +175,7 @@ const PortfolioPage = () => {
                 marginBottom: "1rem",
               }}
             >
-              Portfolio Page
+              Our Portfolio
             </h1>
             <div
               style={{
