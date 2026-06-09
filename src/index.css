@@ -19,6 +19,17 @@ body {
   --secondary-green: rgb(223, 240, 216);
 }
 
+.dark {
+  --background: #363636;
+  --text: white;
+}
+
+html.dark body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -100,7 +111,10 @@ navbar
   max-width: 2200px;
   margin: 0 auto;
 }
-
+.dark .contact-div{
+  background: var(--background);
+  color: var(--text)
+}
 .homepage-content {
   display: flex;
   flex-direction: column;

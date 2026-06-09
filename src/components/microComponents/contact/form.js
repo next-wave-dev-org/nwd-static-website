@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "../../../components/Button";
 
 export function FormComponent() {
   const navigate = useNavigate();
@@ -157,10 +158,15 @@ export function FormComponent() {
             </div>
           </div>
         </div>
+        
+        {/* <Button type="submit" disabled={submitting || isOverLimit}>
+          {submitting ? "Submitting..." : "Submit"}
+        </Button> */}
 
         <button type="submit" disabled={submitting || isOverLimit}>
           {submitting ? "Submitting..." : "Submit"}
         </button>
+
         {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       </form>
