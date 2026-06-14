@@ -17,17 +17,24 @@ export function FormComponent() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const name = e.target["entry.2005620554"].value.trim();
-    const email = e.target["emailAddress"].value.trim();
-    const msg = message.trim();   
+    const form = new FormData(e.target);
 
-    if (!name || !email || !msg) {
-      alert("Fields cannot be empty.");
+    const name = form.get("entry.2005620554")?.trim();
+    const email = form.get("emailAddress")?.trim();
+    const msg = message.trim();
+
+    if (!email) {
+      setErrorMessage("Email is required");
+      return;
+    }
+    
+    if (!name || !msg) {
+      setErrorMessage("Fields cannot be empty.");
       return;
     }
 
     if (!email.includes("@")) {
-      alert("Invalid email.");
+      setErrorMessage("Invalid email.");
       return;
     }
 

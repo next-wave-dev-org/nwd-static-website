@@ -33,13 +33,14 @@ describe("Contact Page Integration Tests", () => {
       </MemoryRouter>
     );
 
-    // Select inputs by name attribute (stable and safe)
     const nameInput = document.querySelector(
       'input[name="entry.2005620554"]'
     );
+
     const emailInput = document.querySelector(
       'input[name="emailAddress"]'
     );
+
     const messageInput = document.querySelector(
       'textarea[name="entry.839337160"]'
     );
@@ -53,6 +54,37 @@ describe("Contact Page Integration Tests", () => {
     );
 
     expect(global.fetch).toHaveBeenCalled();
-    expect(mockedNavigate).toHaveBeenCalledWith("/contact-thank-you");
+    expect(mockedNavigate).toHaveBeenCalledWith(
+      "/contact-thank-you"
+    );
+  });
+
+  test("Validation: shows error when email is empty and does not submit", async () => {
+    render(
+      <MemoryRouter>
+        <Contact />
+      </MemoryRouter>
+    );
+
+    const nameInput = document.querySelector(
+      'input[name="entry.2005620554"]'
+    );
+
+    const messageInput = document.querySelector(
+      'textarea[name="entry.839337160"]'
+    );
+
+    await userEvent.type(nameInput, "Beimnet");
+    await userEvent.type(messageInput, "Hello test message");
+
+    await userEvent.click(
+      screen.getByRole("button", { name: /submit/i })
+    );
+
+    expect(global.fetch).not.toHaveBeenCalled();
+
+    expect(
+      screen.getByText(/email is required/i)
+    ).toBeInTheDocument();
   });
 });
