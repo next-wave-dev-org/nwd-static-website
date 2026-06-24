@@ -12,7 +12,7 @@ function GraduatesPage() {
 
       <div
         style={{
-          backgroundColor: "#eef7fb",
+          backgroundColor: "#bbd7fa",
           minHeight: "100vh",
           padding: "60px 0",
         }}
@@ -208,31 +208,33 @@ function GraduatesPage() {
 }
 
 const gainItemStyle = {
-  display: "flex",
-  alignItems: "center",
-  gap: "10px",
-  marginBottom: "15px",
+display: "flex",
+alignItems: "center",
+gap: "10px",
+marginBottom: "15px",
 };
 
 const iconStyle = {
-  fontSize: "1.2rem",
-  lineHeight: "1.5",
+fontSize: "1.2rem",
+lineHeight: "1.5",
 };
 
 const sectionCardStyle = {
-  backgroundColor: "#fff",
-  borderRadius: "16px",
-  padding: "32px",
-  marginBottom: "32px",
-  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+backgroundColor: "#d7e8ff",
+borderRadius: "20px",
+padding: "2.25rem",
+marginBottom: "2rem",
+boxShadow: "0 8px 24px rgba(0, 0, 0, 0.08)",
+border: "1px solid rgba(255,255,255,0.45)",
+backdropFilter: "blur(6px)",
 };
 
 const featureCardStyle = {
-  backgroundColor: "#fff",
-  border: "1px solid #d9e4ec",
-  borderRadius: "12px",
-  padding: "24px",
-  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+backgroundColor: "#e8f2ff",
+borderRadius: "20px",
+padding: "2rem",
+boxShadow: "0 8px 24px rgba(0, 0, 0, 0.08)",
+border: "1px solid rgba(255,255,255,0.45)",
 };
 
 export default GraduatesPage;
