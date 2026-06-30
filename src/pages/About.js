@@ -79,7 +79,7 @@ function About() {
         <section style={sectionStyle}>
           <h2 style={sectionHeadingStyle}>
             <GraduationCap {...iconProps} />
-            For Graduates
+            What We Do For Graduates
           </h2>
           <p
             style={{
@@ -116,7 +116,7 @@ function About() {
         <section style={sectionStyle}>
           <h2 style={sectionHeadingStyle}>
             <Building2 {...iconProps} />
-            For Companies
+            How We Work With Companies
           </h2>
           <p
             style={{
