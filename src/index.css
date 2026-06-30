@@ -109,9 +109,10 @@ navbar
 /* ======= hero ======= */
 .hero__wrapper {
   height: 70vh;
-  background-image: url("images/NWD_AI_generated_photo.png");
+  background-image: url("images/NWD_AI_generated_photo.webp");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero {
@@ -251,8 +252,10 @@ navbar
 /* ======= developer preview ======= */
 .developer-prev {
   height: 55vh;
-  background-image: url("images/Arts_and_Sciences.jpg");
+  background-image: url("images/Arts_and_Sciences.webp");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   box-shadow: inset 0 0 0 1000px rgba(0, 77, 168, 0.85);
   display: flex;
   flex-direction: row;
@@ -1243,6 +1246,17 @@ h1, h2, h3 {
   }
 }
 
+/* ======================================================
+   SERVICES PAGE REDESIGN
+====================================================== */
+
+/* Full-page wrapper */
+.services-page-wrapper {
+  background-color: #bbd7fa;
+  width: 100%;
+  padding: 2rem 0;
+}
+
 .gain-list {
   list-style: none;
   padding: 0;
@@ -1259,60 +1273,194 @@ h1, h2, h3 {
   font-size: 18px;
 }
 
-/* ===== SERVICES PAGE SPACING  ===== */
+/* ===== SERVICES PAGE SPACING ===== */
 
+/* Main services container */
 .services-page {
-  padding-top: 2.5rem; 
+  background-color: #cfe3ff;
+  border-radius: 24px;
+  padding: 3rem 2rem 5rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
 }
 
-/* Title */
-.services-page h1 {
-  margin-bottom: 1.75rem;
-  line-height: 1.2;
+/* Hero Section */
+.services-page__hero {
+  text-align: center;
+  margin-bottom: 5rem;
 }
 
-/* Section headers */
-.services-page h2 {
-  margin-top: 2.5rem;
-  margin-bottom: 0.9rem;
+.services-page__hero h1 {
+  font-size: 3rem;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  color: var(--primary-black);
 }
 
-/* Card titles */
-.services-page h3 {
-  margin-bottom: 0.6rem;
+.services-page__hero p {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.15rem;
+  line-height: 1.8;
 }
 
-/* Paragraphs */
-.services-page p {
-  margin-bottom: 1.25rem;
+/* Shared Section Spacing */
+.services-page__section {
+  margin-bottom: 4rem;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 2rem;
+}
+
+/* Universal Card Styling */
+.services-card,
+.services-feature-card,
+.services-cta-card {
+  background-color: #e8f2ff;
+  border-radius: 20px;
+  padding: 2.25rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+/* Service Cards */
+.services-card h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-blue);
+}
+
+.services-card ul {
+  padding-left: 1.2rem;
+  line-height: 1.9;
+}
+
+/* Feature Cards */
+.services-feature-card h2,
+.services-cta-card h2 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-blue);
+}
+
+/* Tech Stack Table */
+.services-tech-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.services-tech-table tr:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.services-tech-table td {
+  padding: 1rem 0.5rem;
+  vertical-align: top;
   line-height: 1.7;
+}
+
+.services-tech-table__title {
+  font-weight: 700;
+  width: 220px;
+  white-space: nowrap;
+}
+
+.services-tech-icon {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* CTA Card */
+.services-cta-card {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.services-cta-card p {
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.8;
 }
 
 /* Lists */
 .services-page ul {
-  margin-top: 0.4rem;
-  margin-bottom: 1.25rem;
-  padding-left: 1.2rem;
+  line-height: 1.9;
 }
 
 .services-page li {
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.65rem;
 }
 
-/* Tables */
-.services-page table {
-  margin-top: 1.25rem;
-  margin-bottom: 2.5rem;
+/* ======================================================
+   SERVICES MOBILE RESPONSIVE
+====================================================== */
+
+@media (max-width: 800px) {
+  .services-page-wrapper {
+    padding: 1rem 0;
+  }
+
+  .services-page {
+    padding: 2rem 1rem 4rem;
+    border-radius: 18px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .services-page__hero {
+    margin-bottom: 3rem;
+  }
+
+  .services-page__hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .services-page__hero p {
+    font-size: 1rem;
+  }
+
+  .services-page__section {
+    margin-bottom: 2.5rem;
+  }
+
+  .services-card,
+  .services-feature-card,
+  .services-cta-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .services-tech-table td {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 0;
+  }
+
+  .services-tech-table__title {
+    width: 100%;
+    padding-bottom: 0;
+  }
 }
 
-/* Buttons */
-.services-page button {
-  margin-top: 1.25rem;
-}
+@media (max-width: 480px) {
+  .services-page__hero h1 {
+    font-size: 1.9rem;
+  }
 
-/* Grid spacing refinement */
-.services-page .services-grid {
-  gap: 25px;
+  .services-page__hero p {
+    line-height: 1.7;
+  }
+
+  .services-card,
+  .services-feature-card,
+  .services-cta-card {
+    padding: 1.25rem;
+  }
 }
 
 /* Mobile tuning to match other pages */
