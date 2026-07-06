@@ -17,9 +17,15 @@ export function FormComponent() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const name = e.target["entry.2005620554"].value.trim();
-    const email = e.target["emailAddress"].value.trim();
-    const msg = message.trim();   
+    const form = e.currentTarget;
+
+    const name =
+      form.elements["entry.2005620554"]?.value.trim() || "";
+
+    const email =
+      form.elements["emailAddress"]?.value.trim() || "";
+
+    const msg = message.trim();
 
     if (!name || !email || !msg) {
       alert("Fields cannot be empty.");
@@ -35,11 +41,12 @@ export function FormComponent() {
       alert("Message must be under 500 characters.");
       return;
     }
+
     setSuccessMessage("");
     setErrorMessage("");
     setSubmitting(true);
 
-    const formData = new FormData(e.target);
+    const formData = new FormData(form);
 
     const googleFormUrl =
       "https://docs.google.com/forms/d/e/1FAIpQLSc6TcZviCuDGUOS0Nm4geU5rDJnDxlghpY4VMyPbFmZRU3-mg/formResponse";
@@ -56,7 +63,6 @@ export function FormComponent() {
           send_to: "AW-CONVERSION_ID/CONVERSION_LABEL",
         });
       }
-
 
       setMessage("");
       navigate("/contact-thank-you");
@@ -142,7 +148,6 @@ export function FormComponent() {
                 : "#666",
             }}
           >
-
             <div>
               {isOverLimit
                 ? "Character limit reached"
@@ -161,8 +166,18 @@ export function FormComponent() {
         <button type="submit" disabled={submitting || isOverLimit}>
           {submitting ? "Submitting..." : "Submit"}
         </button>
-        {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
-        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+
+        {successMessage && (
+          <p style={{ color: "green" }}>
+            {successMessage}
+          </p>
+        )}
+
+        {errorMessage && (
+          <p style={{ color: "red" }}>
+            {errorMessage}
+          </p>
+        )}
       </form>
     </>
   );
