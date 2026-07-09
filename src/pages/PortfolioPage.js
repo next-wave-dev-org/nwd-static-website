@@ -8,6 +8,7 @@ import {faGithub} from '@fortawesome/free-brands-svg-icons'
 import page1 from '../images/projects/pelletier/pelletier.png'
 import page2 from '../images/projects/nsc_portfolio/homepage.png'
 import nwdScreenshot from '../images/projects/nwd/nwd_home.png';
+import nwdCentralHubScreenshot from '../images/projects/nwd/nwd-central-hub.webp';
 import page3 from '../images/projects/belindas_closet/home_page_light.png'
 import page4 from '../images/projects/nsc_events/home_page_not_signed_in.png'
 import shiftAppScreenshot from '../images/projects/shiftapp/shiftapp_home.png';
@@ -36,6 +37,23 @@ const projects = [
     ],
     description: "Official website for Next Wave Dev, built by students in the Bachelor's program at North Seattle College.",
     screenshot: nwdScreenshot
+  },
+  {
+    title: 'NWD Central Hub Prototype',
+    company: 'Next Wave Dev',
+    status: 'In Development',
+    socialMedia: [
+      {
+        icon: faGithub,
+        link: 'https://github.com/next-wave-dev-org/nwd-central-hub-prototype'
+      },
+      {
+        icon: faLink,
+        link: 'https://nwd-central-hub-prototype.vercel.app'
+      },
+    ],
+    description: "Unified platform designed by Next Wave Dev to streamline how contractors, clients, and administrators collaborate on real technical projects.",
+    screenshot: nwdCentralHubScreenshot
   },
 //{
   //  title: 'Construction and Renovation Site',
