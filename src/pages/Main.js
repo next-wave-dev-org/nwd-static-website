@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-import nwdScreenshot from "../images/next-wave-dev.png";
+import nwdScreenshot from "../images/next-wave-dev.webp";
 import DeveloperThumbnail from "../components/DeveloperThumbnail";
 import developerData from "../developers.json";
 import { Helmet } from "react-helmet";
@@ -82,6 +82,8 @@ function Main() {
               className="portfolio-div__examples__photo"
               alt="Next Wave Dev website"
               src={nwdScreenshot}
+              loading="lazy"
+              decoding="async"
             />
             <p className="portfolio-div__examples_description">
               Next Wave Dev
@@ -94,6 +96,7 @@ function Main() {
           <div className="developer-prev__gallery__grid">
             {developerDataSlice.map((developer, index) => (
               <DeveloperThumbnail
+                key={developer.name}
                 fileName={developer.photo}
                 developerName={developer.name}
               />

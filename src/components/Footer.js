@@ -6,6 +6,7 @@ import LINKEDIN_ICON from "../images/linkedin_logo.png";
 import CandidSeal from "./CandidSeal";
 
 const Footer = () => {
+  
   return (
     <div
       style={{
@@ -13,10 +14,10 @@ const Footer = () => {
         flexDirection: "row",
         width: "100%",
         minHeight: "120px",
-        gap: "5rem",
+        gap: "3rem",
         backgroundColor: "#004da8",
         alignItems: "center",
-        justifyContent: "space-evenly",
+        justifyContent: "center",
         flexWrap: "wrap",
         padding: "1rem 2rem",
         boxSizing: "border-box",
@@ -28,9 +29,9 @@ const Footer = () => {
           display: "flex",
           flexDirection: "row",
           width: "auto",
-          gap: "5rem",
+          gap: "4rem",
           flexWrap: "wrap",
-          justifyContent: "flex-start",
+          justifyContent: "center",
           alignItems: "center",
         }}
       >
@@ -45,25 +46,19 @@ const Footer = () => {
               flexDirection: "row",
               gap: "1rem",
               flexWrap: "wrap",
+              justifyContent: "center",
+              padding: 0,
             }}
           >
-            <li><FooterLink name="Home" /></li>
-            <li><FooterLink name="Contact" /></li>
-            <li><FooterLink name="About" /></li>
-            <li><FooterLink name="Developers" /></li>
-            <li><FooterLink name="Portfolio" /></li>
-            <li><FooterLink name="Services" /></li>
-            {/* Removed Pricing from here */}
-            <li><FooterLink name="Donate" /></li>
+            <li><FooterLink name="Contact" currentPath={location.pathname} /></li>
+            <li><FooterLink name="About" currentPath={location.pathname} /></li>
+            <li><FooterLink name="Developers" currentPath={location.pathname} /></li>
+            <li><FooterLink name="Portfolio" currentPath={location.pathname} /></li>
+            <li><FooterLink name="Services" currentPath={location.pathname} /></li>
+            <li><FooterLink name="Donate" currentPath={location.pathname} /></li>
+            
           </ul>
         </ul>
-
-        {/* Contact */}
-        <ul style={footerList}>
-          <h4 style={footerCategory}>Contact</h4>
-          <Separator />
-          <li><FooterLink name="Contact" to="/contact" /></li>
-        </ul> 
 
         {/* Join Us */}
         <ul style={footerList}>
@@ -76,9 +71,13 @@ const Footer = () => {
               flexDirection: "row",
               gap: "1rem",
               flexWrap: "wrap",
+              justifyContent: "center",
+              padding: 0,
             }}
           >
-            <li><FooterLink name="Graduates" to="/graduates" /></li>
+            <li><FooterLink name="Graduates" to="/graduates" currentPath={location.pathname} /></li>
+            <li><FooterLink name="Volunteer" to="/volunteer" /></li>
+            <li><FooterLink name="Apply" to="/apply" /></li>
           </ul>
         </ul>
 
@@ -93,10 +92,12 @@ const Footer = () => {
               flexDirection: "row",
               gap: "1rem",
               flexWrap: "wrap",
+              justifyContent: "center",
+              padding: 0,
             }}
           >
-            <li><FooterLink name="Companies" to="/companies" /></li>
-            <li><FooterLink name="Pricing" to="/pricing" /></li>
+            <li><FooterLink name="Companies" to="/companies" currentPath={location.pathname} /></li>
+            <li><FooterLink name="Pricing" to="/pricing" currentPath={location.pathname} /></li>
           </ul>
         </ul>
       </div>
@@ -107,36 +108,65 @@ const Footer = () => {
           display: "flex",
           flexDirection: "row",
           width: "auto",
-          gap: "2rem",
           alignItems: "center",
-          justifyContent: "flex-end",
-          flexWrap: "wrap",
+          justifyContent: "center",
         }}
       >
-        {/* LinkedIn Icon */}
-        <a
-          href="https://www.linkedin.com/company/next-wave-dev/"
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* Footer Brand / Social Row */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            flexWrap: "nowrap",
+            gap: "12px",
+          }}
         >
-          <img
-            src={LINKEDIN_ICON}
-            alt="LinkedIn Icon"
-            style={{ width: "64px", height: "64px" }}
-          />
-        </a>
+          {/* LinkedIn Icon */}
+          <a
+            href="https://www.linkedin.com/company/next-wave-dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={LINKEDIN_ICON}
+              alt="LinkedIn Icon"
+              style={{
+                width: "64px",
+                height: "64px",
+                objectFit: "contain",
+              }}
+            />
+          </a>
 
-        {/* Dynamic Candid Seal */}
-        <CandidSeal />
+          {/* Dynamic Candid Seal */}
+          <div
+            style={{
+              width: "64px",
+              height: "64px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              overflow: "hidden",
+            }}
+          >
+            <CandidSeal />
+          </div>
 
-        {/* Logo */}
-        <Link to={"/"}>
-          <img
-            src={NEXTWAVEDEV}
-            alt="Next Wave Dev logo"
-            style={{ width: "6rem", height: "auto" }}
-          />
-        </Link>
+          {/* Logo */}
+          <Link to={"/"}>
+            <img
+              src={NEXTWAVEDEV}
+              alt="Next Wave Dev logo"
+              style={{
+                width: "64px",
+                height: "64px",
+                objectFit: "contain",
+              }}
+            />
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -152,6 +182,8 @@ const footerList = {
   listStyleType: "none",
   fontWeight: 200,
   color: "white",
+  padding: 0,
+  margin: 0,
 };
 
 export default Footer;

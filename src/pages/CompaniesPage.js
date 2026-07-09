@@ -51,7 +51,7 @@ function CompaniesPage() {
 
                         {/* Hero Section */}
                         <h1 style={{ marginBottom: "25px" }}>
-                            For Companies – Secure Your Future Talent Pipeline
+                            Secure Your Future Talent Pipeline
                         </h1>
 
                         <p style={{ marginBottom: "20px", lineHeight: "1.7" }}>
