@@ -66,7 +66,7 @@ const DevelopersPage = () => {
           <h1
             style={{
               textAlign: "center",
-              color: "#004da8",
+              color: "#000000",
               fontSize: "3rem",
               marginBottom: "3rem",
             }}

@@ -58,7 +58,7 @@ function About() {
             fontSize: "3rem",
             fontWeight: "700",
             marginBottom: "2rem",
-            color: "#004da8",
+            color: "#000000",
           }}
         >
           About Next Wave Dev
