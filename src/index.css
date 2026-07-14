@@ -1502,10 +1502,7 @@ h1, h2, h3 {
   object-position: center;
   border-radius: 12px;
 }
-.developer-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,.12);
-}
+
 /* TEXT */
 .developer-card__name {
   margin-top: 10px;
