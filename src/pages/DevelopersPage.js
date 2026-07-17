@@ -47,13 +47,38 @@ const DevelopersPage = () => {
 
       <Navbar />
 
-      <div className="developers-container">
-        <h1 className="developers-title">Our Developers</h1>
+      <div
+        style={{
+          backgroundColor: "#bbd7fa",
+          minHeight: "calc(100vh - 95px)",
+          padding: "2rem 0",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            backgroundColor: "#cfe3ff",
+            borderRadius: "24px",
+            padding: "3rem",
+          }}
+        >
+          <h1
+            style={{
+              textAlign: "center",
+              color: "#000000",
+              fontSize: "3rem",
+              marginBottom: "3rem",
+            }}
+          >
+            Our Developers
+          </h1>
 
-        <div className="developers-grid">
-          {developers.map((developer, index) => (
-            <Developer key={index} {...developer} />
-          ))}
+          <div className="developers-grid">
+            {developers.map((developer, index) => (
+              <Developer key={index} {...developer} />
+            ))}
+          </div>
         </div>
       </div>
 

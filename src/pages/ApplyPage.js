@@ -41,28 +41,68 @@ const ApplyPage = () => {
       </Helmet>
       <Navbar />
 
-      <div className="apply-page">
-        <h1>Graduate Application</h1>
+<div
+  style={{
+    backgroundColor: "#bbd7fa",
+    minHeight: "100vh",
+    padding: "2rem 1.5rem 4rem",
+  }}
+>
+  <div
+    style={{
+      maxWidth: "1200px",
+      margin: "0 auto",
+      backgroundColor: "#cfe3ff",
+      borderRadius: "24px",
+      padding: "3rem",
+      boxShadow: "0 8px 24px rgba(0,0,0,.08)",
+    }}
+  >
+    <h1
+      style={{
+        textAlign: "center",
+        color: "#000000",
+        fontSize: "3rem",
+        marginBottom: "1rem",
+      }}
+    >
+      Graduate Application
+    </h1>
 
-        <p className="form-note">
-          Note: You must be logged into a Google account to upload your resume.
-        </p>
+    <p
+      style={{
+        textAlign: "center",
+        color: "#374151",
+        marginBottom: "2rem",
+        fontSize: "1.05rem",
+      }}
+    >
+      Note: You must be logged into a Google account to upload your resume.
+    </p>
 
-        <div className="iframe-container">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSctT3LN53mdK31PISovBb_al5MaDndIOZJt1MzhPERyJ56hEA/viewform?embedded=true"
-            frameBorder="0"
-            marginHeight="0"
-            marginWidth="0"
-            width="100%"
-            height="1800"
-            title="Graduate Application Form"
-            onLoad={() => window.scrollTo(0, 0)}
-          >
-            Loading…
-          </iframe>
-        </div>
-      </div>
+    <div
+      style={{
+        backgroundColor: "white",
+        borderRadius: "16px",
+        overflow: "hidden",
+        boxShadow: "0 6px 18px rgba(0,0,0,.08)",
+      }}
+    >
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSctT3LN53mdK31PISovBb_al5MaDndIOZJt1MzhPERyJ56hEA/viewform?embedded=true"
+        frameBorder="0"
+        marginHeight="0"
+        marginWidth="0"
+        width="100%"
+        height="1800"
+        title="Graduate Application Form"
+        onLoad={() => window.scrollTo(0, 0)}
+      >
+        Loading…
+      </iframe>
+    </div>
+  </div>
+</div>
 
       <Footer />
     </>
