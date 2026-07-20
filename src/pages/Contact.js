@@ -38,16 +38,24 @@ function Contact() {
         <meta name="author" content="Next Wave Dev" />
       </Helmet>
       <Navbar />
-      <div style={{ minHeight: "calc(100vh - 95px)" }}>
-        <div
+      <div
           style={{
-            marginTop: "10vh",
-            marginBottom: "10vh",
-            marginLeft: "2rem",
-            marginRight: "2rem",
-            height: "100%",
+            minHeight: "calc(100vh - 95px)",
+            backgroundColor: "#bbd7fa",
+            paddingTop: "2rem",
+            paddingBottom: "2rem",
           }}
         >
+          <div
+            style={{
+              backgroundColor: "#cfe3ff",
+              borderRadius: "24px",
+              maxWidth: "1200px",
+              margin: "2rem auto",
+              padding: "3rem",
+              minHeight: "600px",
+            }}
+          >
           <div
             style={{
               ...flexParent,
@@ -72,7 +80,11 @@ function Contact() {
                 height="400"
                 allowFullScreen=""
                 loading="lazy"
-                style={{ border: "none" }}
+                style={{
+                  border: "none",
+                  borderRadius: "16px",
+                  boxShadow: "0 8px 24px rgba(0,0,0,.08)",
+                }}
                 referrerPolicy="no-referrer-when-downgrade"
                 id={"contact-page-map"}
               ></iframe>
@@ -88,14 +100,17 @@ function Contact() {
 export const flexChild = {
   position: "relative",
   width: "100%",
+  flex: "1 1 450px",
   minHeight: "1px",
   paddingRight: "15px",
   paddingLeft: "15px",
 };
-
 export const flexParent = {
   display: "flex",
   flexWrap: "wrap",
+  gap: "2rem",
+  alignItems: "stretch",
+  justifyContent: "space-between",
 };
 
 export default Contact;

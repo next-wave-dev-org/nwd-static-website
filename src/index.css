@@ -1479,17 +1479,19 @@ h1, h2, h3 {
 .developers-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
+  gap: 30px;
+  padding: 0px;
 }
 
 /* CARD */
 .developer-card {
-  background: white;
-  border-radius: 10px;
-  padding: 16px;
+  background: #e8f2ff;
+  border-radius: 20px;
+  padding: 24px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  border: 1px solid rgba(255,255,255,.45);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
 /* IMAGE */
