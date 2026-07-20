@@ -1,6 +1,6 @@
 // src/pages/PortfolioPage.js
 
-import React from "react";
+import React, {useState} from "react";
 import { Helmet } from "react-helmet";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -254,17 +254,27 @@ const PortfolioPage = () => {
 };
 
 function PortfolioCard({ project }) {
+  const [hovered, setHovered] = useState(false);
+
   return (
     <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       style={{
         backgroundColor: "#fff",
         borderRadius: "22px",
         overflow: "hidden",
-        boxShadow: "0 10px 25px rgba(0,0,0,0.12)",
         display: "flex",
         flexDirection: "column",
-        transition: "all .25s ease",
         height: "100%",
+
+        transition: "all 0.25s ease",
+
+        transform: hovered ? "translateY(-8px)" : "translateY(0)",
+
+        boxShadow: hovered
+          ? "0 18px 40px rgba(0,0,0,0.18)"
+          : "0 10px 25px rgba(0,0,0,0.12)",
       }}
     >
       <img
@@ -274,6 +284,9 @@ function PortfolioCard({ project }) {
           width: "100%",
           height: "220px",
           objectFit: "cover",
+
+          transition: "transform .3s ease",
+          transform: hovered ? "scale(1.04)" : "scale(1)",
         }}
       />
 
@@ -290,6 +303,7 @@ function PortfolioCard({ project }) {
             margin: 0,
             fontSize: "1.65rem",
             fontWeight: 700,
+            color: "#111827",
           }}
         >
           {project.title}
@@ -312,6 +326,9 @@ function PortfolioCard({ project }) {
               borderRadius: "999px",
               fontWeight: 600,
               fontSize: ".9rem",
+
+              transform: hovered ? "scale(1.05)" : "scale(1)",
+              transition: "all .25s ease",
             }}
           >
             {project.company}
@@ -319,12 +336,15 @@ function PortfolioCard({ project }) {
 
           <span
             style={{
-              backgroundColor: "#d8f5dc",
-              color: "#2d7a34",
+              backgroundColor: "#e9f3ff",
+              color: "#2563eb",
               padding: "6px 14px",
               borderRadius: "999px",
               fontWeight: 600,
               fontSize: ".9rem",
+
+              transform: hovered ? "scale(1.05)" : "scale(1)",
+              transition: "all .25s ease",
             }}
           >
             {project.status}
@@ -333,10 +353,12 @@ function PortfolioCard({ project }) {
 
         <p
           style={{
-            color: "#555",
+            color: hovered ? "#374151" : "#555",
             lineHeight: 1.7,
             fontSize: "1rem",
             flexGrow: 1,
+
+            transition: "color .25s ease",
           }}
         >
           {project.description}
@@ -350,15 +372,24 @@ function PortfolioCard({ project }) {
           }}
         >
           {project.socialMedia.map((item, index) => (
-            <a
+           <a
               key={index}
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "#2563eb";
+                e.currentTarget.style.transform = "scale(1.15)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "#1f2937";
+                e.currentTarget.style.transform = "scale(1)";
+              }}
               style={{
                 color: "#1f2937",
                 textDecoration: "none",
                 fontSize: "1.8rem",
+                transition: "all .25s ease",
               }}
             >
               <FontAwesomeIcon icon={item.icon} />
