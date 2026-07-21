@@ -38,15 +38,27 @@ function About() {
 
       <Navbar />
 
-      <main
-        style={{ padding: "2rem 3vw", maxWidth: "1200px", margin: "0 auto" }}
-      >
+      <div
+          style={{
+            backgroundColor: "#bbd7fa",
+            padding: "2rem 0",
+          }}
+        >
+          <main
+            style={{
+              maxWidth: "1200px",
+              margin: "0 auto",
+              padding: "3rem",
+              backgroundColor: "#cfe3ff",
+              borderRadius: "24px",
+            }}
+          >
         <h1
           style={{
             fontSize: "3rem",
             fontWeight: "700",
             marginBottom: "2rem",
-            color: "#004da8",
+            color: "#000000",
           }}
         >
           About Next Wave Dev
@@ -61,7 +73,7 @@ function About() {
             style={{
               fontSize: "1rem",
               marginBottom: "1rem",
-              color: "gray-600",
+              color: "#1f2937",
             }}
           >
             At Next Wave Dev, our core purpose is to solve the classic conundrum
@@ -170,7 +182,7 @@ function About() {
           </p>
         </section>
       </main>
-
+      </div>
       <img
         src={NWD_about_photo}
         alt="Picture of NWD"
@@ -190,9 +202,10 @@ function About() {
 const sectionStyle = {
   padding: "2rem",
   marginBottom: "2rem",
-  backgroundColor: "#f8f9fa",
+  backgroundColor: "#e8f2ff",
   borderLeft: "6px solid #004da8",
-  borderRadius: "12px",
+  borderRadius: "20px",
+  boxShadow: "0 8px 24px rgba(0,0,0,.08)",
 };
 const sectionHeadingStyle = {
   fontSize: "2rem",
