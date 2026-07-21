@@ -39,7 +39,7 @@ const projects = [
       },
     ],
   },
-
+/*
   {
     title: "Construction and Renovation Site",
     company: "Pelletier Construction",
@@ -145,6 +145,7 @@ const projects = [
       },
     ],
   },
+  */
 ];
 const PortfolioPage = () => {
   return (
