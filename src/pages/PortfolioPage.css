@@ -1,0 +1,61 @@
+.portfolio-title {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.dark .portfolio-title {
+    color: white;
+}
+
+.portfolio-subtitle {
+    font-size: 28px;
+    margin-bottom: 4rem;
+    color: #858585;
+}
+
+.dark .portfolio-subtitle {
+    color: #d1d5db;
+}
+
+.portfolio-project-light {
+    background: white;
+}
+
+.portfolio-project-green {
+    background: #dff0d8;
+}
+
+.dark .portfolio-project-light {
+    background: #111827;
+}
+
+.dark .portfolio-project-green {
+    background: #1f2937;
+}
+
+.portfolio-company {
+    color: #858585;
+    margin-bottom: .75rem;
+}
+
+.dark .portfolio-company {
+    color: #d1d5db;
+}
+
+.portfolio-link {
+    text-decoration: none;
+    color: #282828;
+}
+
+.dark .portfolio-link {
+    color: white;
+}
+
+.portfolio-link:hover {
+    color: #004da8;
+}
+
+.dark .portfolio-link:hover {
+    color: #60a5fa;
+}

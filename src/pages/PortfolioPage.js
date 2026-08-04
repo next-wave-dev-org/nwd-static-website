@@ -16,7 +16,7 @@ import lictonSpringsScreenshot from '../images/projects/licton_springs/licton_sp
 import {faLink} from "@fortawesome/free-solid-svg-icons";
 import Footer from "../components/Footer";
 import { pageMetadata, BASE_URL } from "../utils/metadataConfig";
-
+import "./PortfolioPage.css";
 const metadata = pageMetadata.portfolio;
 
 const projects = [
@@ -37,49 +37,49 @@ const projects = [
     description: "Official website for Next Wave Dev, built by students in the Bachelor's program at North Seattle College.",
     screenshot: nwdScreenshot
   },
-//{
-  //  title: 'Construction and Renovation Site',
-  //  company: 'Pelletier Construction',
-  //  status: 'Complete',
-  //  socialMedia: [
-  //    {
-  //      icon: faGithub,
-  //      link: 'https://github.com/PelletierConstructionGroup/PelletierConstructionGroup.github.io'
-  //    },
-  //    {
-  //      icon: faLink,
-  //      link: 'https://pelletierconstructiongroup.github.io/'
-  //    },
-  //  ],
-  //  description: "Pelletier Construction Group is a company based in the Seattle area specializing in home renovation. In 2023, Pelletier Construction had their website redesigned by bachelor's program students of the North Seattle College.",
-  //  screenshot: page1
-  //},
-  //{
-  //  title: 'Belinda\'s Closet',
-  //  company: 'North Seattle College',
-  //  status: 'In Development',
-  //  socialMedia: [
-  //    {
-  //      icon: faGithub,
-  //      link: 'https://github.com/SeattleColleges/belindas-closet-nextjs'
-  //    },
-  //  ],
-  //  description: "Belinda's closet is a store at North Seattle College which allows students to borrow and donate clothes for graduation. With the student built website, students will be able to see which clothes are available online.",
-  //  screenshot: page3
-  //},
-  //{
-  //  title: 'North Seattle College Events',
-  //  company: 'North Seattle College',
-  //  status: 'In Development',
-  //  socialMedia: [
-  //    {
-  //      icon: faGithub,
-  //      link: 'https://github.com/SeattleColleges/nsc-events-nextjs'
-  //    },
-  //  ],
-  //  description: "North Seattle College Events (NSC Events) is a student built website that allows all students to view upcoming events occurring at the college, and for administrators to add and manage event announcements through the website.",
-  //  screenshot: page4
-  //},
+{
+   title: 'Construction and Renovation Site',
+   company: 'Pelletier Construction',
+   status: 'Complete',
+   socialMedia: [
+     {
+       icon: faGithub,
+       link: 'https://github.com/PelletierConstructionGroup/PelletierConstructionGroup.github.io'
+     },
+     {
+       icon: faLink,
+       link: 'https://pelletierconstructiongroup.github.io/'
+     },
+   ],
+   description: "Pelletier Construction Group is a company based in the Seattle area specializing in home renovation. In 2023, Pelletier Construction had their website redesigned by bachelor's program students of the North Seattle College.",
+   screenshot: page1
+  },
+  {
+   title: 'Belinda\'s Closet',
+   company: 'North Seattle College',
+   status: 'In Development',
+   socialMedia: [
+     {
+       icon: faGithub,
+       link: 'https://github.com/SeattleColleges/belindas-closet-nextjs'
+     },
+   ],
+   description: "Belinda's closet is a store at North Seattle College which allows students to borrow and donate clothes for graduation. With the student built website, students will be able to see which clothes are available online.",
+   screenshot: page3
+  },
+  {
+   title: 'North Seattle College Events',
+   company: 'North Seattle College',
+   status: 'In Development',
+   socialMedia: [
+     {
+       icon: faGithub,
+       link: 'https://github.com/SeattleColleges/nsc-events-nextjs'
+     },
+   ],
+   description: "North Seattle College Events (NSC Events) is a student built website that allows all students to view upcoming events occurring at the college, and for administrators to add and manage event announcements through the website.",
+   screenshot: page4
+  },
   //{
   //  title: 'Shift App',
   //  company: 'North Seattle College',
@@ -168,22 +168,10 @@ const PortfolioPage = () => {
           style={{ marginTop: "10vh", marginBottom: "10vh", height: "100%" }}
         >
           <div style={{ marginLeft: "2rem", marginRight: "2rem" }}>
-            <h1
-              style={{
-                fontSize: "48px",
-                fontWeight: "600",
-                marginBottom: "1rem",
-              }}
-            >
+            <h1 className="portfolio-title">
               Portfolio Page
             </h1>
-            <div
-              style={{
-                fontSize: "28px",
-                marginBottom: "4rem",
-                color: "#858585",
-              }}
-            >
+            <div className="portfolio-subtitle">
               Since 2025, we have built a portfolio of products made by graduates...
             </div>
           </div>
@@ -218,7 +206,11 @@ function PortfolioComponent(props) {
         paddingBottom: "8rem",
         flexDirection: !props.bgSwitch ? "row-reverse" : "",
       }}
-      className={`${props.bgSwitch ? "ps-sm-2" : "ps-sm-5"} xs-center`}
+      className={`portfolio-project ${
+        props.bgSwitch
+          ? "portfolio-project-light"
+          : "portfolio-project-green"
+      }`}
     >
       <div style={flexChild} className={"col-sm-6"}>
         <img
@@ -234,7 +226,7 @@ function PortfolioComponent(props) {
         <h2 style={{ fontSize: "28px", marginBottom: ".3rem" }}>
           {props.title}
         </h2>
-        <div style={{ color: "#858585", marginBottom: ".75rem" }}>
+        <div className="portfolio-company">
           {props.company} — {props.status}
         </div>
         <div>
@@ -242,7 +234,7 @@ function PortfolioComponent(props) {
             <a
               href={obj.link}
               key={index}
-              style={{ textDecoration: "none", color: "#282828" }}
+              className="portfolio-link"
               target="_blank"
               rel="noopener noreferrer"
               aria-label={
