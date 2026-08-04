@@ -1,0 +1,25 @@
+.dark .developer-card {
+    background: #1f2937;
+    color: white;
+}
+
+.dark .developer-card__name {
+    color: white;
+}
+
+.dark .developer-card__degree,
+.dark .developer-card__role {
+    color: #d1d5db;
+}
+
+.dark .developer-card__links a {
+    color: #60a5fa;
+}
+
+.dark .developer-card__links a:hover {
+    color: #93c5fd;
+}
+
+.dark .developers-title {
+    color: white;
+}

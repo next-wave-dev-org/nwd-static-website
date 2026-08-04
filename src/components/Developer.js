@@ -2,6 +2,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import "./Developer.css";
 
 const Developer = ({ name, photo, degree, website, github, linkedin, role }) => {
   return (

@@ -1,0 +1,48 @@
+.info-section {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background: #f8f9fa;
+    border-left: 6px solid #004da8;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.dark .info-section {
+    background: #1f2937;
+    border-left-color: #60a5fa;
+}
+
+.info-section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.dark .info-section-title {
+    color: white;
+}
+
+.info-section-content {
+    font-size: 1rem;
+}
+
+.dark .info-section-content {
+    color: white;
+}
+
+.info-section-content p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.info-section ul {
+    margin-left: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.25rem;
+}
+
+.info-section li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}

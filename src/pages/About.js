@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
 import NWD_about_photo from "../images/about/New_NWD_about_photo.png";
 import { pageMetadata, BASE_URL } from "../utils/metadataConfig";
+import InfoSection from "../components/InfoSection";
 
 function About() {
   const metadata = pageMetadata.about;
@@ -42,11 +43,8 @@ function About() {
           About Next Wave Dev
         </h1>
 
-        <section style={sectionStyle}>
-          <h2 style={{ fontSize: "2rem", fontWeight: "700", marginBottom: "1rem", color: "#1f2937" }}>
-            Our Mission
-          </h2>
-          <p style={{ fontSize: "1rem", marginBottom: "1rem", color: "gray-600" }}>
+        <InfoSection title="Our Mission">
+          <p>
             At Next Wave Dev, our core purpose is to solve the classic conundrum of the tech world:
             Graduates need experience to get a job, but they need a job to get experience.
             <br />
@@ -55,48 +53,40 @@ function About() {
             professional experience, mentorship, and portfolio-building opportunities they need to
             successfully launch their careers in the technology field.
           </p>
-        </section>
+        </InfoSection>
 
-        <section style={sectionStyle}>
-          <h2 style={{ fontSize: "2rem", fontWeight: "700", marginBottom: "1rem", color: "#1f2937" }}>
-            For Graduates
-          </h2>
-          <p style={{ fontSize: "1rem", marginBottom: "0.5rem", color: "gray-600" }}>
+        <InfoSection title="For Graduates">
+          <p>
             You’ve put in the work, earned the degree, and mastered the theory. Now, it’s time to build your professional portfolio.
           </p>
-          <ul style={{ paddingBottom: "1rem", marginLeft: "1rem" }}>
+          <ul>
             <li><strong>Gain Real Experience:</strong> Work on tangible, in-production company projects, not simulated ones.</li>
             <li><strong>Build Your Portfolio:</strong> Accumulate impressive case studies and references that hiring managers look for.</li>
             <li><strong>Access Mentorship:</strong> Learn best practices, industry workflows, and professional communication from experienced developers and project managers.</li>
             <li><strong>Increase Employability:</strong> Graduates from our program are significantly more prepared and marketable for entry-level and junior roles.</li>
           </ul>
-        </section>
+        </InfoSection>
 
-        <section style={sectionStyle}>
-          <h2 style={{ fontSize: "2rem", fontWeight: "700", marginBottom: "1rem", color: "#1f2937" }}>
-            For Companies
-          </h2>
-          <p style={{ fontSize: "1rem", marginBottom: "0.5rem", color: "gray-600" }}>
+
+        <InfoSection title="For Companies">
+          <p>
             Tap into a pool of fresh, enthusiastic, and academically current talent ready to contribute immediately.
           </p>
-          <ul style={{ paddingBottom: "1rem", marginLeft: "1rem" }}>
+          <ul>
             <li><strong>Cost-Effective Support:</strong> Get project assistance from bright, motivated talent while they gain essential experience.</li>
             <li><strong>Pipeline for Hiring:</strong> Identify and evaluate potential full-time employees directly through their project performance.</li>
             <li><strong>Fresh Perspectives:</strong> Benefit from the latest methodologies and innovative thinking brought by recent graduates.</li>
             <li><strong>Impactful Contribution:</strong> Invest in the future of the tech industry by providing invaluable opportunities to the next generation of developers.</li>
           </ul>
-        </section>
+        </InfoSection>
 
-        <section style={sectionStyle}>
-          <h2 style={{ fontSize: "2rem", fontWeight: "700", marginBottom: "1rem", color: "#1f2937" }}>
-            Our Vision
-          </h2>
-          <p style={{ fontSize: "1rem", marginBottom: "1rem", color: "gray-600" }}>
+        <InfoSection title="Our Vision">
+          <p>
             We envision a tech ecosystem where the path from graduation to a successful,
             fulfilling career is clear, efficient, and accessible to everyone. Next Wave Dev is more
             than just a platform; we are the dedicated accelerator for the next generation of tech leaders.
           </p>
-        </section>
+        </InfoSection>
       </main>
 
       <img
@@ -114,13 +104,5 @@ function About() {
     </>
   );
 }
-
-const sectionStyle = {
-  padding: "2rem",
-  marginBottom: "2rem",
-  backgroundColor: "#f8f9fa",
-  borderLeft: "6px solid #004da8",
-  borderRadius: "12px",
-};
 
 export default About;
