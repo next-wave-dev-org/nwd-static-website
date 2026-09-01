@@ -17,6 +17,7 @@ import {faLink} from "@fortawesome/free-solid-svg-icons";
 import Footer from "../components/Footer";
 import { pageMetadata, BASE_URL } from "../utils/metadataConfig";
 import "./PortfolioPage.css";
+import PortfolioComponent from "../components/PortfolioComponent";
 const metadata = pageMetadata.portfolio;
 
 const projects = [
@@ -37,49 +38,49 @@ const projects = [
     description: "Official website for Next Wave Dev, built by students in the Bachelor's program at North Seattle College.",
     screenshot: nwdScreenshot
   },
-{
-   title: 'Construction and Renovation Site',
-   company: 'Pelletier Construction',
-   status: 'Complete',
-   socialMedia: [
-     {
-       icon: faGithub,
-       link: 'https://github.com/PelletierConstructionGroup/PelletierConstructionGroup.github.io'
-     },
-     {
-       icon: faLink,
-       link: 'https://pelletierconstructiongroup.github.io/'
-     },
-   ],
-   description: "Pelletier Construction Group is a company based in the Seattle area specializing in home renovation. In 2023, Pelletier Construction had their website redesigned by bachelor's program students of the North Seattle College.",
-   screenshot: page1
-  },
-  {
-   title: 'Belinda\'s Closet',
-   company: 'North Seattle College',
-   status: 'In Development',
-   socialMedia: [
-     {
-       icon: faGithub,
-       link: 'https://github.com/SeattleColleges/belindas-closet-nextjs'
-     },
-   ],
-   description: "Belinda's closet is a store at North Seattle College which allows students to borrow and donate clothes for graduation. With the student built website, students will be able to see which clothes are available online.",
-   screenshot: page3
-  },
-  {
-   title: 'North Seattle College Events',
-   company: 'North Seattle College',
-   status: 'In Development',
-   socialMedia: [
-     {
-       icon: faGithub,
-       link: 'https://github.com/SeattleColleges/nsc-events-nextjs'
-     },
-   ],
-   description: "North Seattle College Events (NSC Events) is a student built website that allows all students to view upcoming events occurring at the college, and for administrators to add and manage event announcements through the website.",
-   screenshot: page4
-  },
+// {
+//    title: 'Construction and Renovation Site',
+//    company: 'Pelletier Construction',
+//    status: 'Complete',
+//    socialMedia: [
+//      {
+//        icon: faGithub,
+//        link: 'https://github.com/PelletierConstructionGroup/PelletierConstructionGroup.github.io'
+//      },
+//      {
+//        icon: faLink,
+//        link: 'https://pelletierconstructiongroup.github.io/'
+//      },
+//    ],
+//    description: "Pelletier Construction Group is a company based in the Seattle area specializing in home renovation. In 2023, Pelletier Construction had their website redesigned by bachelor's program students of the North Seattle College.",
+//    screenshot: page1
+//   },
+//   {
+//    title: 'Belinda\'s Closet',
+//    company: 'North Seattle College',
+//    status: 'In Development',
+//    socialMedia: [
+//      {
+//        icon: faGithub,
+//        link: 'https://github.com/SeattleColleges/belindas-closet-nextjs'
+//      },
+//    ],
+//    description: "Belinda's closet is a store at North Seattle College which allows students to borrow and donate clothes for graduation. With the student built website, students will be able to see which clothes are available online.",
+//    screenshot: page3
+//   },
+//   {
+//    title: 'North Seattle College Events',
+//    company: 'North Seattle College',
+//    status: 'In Development',
+//    socialMedia: [
+//      {
+//        icon: faGithub,
+//        link: 'https://github.com/SeattleColleges/nsc-events-nextjs'
+//      },
+//    ],
+//    description: "North Seattle College Events (NSC Events) is a student built website that allows all students to view upcoming events occurring at the college, and for administrators to add and manage event announcements through the website.",
+//    screenshot: page4
+//   },
   //{
   //  title: 'Shift App',
   //  company: 'North Seattle College',
@@ -178,15 +179,14 @@ const PortfolioPage = () => {
 
           {projects.map((obj, index) => (
             <PortfolioComponent
-              key={obj.index}
+              key={index}
               company={obj.company}
               status={obj.status}
               screenshot={obj.screenshot}
               description={obj.description}
               title={obj.title}
               socialMedia={obj.socialMedia}
-              bgSwitch={index % 2 === 0}
-              index={index}
+              reverse={index % 2 !== 0}
             />
           ))}
           <Footer />
@@ -196,87 +196,87 @@ const PortfolioPage = () => {
   );
 };
 
-function PortfolioComponent(props) {
-  return (
-    <div
-      style={{
-        ...flexParent,
-        backgroundColor: props.bgSwitch ? "#fff" : "#dff0d8",
-        paddingTop: props.index ? "8rem" : "",
-        paddingBottom: "8rem",
-        flexDirection: !props.bgSwitch ? "row-reverse" : "",
-      }}
-      className={`portfolio-project ${
-        props.bgSwitch
-          ? "portfolio-project-light"
-          : "portfolio-project-green"
-      }`}
-    >
-      <div style={flexChild} className={"col-sm-6"}>
-        <img
-          src={props.screenshot}
-          style={{ width: "100%" }}
-          className={"shadow-sm"}
-        />
-      </div>
-      <div
-        style={{ ...flexChild, marginTop: "2rem" }}
-        className={"col-sm-6 flex-xs-center"}
-      >
-        <h2 style={{ fontSize: "28px", marginBottom: ".3rem" }}>
-          {props.title}
-        </h2>
-        <div className="portfolio-company">
-          {props.company} — {props.status}
-        </div>
-        <div>
-          {props.socialMedia.map((obj, index) => (
-            <a
-              href={obj.link}
-              key={index}
-              className="portfolio-link"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={
-                obj.icon === faGithub
-                ? "GitHub repository"
-                : obj.icon === faLink
-                ? "Project website"
-                : "External link"
-              }
-              title={
-                obj.icon === faGithub
-                ? "GitHub repository"
-                : obj.icon === faLink
-                ? "Project website"
-                : "External link"
-              }
+// function PortfolioComponent(props) {
+//   return (
+//     <div
+//       style={{
+//         ...flexParent,
+//         backgroundColor: props.bgSwitch ? "#fff" : "#dff0d8",
+//         paddingTop: props.index ? "8rem" : "",
+//         paddingBottom: "8rem",
+//         flexDirection: !props.bgSwitch ? "row-reverse" : "",
+//       }}
+//       className={`portfolio-project ${
+//         props.bgSwitch
+//           ? "portfolio-project-light"
+//           : "portfolio-project-green"
+//       }`}
+//     >
+//       <div style={flexChild} className={"col-sm-6"}>
+//         <img
+//           src={props.screenshot}
+//           style={{ width: "100%" }}
+//           className={"shadow-sm"}
+//         />
+//       </div>
+//       <div
+//         style={{ ...flexChild, marginTop: "2rem" }}
+//         className={"col-sm-6 flex-xs-center"}
+//       >
+//         <h2 style={{ fontSize: "28px", marginBottom: ".3rem" }}>
+//           {props.title}
+//         </h2>
+//         <div className="portfolio-company">
+//           {props.company} — {props.status}
+//         </div>
+//         <div>
+//           {props.socialMedia.map((obj, index) => (
+//             <a
+//               href={obj.link}
+//               key={index}
+//               className="portfolio-link"
+//               target="_blank"
+//               rel="noopener noreferrer"
+//               aria-label={
+//                 obj.icon === faGithub
+//                 ? "GitHub repository"
+//                 : obj.icon === faLink
+//                 ? "Project website"
+//                 : "External link"
+//               }
+//               title={
+//                 obj.icon === faGithub
+//                 ? "GitHub repository"
+//                 : obj.icon === faLink
+//                 ? "Project website"
+//                 : "External link"
+//               }
 
-            >
-              <FontAwesomeIcon
-                icon={obj.icon}
-                style={{ fontSize: "40px", marginRight: "1rem" }}
-              />
-            </a>
-          ))}
-        </div>
-        <div style={{ marginTop: "2.1rem", fontSize: "24px", width: "75%" }}>
-          {props.description}
-        </div>
-      </div>
-    </div>
-  );
-}
+//             >
+//               <FontAwesomeIcon
+//                 icon={obj.icon}
+//                 style={{ fontSize: "40px", marginRight: "1rem" }}
+//               />
+//             </a>
+//           ))}
+//         </div>
+//         <div style={{ marginTop: "2.1rem", fontSize: "24px", width: "75%" }}>
+//           {props.description}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 
-const styles = {
-  container: {
-    padding: "32px",
-    backgroundColor: "#f9f9f9",
-  },
-  header: {
-    fontSize: "2rem",
-    marginBottom: "24px",
-  },
-};
+// const styles = {
+//   container: {
+//     padding: "32px",
+//     backgroundColor: "#f9f9f9",
+//   },
+//   header: {
+//     fontSize: "2rem",
+//     marginBottom: "24px",
+//   },
+// };
 
 export default PortfolioPage;

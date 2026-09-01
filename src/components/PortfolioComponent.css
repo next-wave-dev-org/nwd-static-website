@@ -1,0 +1,74 @@
+.portfolio-tile {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 8rem 5vw;
+  background: #fff;
+}
+
+.portfolio-tile.reverse {
+  flex-direction: row-reverse;
+  background: #dff0d8;
+}
+
+.portfolio-tile-image {
+  flex: 1;
+}
+
+.portfolio-tile-image img {
+  width: 100%;
+  display: block;
+}
+
+.portfolio-tile-content {
+  flex: 1;
+}
+
+.portfolio-tile-content h2 {
+  font-size: 28px;
+  margin-bottom: 0.3rem;
+}
+
+.portfolio-tile-company {
+  color: #858585;
+  margin-bottom: 0.75rem;
+}
+
+.portfolio-tile-links a {
+  color: #282828;
+  text-decoration: none;
+  margin-right: 1rem;
+  font-size: 40px;
+}
+
+.portfolio-tile-content p {
+  margin-top: 2.1rem;
+  font-size: 24px;
+  width: 75%;
+}
+
+/* Dark mode */
+.dark .portfolio-tile {
+  background: #111827;
+}
+
+.dark .portfolio-tile.reverse {
+  background: #1f2937;
+}
+
+.dark .portfolio-tile-content h2,
+.dark .portfolio-tile-content p {
+  color: white;
+}
+
+.dark .portfolio-tile-company {
+  color: #d1d5db;
+}
+
+.dark .portfolio-tile-links a {
+  color: white;
+}
+
+.dark .portfolio-tile-links a:hover {
+  color: #60a5fa;
+}
