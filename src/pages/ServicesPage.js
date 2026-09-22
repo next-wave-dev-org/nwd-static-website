@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Helmet } from "react-helmet";
 import Navbar from "../components/Navbar";
@@ -11,8 +12,9 @@ import {
   FaBrain,
   FaCloud,
   FaMobileAlt,
-  FaRocket
+  FaRocket,
 } from "react-icons/fa";
+import "./ServicesPage.css";
 
 function ServicesPage() {
   const metadata = pageMetadata.services;
@@ -21,157 +23,274 @@ function ServicesPage() {
     <>
       <Navbar />
 
-      <div className="section-container services-page">
+      <main className="services-page">
         <Helmet>
           <title>{metadata.title}</title>
           <meta name="description" content={metadata.description} />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="canonical" href={`${BASE_URL}/#${metadata.pageUrl}`} />
+          <link
+            rel="canonical"
+            href={`${BASE_URL}/#${metadata.pageUrl}`}
+          />
 
           <meta property="og:type" content={metadata.type} />
           <meta property="og:title" content={metadata.title} />
-          <meta property="og:description" content={metadata.description} />
-          <meta property="og:image" content={`${BASE_URL}/og-logo.png`} />
-          <meta property="og:image:alt" content="Next Wave Dev Services" />
-          <meta property="og:url" content={`${BASE_URL}/#${metadata.pageUrl}`} />
+          <meta
+            property="og:description"
+            content={metadata.description}
+          />
+          <meta
+            property="og:image"
+            content={`${BASE_URL}/og-logo.png`}
+          />
+          <meta
+            property="og:image:alt"
+            content="Next Wave Dev Services"
+          />
+          <meta
+            property="og:url"
+            content={`${BASE_URL}/#${metadata.pageUrl}`}
+          />
           <meta property="og:site_name" content="Next Wave Dev" />
 
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content={metadata.title} />
-          <meta name="twitter:description" content={metadata.description} />
-          <meta name="twitter:image" content={`${BASE_URL}/og-logo.png`} />
+          <meta
+            name="twitter:card"
+            content="summary_large_image"
+          />
+          <meta
+            name="twitter:title"
+            content={metadata.title}
+          />
+          <meta
+            name="twitter:description"
+            content={metadata.description}
+          />
+          <meta
+            name="twitter:image"
+            content={`${BASE_URL}/og-logo.png`}
+          />
 
-          <meta name="keywords" content="services, development, web design, mobile apps, AI integration" />
+          <meta
+            name="keywords"
+            content="services, development, web design, mobile apps, AI integration"
+          />
           <meta name="author" content="Next Wave Dev" />
         </Helmet>
 
-        <h1>Empowering the Next Wave of Digital Innovation</h1>
-        <p style={{ marginBottom: "20px" }}>
-          From vision to deployment, our developers build scalable,
-          high-performance solutions your business deserves.
-        </p>
+        <div className="services-container">
+          <header className="services-header">
+            <h1>Empowering the Next Wave of Digital Innovation</h1>
 
-        <Button to="/contact" variant="primary">
-          Let’s Build Together
-        </Button>
+            <p>
+              From vision to deployment, our developers build scalable,
+              high-performance solutions your business deserves.
+            </p>
 
-        <h2>Our Services</h2>
+            <Button to="/contact" variant="primary">
+              Let’s Build Together
+            </Button>
+          </header>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: "30px",
-            marginTop: "30px",
-            marginBottom: "60px"
-          }}
-        >
-          <div style={cardStyle}>
-            <h3>Development & Engineering</h3>
-            <ul>
-              <li><strong>Custom Web Development:</strong> High-performance, SEO-optimized websites and landing pages built to convert.</li>
-              <li><strong>Full-Stack Web Applications:</strong> Complex SaaS platforms, dashboards, and portals using modern reactive frameworks.</li>
-              <li><strong>Mobile App Development:</strong> Cross-platform iOS & Android applications with a seamless native feel.</li>
-              <li><strong>API Development & Integration:</strong> Custom APIs and third-party integrations like Stripe, Salesforce, and HubSpot.</li>
+          <section className="services-section">
+            <h2>Our Services</h2>
+
+            <div className="services-grid">
+              <article className="service-card">
+                <h3>Development &amp; Engineering</h3>
+
+                <ul>
+                  <li>
+                    <strong>Custom Web Development:</strong> High-performance,
+                    SEO-optimized websites and landing pages built to convert.
+                  </li>
+
+                  <li>
+                    <strong>Full-Stack Web Applications:</strong> Complex SaaS
+                    platforms, dashboards, and portals using modern reactive
+                    frameworks.
+                  </li>
+
+                  <li>
+                    <strong>Mobile App Development:</strong> Cross-platform
+                    iOS &amp; Android applications with a seamless native feel.
+                  </li>
+
+                  <li>
+                    <strong>API Development &amp; Integration:</strong> Custom
+                    APIs and third-party integrations like Stripe, Salesforce,
+                    and HubSpot.
+                  </li>
+                </ul>
+              </article>
+
+              <article className="service-card">
+                <h3>Modernization &amp; Optimization</h3>
+
+                <ul>
+                  <li>
+                    <strong>Legacy Rebuilds:</strong> Migrating outdated
+                    systems to modern tech stacks without losing data or
+                    uptime.
+                  </li>
+
+                  <li>
+                    <strong>Performance Tuning &amp; Debugging:</strong> Expert
+                    error resolution, security patching, and performance
+                    optimization.
+                  </li>
+
+                  <li>
+                    <strong>UI/UX Design &amp; Prototyping:</strong>{" "}
+                    Professional Figma designs and interactive prototypes
+                    before development begins.
+                  </li>
+                </ul>
+              </article>
+
+              <article className="service-card">
+                <h3>Intelligence &amp; Infrastructure</h3>
+
+                <ul>
+                  <li>
+                    <strong>AI &amp; Machine Learning Integration:</strong>{" "}
+                    GPT-4, Claude, custom chatbots, and automated workflows.
+                  </li>
+
+                  <li>
+                    <strong>Cloud &amp; DevOps:</strong> CI/CD pipelines,
+                    infrastructure management, and 99.9% uptime deployment.
+                  </li>
+
+                  <li>
+                    <strong>QA &amp; Automated Testing:</strong> Robust
+                    Cypress and Playwright testing suites for reliability.
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section className="services-section">
+            <h2>The Next Wave Tech Stack</h2>
+
+            <div className="tech-table-wrapper">
+              <table className="services-tech-table">
+                <tbody>
+                  <tr>
+                    <td>
+                      <FaLaptopCode className="tech-icon" />
+                      Frontend
+                    </td>
+                    <td>
+                      React, Next.js, Astro, HTML5, CSS3, Tailwind CSS,
+                      TypeScript
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <FaServer className="tech-icon" />
+                      Backend
+                    </td>
+                    <td>
+                      Node.js, NestJS, Python (FastAPI/Flask), Java
+                      (Spring Boot)
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <FaMobileAlt className="tech-icon" />
+                      Mobile
+                    </td>
+                    <td>
+                      React Native, Flutter, Expo
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <FaDatabase className="tech-icon" />
+                      Database
+                    </td>
+                    <td>
+                      PostgreSQL, MongoDB, Supabase, Redis, MySQL
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <FaBrain className="tech-icon" />
+                      Data &amp; AI
+                    </td>
+                    <td>
+                      Pandas, Jupyter Lab, NumPy, OpenAI API, LangChain
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <FaCloud className="tech-icon" />
+                      Cloud / DevOps
+                    </td>
+                    <td>
+                      AWS, Azure, Google Cloud, Terraform, Docker, Kubernetes
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <FaRocket className="tech-icon" />
+                      Deployment
+                    </td>
+                    <td>
+                      Netlify, Vercel, Railway, GitHub Actions
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section className="services-section">
+            <h2>Why Hire Next Wave Dev?</h2>
+
+            <ul className="why-hire-list">
+              <li>
+                <strong>Built for Scale:</strong> We architect solutions that
+                grow with your user base.
+              </li>
+
+              <li>
+                <strong>Clean Code Standards:</strong> Secure, accessible,
+                and well-documented code following WCAG best practices.
+              </li>
+
+              <li>
+                <strong>Agile &amp; Adaptive:</strong> Rapid sprints with
+                transparent updates as your project evolves.
+              </li>
             </ul>
-          </div>
+          </section>
 
-          <div style={cardStyle}>
-            <h3>Modernization & Optimization</h3>
-            <ul>
-              <li><strong>Legacy Rebuilds:</strong> Migrating outdated systems to modern tech stacks without losing data or uptime.</li>
-              <li><strong>Performance Tuning & Debugging:</strong> Expert error resolution, security patching, and performance optimization.</li>
-              <li><strong>UI/UX Design & Prototyping:</strong> Professional Figma designs and interactive prototypes before development begins.</li>
-            </ul>
-          </div>
+          <section className="services-cta">
+            <h2>Ready to Build the Future?</h2>
 
-          <div style={cardStyle}>
-            <h3>Intelligence & Infrastructure</h3>
-            <ul>
-              <li><strong>AI & Machine Learning Integration:</strong> GPT-4, Claude, custom chatbots, and automated workflows.</li>
-              <li><strong>Cloud & DevOps:</strong> CI/CD pipelines, infrastructure management, and 99.9% uptime deployment.</li>
-              <li><strong>QA & Automated Testing:</strong> Robust Cypress and Playwright testing suites for reliability.</li>
-            </ul>
-          </div>
+            <p>
+              Whether you have a fully scoped project or just a rough idea on
+              a napkin, our developers are ready to jump in.
+            </p>
+
+            <Button to="/contact" variant="primary">
+              Contact Us
+            </Button>
+          </section>
         </div>
-
-        <h2>The Next Wave Tech Stack</h2>
-
-        <table style={{ width: "100%", borderCollapse: "collapse", marginBottom: "60px" }}>
-          <tbody>
-            <tr>
-              <td style={tdTitle}><FaLaptopCode style={iconStyle} /> Frontend</td>
-              <td style={tdContent}>React, Next.js, Astro, HTML5, CSS3, Tailwind CSS, TypeScript</td>
-            </tr>
-            <tr>
-              <td style={tdTitle}><FaServer style={iconStyle} /> Backend</td>
-              <td style={tdContent}>Node.js, NestJS, Python (FastAPI/Flask), Java (Spring Boot)</td>
-            </tr>
-            <tr>
-              <td style={tdTitle}><FaMobileAlt style={iconStyle} /> Mobile</td>
-              <td style={tdContent}>React Native, Flutter, Expo</td>
-            </tr>
-            <tr>
-              <td style={tdTitle}><FaDatabase style={iconStyle} /> Database</td>
-              <td style={tdContent}>PostgreSQL, MongoDB, Supabase, Redis, MySQL</td>
-            </tr>
-            <tr>
-              <td style={tdTitle}><FaBrain style={iconStyle} /> Data & AI</td>
-              <td style={tdContent}>Pandas, Jupyter Lab, NumPy, OpenAI API, LangChain</td>
-            </tr>
-            <tr>
-              <td style={tdTitle}><FaCloud style={iconStyle} /> Cloud / DevOps</td>
-              <td style={tdContent}>AWS, Azure, Google Cloud, Terraform, Docker, Kubernetes</td>
-            </tr>
-            <tr>
-              <td style={tdTitle}><FaRocket style={iconStyle} /> Deployment</td>
-              <td style={tdContent}>Netlify, Vercel, Railway, GitHub Actions</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h2>Why Hire Next Wave Dev?</h2>
-        <ul style={{ marginBottom: "60px" }}>
-          <li><strong>Built for Scale:</strong> We architect solutions that grow with your user base.</li>
-          <li><strong>Clean Code Standards:</strong> Secure, accessible, and well-documented code following WCAG best practices.</li>
-          <li><strong>Agile & Adaptive:</strong> Rapid sprints with transparent updates as your project evolves.</li>
-        </ul>
-
-        <h2>Ready to Build the Future?</h2>
-        <p>
-          Whether you have a fully scoped project or just a rough idea on a napkin,
-          our developers are ready to jump in.
-        </p>
-
-        <Button to="/contact" variant="primary">
-          Contact Us
-        </Button>
-      </div>
+      </main>
 
       <Footer />
     </>
   );
 }
-
-const cardStyle = {
-  padding: "25px",
-  borderRadius: "10px",
-  boxShadow: "0 4px 15px rgba(0,0,0,0.1)"
-};
-
-const tdTitle = {
-  padding: "10px",
-  fontWeight: "bold",
-  width: "200px"
-};
-
-const tdContent = {
-  padding: "10px"
-};
-
-const iconStyle = {
-  marginRight: "8px",
-  verticalAlign: "middle"
-};
 
 export default ServicesPage;
