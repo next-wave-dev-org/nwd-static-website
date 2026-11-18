@@ -1,0 +1,60 @@
+
+/* Main page layout */
+.graduates-container {
+  padding: 60px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Comparison table */
+.graduates-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 60px;
+}
+
+.graduates-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.graduates-table th,
+.graduates-table td {
+  text-align: left;
+  padding: 10px;
+}
+
+/* Benefits list */
+.graduates-benefits-list {
+  margin-bottom: 60px;
+  padding-left: 20px;
+}
+
+.graduates-benefits-list li {
+  margin-bottom: 15px;
+}
+
+/* How It Works section */
+.graduates-how-it-works-title {
+  margin-bottom: 20px;
+}
+
+.graduates-how-it-works-list {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  padding-left: 1.25rem;
+}
+
+.graduates-how-it-works-list li {
+  margin-bottom: 12px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .graduates-container {
+    padding: 40px 20px;
+  }
+
+  .graduates-how-it-works-list {
+    font-size: 1rem;
+  }
+}

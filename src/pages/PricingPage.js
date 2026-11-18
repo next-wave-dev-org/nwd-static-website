@@ -1,9 +1,11 @@
+
 import React, { useState, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FormComponent } from "../components/microComponents/contact/form";
 import { Helmet } from "react-helmet";
 import { pageMetadata, BASE_URL } from "../utils/metadataConfig";
+import "./Pricing.css";
 
 const pricingModel = {
   webApp: 3000,
@@ -55,16 +57,11 @@ const PricingPage = () => {
   };
 
   const toggleFeature = (feature) => {
-    if (selectedFeatures.includes(feature)) {
-      setSelectedFeatures(
-        selectedFeatures.filter((f) => f !== feature)
-      );
-    } else {
-      setSelectedFeatures([
-        ...selectedFeatures,
-        feature,
-      ]);
-    }
+    setSelectedFeatures((previous) =>
+      previous.includes(feature)
+        ? previous.filter((item) => item !== feature)
+        : [...previous, feature]
+    );
   };
 
   const total = selectedFeatures.reduce(
@@ -90,14 +87,8 @@ const PricingPage = () => {
           href={`${BASE_URL}/#${metadata.pageUrl}`}
         />
 
-        <meta
-          property="og:type"
-          content={metadata.type}
-        />
-        <meta
-          property="og:title"
-          content={metadata.title}
-        />
+        <meta property="og:type" content={metadata.type} />
+        <meta property="og:title" content={metadata.title} />
         <meta
           property="og:description"
           content={metadata.description}
@@ -123,163 +114,156 @@ const PricingPage = () => {
 
       <Navbar />
 
-      <div className="pricing-container">
+      <main className="pricing-page">
+        <div className="pricing-container">
 
-        <section className="pricing-hero">
-          <h1>Simple, Transparent Pricing</h1>
+          {/* Hero Section */}
+          <section className="pricing-hero">
+            <h1 className="pricing-heading">
+              Simple, Transparent Pricing
+            </h1>
 
-          <p>
-            High-end engineering at{" "}
-            <strong>
-              60% of standard agency rates.
-            </strong>{" "}
-            We pass the savings of our graduate-led
-            model directly to you.
-          </p>
-        </section>
+            <p className="pricing-text">
+              High-end engineering at{" "}
+              <strong>
+                60% of standard agency rates.
+              </strong>{" "}
+              We pass the savings of our graduate-led
+              model directly to you.
+            </p>
+          </section>
 
-        <section className="pricing-packages">
-          <h2>Service Packages</h2>
+          {/* Service Packages */}
+          <section className="pricing-section">
+            <h2 className="pricing-heading">
+              Service Packages
+            </h2>
 
-          <div className="package-grid">
-            {servicePackages.map(
-              (pkg, index) => (
-                <div
-                  key={index}
+            <div className="package-grid">
+              {servicePackages.map((pkg) => (
+                <article
+                  key={pkg.title}
                   className="pricing-card"
                 >
-                  <h3>
+                  <h3 className="pricing-card-title">
                     {pkg.title} – {pkg.price}
                   </h3>
 
-                  <p>
+                  <p className="pricing-text">
                     {pkg.description}
                   </p>
-                </div>
-              )
-            )}
-          </div>
-        </section>
-
-        <section className="pricing-calculator">
-          <h2>
-            Custom Quote Calculator
-          </h2>
-
-          <p>
-            Select features below to estimate
-            your project cost.
-          </p>
-
-          <div className="calculator-layout">
-
-            <div className="calculator-options">
-
-              {Object.entries(
-                pricingModel
-              ).map(([key, value]) => (
-
-                <label
-                  key={key}
-                  className="calculator-option"
-                >
-
-                  <input
-                    type="checkbox"
-                    checked={selectedFeatures.includes(
-                      key
-                    )}
-                    onChange={() =>
-                      toggleFeature(key)
-                    }
-                  />
-
-                  <span>
-                    {key === "webApp" &&
-                      "Core Web App (Next.js/React)"}
-
-                    {key === "mobile" &&
-                      "Mobile App Extension (React Native)"}
-
-                    {key === "database" &&
-                      "Database Architecture"}
-
-                    {key === "ai" &&
-                      "AI / Chatbot Integration"}
-
-                    {key === "cloud" &&
-                      "Cloud Infrastructure"}
-
-                    {key === "design" &&
-                      "UI/UX Design Phase"}
-
-                    {" "}– +$
-                    {value.toLocaleString()}
-                  </span>
-
-                </label>
+                </article>
               ))}
             </div>
+          </section>
 
-            <div className="calculator-summary">
+          {/* Custom Quote Calculator */}
+          <section className="pricing-section pricing-calculator">
+            <h2 className="pricing-heading">
+              Custom Quote Calculator
+            </h2>
 
-              <h3>
-                Current Estimated Quote: $
-                {total.toLocaleString()}
-              </h3>
+            <p className="pricing-text">
+              Select features below to estimate
+              your project cost.
+            </p>
 
-              <p>
-                This estimate is based on an
-                average ~$75/hr graduate rate.
-                Final pricing is provided after
-                a technical discovery call.
-              </p>
+            <div className="calculator-layout">
 
-              <button
-                className="pricing-cta"
-                onClick={scrollToContactForm}
-              >
-                Lock in This Quote
-              </button>
+              <div className="calculator-options">
+                {Object.entries(pricingModel).map(
+                  ([key, value]) => (
+                    <label
+                      key={key}
+                      className="calculator-option"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={selectedFeatures.includes(key)}
+                        onChange={() => toggleFeature(key)}
+                      />
+
+                      <span>
+                        {key === "webApp" &&
+                          "Core Web App (Next.js/React)"}
+
+                        {key === "mobile" &&
+                          "Mobile App Extension (React Native)"}
+
+                        {key === "database" &&
+                          "Database Architecture"}
+
+                        {key === "ai" &&
+                          "AI / Chatbot Integration"}
+
+                        {key === "cloud" &&
+                          "Cloud Infrastructure"}
+
+                        {key === "design" &&
+                          "UI/UX Design Phase"}
+
+                        {" "}– +${value.toLocaleString()}
+                      </span>
+                    </label>
+                  )
+                )}
+              </div>
+
+              <div className="calculator-summary">
+                <h3 className="pricing-card-title">
+                  Current Estimated Quote: $
+                  {total.toLocaleString()}
+                </h3>
+
+                <p className="pricing-text">
+                  This estimate is based on an
+                  average ~$75/hr graduate rate.
+                  Final pricing is provided after
+                  a technical discovery call.
+                </p>
+
+                <button
+                  type="button"
+                  className="pricing-cta"
+                  onClick={scrollToContactForm}
+                >
+                  Lock in This Quote
+                </button>
+              </div>
 
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="pricing-why">
+          {/* Why Our Prices Are Lower */}
+          <section className="pricing-section pricing-why">
+            <h2 className="pricing-heading">
+              Why Our Prices Are Lower
+            </h2>
 
-          <h2>
-            Why Our Prices Are Lower
-          </h2>
+            <p className="pricing-text">
+              We do not carry the overhead of
+              traditional agencies. You get Next
+              Wave Dev graduates trained in modern
+              technology stacks and supported by
+              senior architects delivering 100% of
+              the quality at 60% of the cost.
+            </p>
+          </section>
 
-          <p>
-            We do not carry the overhead of
-            traditional agencies. You get Next
-            Wave Dev graduates trained in modern
-            technology stacks and supported by
-            senior architects delivering 100% of
-            the quality at 60% of the cost.
-          </p>
+          {/* Contact Form */}
+          <section
+            ref={contactFormRef}
+            className="pricing-contact-form"
+          >
+            <h2 className="pricing-heading">
+              Contact Us About Your Quote
+            </h2>
 
-        </section>
+            <FormComponent />
+          </section>
 
-        <section
-          ref={contactFormRef}
-          className="pricing-contact-form"
-          style={{
-            maxWidth: "1000px",
-            margin: "50px auto",
-            padding: "40px",
-          }}
-        >
-          <h2>
-            Contact Us About Your Quote
-          </h2>
-
-          <FormComponent />
-        </section>
-
-      </div>
+        </div>
+      </main>
 
       <Footer />
     </>

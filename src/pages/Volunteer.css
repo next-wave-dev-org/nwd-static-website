@@ -1,0 +1,96 @@
+
+/* =========================================
+   VOLUNTEER PAGE
+========================================= */
+
+.volunteer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   SHARED PAGE LAYOUT
+========================================= */
+
+.page-container {
+  padding: 60px 40px;
+}
+
+.page-container h1 {
+  margin-bottom: 30px;
+}
+
+.page-container h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.page-container p {
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* =========================================
+   SHARED CONTENT SECTIONS
+   Reuse this class on Companies and Pricing.
+========================================= */
+
+.page-content-section {
+  background-color: #f9fafb;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  border-left: 6px solid #0057b8;
+  border-radius: 12px;
+  padding: 35px;
+  margin-bottom: 30px;
+}
+
+.page-content-section h2 {
+  color: #111827;
+}
+
+.page-content-section p {
+  color: #374151;
+}
+
+/* Dark theme */
+html.dark .page-content-section {
+  background-color: #1f2937;
+  color: #d1d5db;
+  border-color: #374151;
+  border-left-color: #0057b8;
+}
+
+html.dark .page-content-section h2 {
+  color: #f9fafb;
+}
+
+html.dark .page-content-section p {
+  color: #d1d5db;
+}
+
+/* =========================================
+   VOLUNTEER CALL TO ACTION
+========================================= */
+
+.volunteer-cta {
+  margin-top: 40px;
+}
+
+.volunteer-cta h2 {
+  margin-bottom: 20px;
+}
+
+/* =========================================
+   RESPONSIVE STYLING
+========================================= */
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 40px 20px;
+  }
+
+  .page-content-section {
+    padding: 25px 20px;
+  }
+}
